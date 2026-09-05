@@ -1,0 +1,22 @@
+{
+  "id": "02-dative-modals-perfekt",
+  "number": 2,
+  "title": "Dative, Modals, Perfekt & Prepositions",
+  "shortTitle": "Dative & Modals",
+  "level": "A1",
+  "summary": "The dative case, possessive articles and der-words, all six modal verbs, the conversational past (Perfekt), prepositions, telling time, adjective endings, and sentence connectors.",
+  "status": "extracted",
+  "topicOrder": [
+    "02-dative-modals-perfekt/01-dative-case",
+    "02-dative-modals-perfekt/02-possessive-articles-der-words",
+    "02-dative-modals-perfekt/03-modal-verbs-all-six",
+    "02-dative-modals-perfekt/04-perfekt",
+    "02-dative-modals-perfekt/05-prepositions",
+    "02-dative-modals-perfekt/06-telling-time-uhrzeit",
+    "02-dative-modals-perfekt/07-adjective-endings",
+    "02-dative-modals-perfekt/08-sentence-connectors",
+    "02-dative-modals-perfekt/09-vocabulary",
+    "02-dative-modals-perfekt/10-practice"
+  ],
+  "sourceFile": "week_2.md"
+}

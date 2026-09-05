@@ -1,0 +1,19 @@
+{
+  "id": "03-praeteritum-and-reflexives",
+  "number": 3,
+  "title": "Präteritum, Reflexives & Adjective Declension",
+  "shortTitle": "Präteritum",
+  "level": "A2",
+  "summary": "The narrative past (Präteritum) including the 20 strong verbs, reflexive verbs with accusative and dative pronouns, indefinite pronouns, and the full adjective-declension system.",
+  "status": "extracted",
+  "topicOrder": [
+    "03-praeteritum-and-reflexives/01-praeteritum",
+    "03-praeteritum-and-reflexives/02-reflexive-verbs",
+    "03-praeteritum-and-reflexives/03-indefinite-pronouns",
+    "03-praeteritum-and-reflexives/04-adjective-declension",
+    "03-praeteritum-and-reflexives/05-vocabulary",
+    "03-praeteritum-and-reflexives/06-applied-skills",
+    "03-praeteritum-and-reflexives/07-practice"
+  ],
+  "sourceFile": "week_3.md"
+}

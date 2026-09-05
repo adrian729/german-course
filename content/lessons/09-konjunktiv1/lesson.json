@@ -1,0 +1,20 @@
+{
+  "id": "09-konjunktiv1",
+  "number": 9,
+  "title": "Konjunktiv I, Futur II & Verb Valency",
+  "shortTitle": "Konjunktiv I",
+  "level": "B1",
+  "summary": "Indirect speech and Konjunktiv I, the future perfect (Futur II), verb valency patterns, and discourse connectors for text cohesion.",
+  "status": "extracted",
+  "topicOrder": [
+    "09-konjunktiv1/01-indirect-speech-konjunktiv-i-introduction",
+    "09-konjunktiv1/02-futur-ii",
+    "09-konjunktiv1/03-verb-valency-patterns-verbvalenz",
+    "09-konjunktiv1/04-discourse-connectors-text-cohesion",
+    "09-konjunktiv1/05-complete-tense-system-review",
+    "09-konjunktiv1/06-vocabulary",
+    "09-konjunktiv1/07-applied-skills",
+    "09-konjunktiv1/08-practice"
+  ],
+  "sourceFile": "week_9.md"
+}

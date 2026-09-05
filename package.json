@@ -1,0 +1,37 @@
+{
+  "name": "german-course",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "extract": "node scripts/extract-corpus.ts",
+    "content": "node scripts/build-content.ts",
+    "dev": "pnpm run content && vite",
+    "build": "pnpm run content && tsc --noEmit && vite build",
+    "preview": "vite preview",
+    "typecheck": "pnpm run content && tsc --noEmit"
+  },
+  "dependencies": {
+    "@tanstack/markdown": "^0.0.13",
+    "@tanstack/react-router": "^1.170.32",
+    "class-variance-authority": "^0.7.1",
+    "cmdk": "^1.1.1",
+    "cn": "^0.2.4",
+    "lucide-react": "^1.40.0",
+    "radix-ui": "^1.6.7",
+    "react": "^19.2.8",
+    "react-dom": "^19.2.8"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "^4.3.3",
+    "@tanstack/router-plugin": "^1.168.35",
+    "@types/node": "^26.4.1",
+    "@types/react": "^19.2.18",
+    "@types/react-dom": "^19.2.7",
+    "@vitejs/plugin-react": "^6.1.1",
+    "gray-matter": "^4.0.3",
+    "tailwindcss": "^4.3.3",
+    "typescript": "^7.0.2",
+    "vite": "^8.2.2"
+  }
+}

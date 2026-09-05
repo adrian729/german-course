@@ -1,0 +1,18 @@
+{
+  "id": "04-genitive-comparative",
+  "number": 4,
+  "title": "Genitive, Comparative & N-Declension",
+  "shortTitle": "Genitive",
+  "level": "A2",
+  "summary": "The genitive case for possession, comparative and superlative forms, and N-declension weak masculine nouns.",
+  "status": "extracted",
+  "topicOrder": [
+    "04-genitive-comparative/01-genitive-case",
+    "04-genitive-comparative/02-comparative-superlative",
+    "04-genitive-comparative/03-n-deklination-weak-masculine-nouns",
+    "04-genitive-comparative/04-vocabulary",
+    "04-genitive-comparative/05-applied-skills",
+    "04-genitive-comparative/06-practice"
+  ],
+  "sourceFile": "week_4.md"
+}

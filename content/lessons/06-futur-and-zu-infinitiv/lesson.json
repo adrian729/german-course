@@ -1,0 +1,19 @@
+{
+  "id": "06-futur-and-zu-infinitiv",
+  "number": 6,
+  "title": "Futur, werden & zu + Infinitiv",
+  "shortTitle": "Futur & zu+Inf",
+  "level": "B1",
+  "summary": "The three functions of werden, the future tense (Futur I), zu + Infinitiv constructions, and relative clauses.",
+  "status": "extracted",
+  "topicOrder": [
+    "06-futur-and-zu-infinitiv/01-werden",
+    "06-futur-and-zu-infinitiv/02-futur-i",
+    "06-futur-and-zu-infinitiv/03-zu-infinitiv-constructions",
+    "06-futur-and-zu-infinitiv/04-relative-clauses-relativsaetze",
+    "06-futur-and-zu-infinitiv/05-vocabulary",
+    "06-futur-and-zu-infinitiv/06-applied-skills",
+    "06-futur-and-zu-infinitiv/07-practice"
+  ],
+  "sourceFile": "week_6.md"
+}

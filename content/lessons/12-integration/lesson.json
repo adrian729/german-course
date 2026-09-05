@@ -1,0 +1,22 @@
+{
+  "id": "12-integration",
+  "number": 12,
+  "title": "Advanced Structures & Full System Integration",
+  "shortTitle": "Integration",
+  "level": "B2",
+  "summary": "Advanced word order, unreal comparisons, brauchen + zu, lassen + Infinitiv, subjective modals, conditional sentences, integrated production exercises, and the complete reference tables.",
+  "status": "extracted",
+  "topicOrder": [
+    "12-integration/01-advanced-word-order",
+    "12-integration/02-als-ob",
+    "12-integration/03-brauchen-zu-infinitiv",
+    "12-integration/04-lassen-infinitiv",
+    "12-integration/05-subjective-use-of-modal-verbs",
+    "12-integration/06-conditional-sentences",
+    "12-integration/07-practice",
+    "12-integration/08-complete-grammar-reference-tables",
+    "12-integration/09-vocabulary",
+    "12-integration/10-answer-key-model-texts"
+  ],
+  "sourceFile": "week_12.md"
+}

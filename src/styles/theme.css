@@ -1,0 +1,286 @@
+/**
+ * Catppuccin × Tailwind v4 × shadcn/ui
+ *
+ * Numeric scales are built in OKLCH from the official Catppuccin palette
+ * (github.com/catppuccin/palette, v1.8.0). Each scale carries one hue — Mocha's,
+ * since Mocha is the preferred flavour — and passes exactly through the authentic
+ * Mocha value at one step and the Latte value at another, marked below.
+ *
+ * Semantic shadcn tokens use verbatim Catppuccin values rather than scale steps,
+ * so `--primary` in light mode is the real Latte mauve (hue 297.02°) rather than
+ * mauve-500 (hue 304.77°). Every foreground/background pair has been verified
+ * against WCAG 2.1 AA — see the audit table at the foot of this file.
+ */
+
+@import "tailwindcss";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme {
+  /* neutral — Latte greys at the light end, Mocha greys at the dark end.
+     They are one continuous ramp: hue 264°→284°, chroma peaking mid-scale.
+     Every step is an authentic Catppuccin value. */
+  --color-neutral-50: oklch(0.9578 0.0058 264.53); /* #eff1f5  Latte base */
+  --color-neutral-100: oklch(0.906 0.0117 264.51); /* #dce0e8  Latte crust */
+  --color-neutral-200: oklch(0.8575 0.0145 268.48); /* #ccd0da  Latte surface0 */
+  --color-neutral-300: oklch(0.7584 0.0205 273.15); /* #acb0be  Latte surface2 */
+  --color-neutral-400: oklch(0.6536 0.0269 278.12); /* #8c8fa1  Latte overlay1 */
+  --color-neutral-500: oklch(0.5471 0.0343 279.08); /* #6c6f85  Latte subtext0 */
+  --color-neutral-600: oklch(0.4765 0.034 278.64); /* #585b70  Mocha surface2 */
+  --color-neutral-700: oklch(0.4037 0.032 280.15); /* #45475a  Mocha surface1 */
+  --color-neutral-800: oklch(0.324 0.0319 281.98); /* #313244  Mocha surface0 */
+  --color-neutral-900: oklch(0.2429 0.0304 283.91); /* #1e1e2e  Mocha base */
+  --color-neutral-950: oklch(0.1828 0.0204 284.2); /* #11111b  Mocha crust */
+
+  /* mauve — hue 304.77° */
+  --color-mauve-50: oklch(0.971 0.015 304.77);
+  --color-mauve-100: oklch(0.9097 0.0496 304.77);
+  --color-mauve-200: oklch(0.8484 0.0841 304.77);
+  --color-mauve-300: oklch(0.7871 0.1187 304.77); /* = Mocha #cba6f7 */
+  --color-mauve-400: oklch(0.6709 0.1845 304.77);
+  --color-mauve-500: oklch(0.5547 0.2503 304.77); /* ≈ Latte #8839ef */
+  --color-mauve-600: oklch(0.4847 0.2278 304.77);
+  --color-mauve-700: oklch(0.4148 0.2053 304.77);
+  --color-mauve-800: oklch(0.3449 0.1797 304.77);
+  --color-mauve-900: oklch(0.2749 0.1435 304.77);
+  --color-mauve-950: oklch(0.205 0.1075 304.77);
+
+  /* blue — hue 259.88° */
+  --color-blue-50: oklch(0.971 0.0137 259.88);
+  --color-blue-100: oklch(0.9028 0.0471 259.88);
+  --color-blue-200: oklch(0.8346 0.0792 259.88);
+  --color-blue-300: oklch(0.7664 0.1113 259.88); /* = Mocha #89b4fa */
+  --color-blue-400: oklch(0.6625 0.1684 259.88);
+  --color-blue-500: oklch(0.5586 0.2255 259.88); /* ≈ Latte #1e66f5 */
+  --color-blue-600: oklch(0.4879 0.1981 259.88);
+  --color-blue-700: oklch(0.4172 0.1695 259.88);
+  --color-blue-800: oklch(0.3464 0.141 259.88);
+  --color-blue-900: oklch(0.2757 0.1127 259.88);
+  --color-blue-950: oklch(0.205 0.0847 259.88);
+
+  /* red — hue 2.76° */
+  --color-red-50: oklch(0.971 0.015 2.76);
+  --color-red-100: oklch(0.8992 0.0532 2.76);
+  --color-red-200: oklch(0.8274 0.0915 2.76);
+  --color-red-300: oklch(0.7556 0.1297 2.76); /* = Mocha #f38ba8 */
+  --color-red-400: oklch(0.653 0.1726 2.76);
+  --color-red-500: oklch(0.5505 0.2155 2.76); /* ≈ Latte #d20f39 */
+  --color-red-600: oklch(0.4814 0.1943 2.76);
+  --color-red-700: oklch(0.4123 0.1665 2.76);
+  --color-red-800: oklch(0.3432 0.1387 2.76);
+  --color-red-900: oklch(0.2741 0.111 2.76);
+  --color-red-950: oklch(0.205 0.0835 2.76);
+
+  /* green — hue 142.72° */
+  --color-green-50: oklch(0.971 0.015 142.72);
+  --color-green-100: oklch(0.9144 0.0621 142.72);
+  --color-green-200: oklch(0.8577 0.1092 142.72); /* = Mocha #a6e3a1 */
+  --color-green-300: oklch(0.7414 0.1432 142.72);
+  --color-green-400: oklch(0.625 0.1772 142.72); /* ≈ Latte #40a02b */
+  --color-green-500: oklch(0.555 0.1639 142.72);
+  --color-green-600: oklch(0.485 0.1506 142.72);
+  --color-green-700: oklch(0.415 0.1373 142.72);
+  --color-green-800: oklch(0.345 0.1169 142.72);
+  --color-green-900: oklch(0.275 0.0934 142.72);
+  --color-green-950: oklch(0.205 0.0701 142.72);
+
+  /* peach — hue 52.63° */
+  --color-peach-50: oklch(0.971 0.015 52.63);
+  --color-peach-100: oklch(0.8973 0.0582 52.63);
+  --color-peach-200: oklch(0.8237 0.1015 52.63); /* = Mocha #fab387 */
+  --color-peach-300: oklch(0.7578 0.1528 52.63);
+  --color-peach-400: oklch(0.692 0.1766 52.63); /* ≈ Latte #fe640b */
+  --color-peach-500: oklch(0.6108 0.1559 52.63);
+  --color-peach-600: oklch(0.5297 0.1352 52.63);
+  --color-peach-700: oklch(0.4485 0.1146 52.63);
+  --color-peach-800: oklch(0.3673 0.094 52.63);
+  --color-peach-900: oklch(0.2862 0.0734 52.63);
+  --color-peach-950: oklch(0.205 0.0532 52.63);
+
+  /* yellow — hue 86.53° */
+  --color-yellow-50: oklch(0.971 0.015 86.53);
+  --color-yellow-100: oklch(0.9193 0.0704 86.53); /* = Mocha #f9e2af */
+  --color-yellow-200: oklch(0.8166 0.1099 86.53);
+  --color-yellow-300: oklch(0.714 0.1461 86.53); /* ≈ Latte #df8e1d */
+  --color-yellow-400: oklch(0.6413 0.1313 86.53);
+  --color-yellow-500: oklch(0.5686 0.1164 86.53);
+  --color-yellow-600: oklch(0.4959 0.1016 86.53);
+  --color-yellow-700: oklch(0.4231 0.0867 86.53);
+  --color-yellow-800: oklch(0.3504 0.0719 86.53);
+  --color-yellow-900: oklch(0.2777 0.0572 86.53);
+  --color-yellow-950: oklch(0.205 0.0426 86.53);
+
+  /* teal — hue 182.75° */
+  --color-teal-50: oklch(0.971 0.015 182.75);
+  --color-teal-100: oklch(0.9147 0.0471 182.75);
+  --color-teal-200: oklch(0.8585 0.0792 182.75); /* = Mocha #94e2d5 */
+  --color-teal-300: oklch(0.7304 0.0887 182.75);
+  --color-teal-400: oklch(0.6023 0.0981 182.75); /* ≈ Latte #179299 */
+  --color-teal-500: oklch(0.5361 0.0908 182.75);
+  --color-teal-600: oklch(0.4698 0.0834 182.75);
+  --color-teal-700: oklch(0.4036 0.0721 182.75);
+  --color-teal-800: oklch(0.3374 0.0603 182.75);
+  --color-teal-900: oklch(0.2712 0.0486 182.75);
+  --color-teal-950: oklch(0.205 0.037 182.75);
+
+  /* lavender — hue 277.31° */
+  --color-lavender-50: oklch(0.971 0.0138 277.31);
+  --color-lavender-100: oklch(0.8938 0.052 277.31);
+  --color-lavender-200: oklch(0.8166 0.091 277.31); /* = Mocha #b4befe */
+  --color-lavender-300: oklch(0.7402 0.133 277.31);
+  --color-lavender-400: oklch(0.6638 0.1751 277.31); /* ≈ Latte #7287fd */
+  --color-lavender-500: oklch(0.5873 0.162 277.31);
+  --color-lavender-600: oklch(0.5108 0.1488 277.31);
+  --color-lavender-700: oklch(0.4344 0.1357 277.31);
+  --color-lavender-800: oklch(0.3579 0.1226 277.31);
+  --color-lavender-900: oklch(0.2815 0.1094 277.31);
+  --color-lavender-950: oklch(0.205 0.0963 277.31);
+}
+
+/* Latte */
+:root {
+  --radius: 0.625rem;
+
+  --background: oklch(0.9578 0.0058 264.53); /* base      #eff1f5 */
+  --foreground: oklch(0.4355 0.043 279.33); /* text      #4c4f69 */
+  --card: oklch(0.9335 0.0087 264.52); /* mantle    #e6e9ef */
+  --card-foreground: oklch(0.4355 0.043 279.33);
+  --popover: oklch(0.9335 0.0087 264.52); /* mantle    #e6e9ef */
+  --popover-foreground: oklch(0.4355 0.043 279.33);
+  --primary: oklch(0.5547 0.2503 297.02); /* mauve     #8839ef */
+  --primary-foreground: oklch(0.9578 0.0058 264.53);
+  /* Hover is a real colour step, not an opacity nudge — `primary/90` over a
+   * saturated mauve is imperceptible. mauve-700, 8.59:1 on primary-foreground. */
+  --primary-hover: oklch(0.4148 0.2053 304.77); /* mauve-700 #670fa2 */
+  --secondary: oklch(0.8575 0.0145 268.48); /* surface0  #ccd0da */
+  --secondary-foreground: oklch(0.4355 0.043 279.33);
+  --muted: oklch(0.906 0.0117 264.51); /* crust     #dce0e8 */
+  --muted-foreground: oklch(0.492 0.0385 279.3); /* subtext1  #5c5f77 */
+  --accent: oklch(0.8575 0.0145 268.48); /* surface0  #ccd0da — resting/active */
+  --accent-foreground: oklch(0.4355 0.043 279.33);
+  /* Darkest step that still clears 4.5:1 on accent-foreground (4.57:1). */
+  --accent-hover: oklch(0.82 0.0145 268.48); /*           #c0c4ce */
+  --destructive: oklch(0.4814 0.1943 2.76); /* red-600   #ad0054 */
+  --destructive-foreground: oklch(0.9578 0.0058 264.53);
+  --border: oklch(0.8083 0.0174 271.2); /* surface1  #bcc0cc — decorative */
+  --input: oklch(0.6009 0.0305 278.69); /* overlay2  #7c7f93 — stateful, 3:1 */
+  --ring: oklch(0.5547 0.2503 297.02); /* mauve     #8839ef */
+
+  --sidebar: oklch(0.9335 0.0087 264.52);
+  --sidebar-foreground: oklch(0.4355 0.043 279.33);
+  --sidebar-primary: oklch(0.5547 0.2503 297.02);
+  --sidebar-primary-foreground: oklch(0.9578 0.0058 264.53);
+  --sidebar-accent: oklch(0.8575 0.0145 268.48);
+  --sidebar-accent-foreground: oklch(0.4355 0.043 279.33);
+  --sidebar-border: oklch(0.8083 0.0174 271.2);
+  --sidebar-ring: oklch(0.5547 0.2503 297.02);
+}
+
+/* Mocha */
+.dark {
+  --background: oklch(0.2429 0.0304 283.91); /* base      #1e1e2e */
+  --foreground: oklch(0.8787 0.0426 272.28); /* text      #cdd6f4 */
+  --card: oklch(0.2155 0.0254 284.06); /* mantle    #181825 */
+  --card-foreground: oklch(0.8787 0.0426 272.28);
+  --popover: oklch(0.2155 0.0254 284.06); /* mantle    #181825 */
+  --popover-foreground: oklch(0.8787 0.0426 272.28);
+  --primary: oklch(0.7871 0.1187 304.77); /* mauve     #cba6f7 */
+  --primary-foreground: oklch(0.1828 0.0204 284.2);
+  /* Brightens on hover rather than dimming — 11.51:1 on primary-foreground. */
+  --primary-hover: oklch(0.8484 0.0841 304.77); /* mauve-200 #dac0fa */
+  --secondary: oklch(0.324 0.0319 281.98); /* surface0  #313244 */
+  --secondary-foreground: oklch(0.8787 0.0426 272.28);
+  --muted: oklch(0.324 0.0319 281.98); /* surface0  #313244 */
+  --muted-foreground: oklch(0.751 0.0396 273.93); /* subtext0  #a6adc8 */
+  --accent: oklch(0.4037 0.032 280.15); /* surface1  #45475a — resting/active */
+  --accent-foreground: oklch(0.8787 0.0426 272.28);
+  --accent-hover: oklch(0.4765 0.034 278.64); /* surface2  #585b70 — 4.62:1 */
+  --destructive: oklch(0.7556 0.1297 2.76); /* red       #f38ba8 */
+  --destructive-foreground: oklch(0.1828 0.0204 284.2);
+  --border: oklch(0.324 0.0319 281.98); /* surface0  #313244 — decorative */
+  --input: oklch(0.6176 0.0367 276); /* overlay1  #7f849c — stateful, 3:1 */
+  --ring: oklch(0.7871 0.1187 304.77); /* mauve     #cba6f7 */
+
+  --sidebar: oklch(0.2155 0.0254 284.06);
+  --sidebar-foreground: oklch(0.8787 0.0426 272.28);
+  --sidebar-primary: oklch(0.7871 0.1187 304.77);
+  --sidebar-primary-foreground: oklch(0.1828 0.0204 284.2);
+  --sidebar-accent: oklch(0.4037 0.032 280.15);
+  --sidebar-accent-foreground: oklch(0.8787 0.0426 272.28);
+  --sidebar-border: oklch(0.324 0.0319 281.98);
+  --sidebar-ring: oklch(0.7871 0.1187 304.77);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary-hover: var(--primary-hover);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent-hover: var(--accent-hover);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/**
+ * WCAG 2.1 AA audit — every pair verified, none below threshold.
+ *
+ *   pair                             Latte      Mocha    threshold
+ *   foreground / background          7.06:1    11.34:1      4.5
+ *   foreground / card                6.57:1    12.14:1      4.5
+ *   foreground / secondary           5.17:1     8.69:1      4.5
+ *   foreground / accent              5.17:1     6.31:1      4.5
+ *   muted-foreground / background    5.53:1     7.37:1      4.5
+ *   muted-foreground / muted         4.73:1     5.65:1      4.5
+ *   muted-foreground / card          5.14:1     7.89:1      4.5
+ *   primary / background             4.79:1     8.07:1      4.5
+ *   primary-foreground / primary     4.79:1     9.23:1      4.5
+ *   destructive / background         6.39:1     7.08:1      4.5
+ *   destructive / card               5.94:1     7.58:1      4.5
+ *   input / background               3.49:1     4.44:1      3.0
+ *   ring / background                4.79:1     8.07:1      3.0
+ *
+ * `--border` is exempt: it draws decorative dividers, not component boundaries,
+ * so WCAG 1.4.11 does not apply. It sits at 1.61:1 (Latte) and 1.30:1 (Mocha) —
+ * shadcn's own default border is ~1.2:1 on white, for the same reason. Anything
+ * that conveys state uses `--input` or `--ring`, both of which clear 3:1.
+ *
+ * Two Latte values are deliberately NOT the obvious Catppuccin choice:
+ *   --muted-foreground uses subtext1, not subtext0 (subtext0 lands at 4.37:1).
+ *   --destructive uses red-600, not Latte red (Latte red is 4.46:1 on card).
+ */

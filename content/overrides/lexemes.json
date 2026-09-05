@@ -1,0 +1,1214 @@
+[
+  {
+    "id": "die-rechnung",
+    "note": "week_5.md:666 writes (-n) which expands to Rechnungn; the correct plural is Rechnungen (-en).",
+    "patch": {
+      "plural": {
+        "form": "Rechnungen",
+        "kind": "suffix",
+        "raw": "-en"
+      },
+      "verification": "authored"
+    }
+  },
+  {
+    "id": "die-haustuer",
+    "note": "plural not given in the source; authored pass",
+    "patch": {
+      "plural": {
+        "form": "Haustüren",
+        "kind": "full",
+        "raw": null
+      },
+      "verification": "authored"
+    }
+  },
+  {
+    "id": "der-fussball",
+    "note": "plural not given in the source; authored pass",
+    "patch": {
+      "plural": {
+        "form": "Fußbälle",
+        "kind": "full",
+        "raw": null
+      },
+      "verification": "authored"
+    }
+  },
+  {
+    "id": "der-apfelsaft",
+    "note": "plural not given in the source; authored pass",
+    "patch": {
+      "plural": {
+        "form": "Apfelsäfte",
+        "kind": "full",
+        "raw": null
+      },
+      "verification": "authored"
+    }
+  },
+  {
+    "id": "die-handtasche",
+    "note": "plural not given in the source; authored pass",
+    "patch": {
+      "plural": {
+        "form": "Handtaschen",
+        "kind": "full",
+        "raw": null
+      },
+      "verification": "authored"
+    }
+  },
+  {
+    "id": "der-buchladen",
+    "note": "plural not given in the source; authored pass",
+    "patch": {
+      "plural": {
+        "form": "Buchläden",
+        "kind": "full",
+        "raw": null
+      },
+      "verification": "authored"
+    }
+  },
+  {
+    "id": "das-schlafzimmer",
+    "note": "plural not given in the source; authored pass",
+    "patch": {
+      "plural": {
+        "form": "Schlafzimmer",
+        "kind": "invariant",
+        "raw": null
+      },
+      "verification": "authored"
+    }
+  },
+  {
+    "id": "der-hauptbahnhof",
+    "note": "plural not given in the source; authored pass",
+    "patch": {
+      "plural": {
+        "form": "Hauptbahnhöfe",
+        "kind": "full",
+        "raw": null
+      },
+      "verification": "authored"
+    }
+  },
+  {
+    "id": "der-geburtstag",
+    "note": "plural not given in the source; authored pass",
+    "patch": {
+      "plural": {
+        "form": "Geburtstage",
+        "kind": "full",
+        "raw": null
+      },
+      "verification": "authored"
+    }
+  },
+  {
+    "id": "der-kopf",
+    "note": "plural not given in the source; authored pass",
+    "patch": {
+      "plural": {
+        "form": "Köpfe",
+        "kind": "full",
+        "raw": null
+      },
+      "verification": "authored"
+    }
+  },
+  {
+    "id": "der-arm",
+    "note": "plural not given in the source; authored pass",
+    "patch": {
+      "plural": {
+        "form": "Arme",
+        "kind": "full",
+        "raw": null
+      },
+      "verification": "authored"
+    }
+  },
+  {
+    "id": "das-bein",
+    "note": "plural not given in the source; authored pass",
+    "patch": {
+      "plural": {
+        "form": "Beine",
+        "kind": "full",
+        "raw": null
+      },
+      "verification": "authored"
+    }
+  },
+  {
+    "id": "der-ruecken",
+    "note": "plural not given in the source; authored pass",
+    "patch": {
+      "plural": {
+        "form": "Rücken",
+        "kind": "invariant",
+        "raw": null
+      },
+      "verification": "authored"
+    }
+  },
+  {
+    "id": "der-bauch",
+    "note": "plural not given in the source; authored pass",
+    "patch": {
+      "plural": {
+        "form": "Bäuche",
+        "kind": "full",
+        "raw": null
+      },
+      "verification": "authored"
+    }
+  },
+  {
+    "id": "das-auge",
+    "note": "plural not given in the source; authored pass",
+    "patch": {
+      "plural": {
+        "form": "Augen",
+        "kind": "full",
+        "raw": null
+      },
+      "verification": "authored"
+    }
+  },
+  {
+    "id": "das-ohr",
+    "note": "plural not given in the source; authored pass",
+    "patch": {
+      "plural": {
+        "form": "Ohren",
+        "kind": "full",
+        "raw": null
+      },
+      "verification": "authored"
+    }
+  },
+  {
+    "id": "der-zahn",
+    "note": "plural not given in the source; authored pass",
+    "patch": {
+      "plural": {
+        "form": "Zähne",
+        "kind": "full",
+        "raw": null
+      },
+      "verification": "authored"
+    }
+  },
+  {
+    "id": "der-finger",
+    "note": "plural not given in the source; authored pass",
+    "patch": {
+      "plural": {
+        "form": "Finger",
+        "kind": "invariant",
+        "raw": null
+      },
+      "verification": "authored"
+    }
+  },
+  {
+    "id": "das-knie",
+    "note": "plural not given in the source; authored pass",
+    "patch": {
+      "plural": {
+        "form": "Knie",
+        "kind": "invariant",
+        "raw": null
+      },
+      "verification": "authored"
+    }
+  },
+  {
+    "id": "der-arzt",
+    "note": "plural not given in the source; authored pass",
+    "patch": {
+      "plural": {
+        "form": "Ärzte",
+        "kind": "full",
+        "raw": null
+      },
+      "verification": "authored"
+    }
+  },
+  {
+    "id": "die-aerztin",
+    "note": "plural not given in the source; authored pass",
+    "patch": {
+      "plural": {
+        "form": "Ärztinnen",
+        "kind": "full",
+        "raw": null
+      },
+      "verification": "authored"
+    }
+  },
+  {
+    "id": "der-schmerz",
+    "note": "plural not given in the source; authored pass",
+    "patch": {
+      "plural": {
+        "form": "Schmerzen",
+        "kind": "full",
+        "raw": null
+      },
+      "verification": "authored"
+    }
+  },
+  {
+    "id": "die-erkaeltung",
+    "note": "plural not given in the source; authored pass",
+    "patch": {
+      "plural": {
+        "form": "Erkältungen",
+        "kind": "full",
+        "raw": null
+      },
+      "verification": "authored"
+    }
+  },
+  {
+    "id": "der-wind",
+    "note": "plural not given in the source; authored pass",
+    "patch": {
+      "plural": {
+        "form": "Winde",
+        "kind": "full",
+        "raw": null
+      },
+      "verification": "authored"
+    }
+  },
+  {
+    "id": "die-wolke",
+    "note": "plural not given in the source; authored pass",
+    "patch": {
+      "plural": {
+        "form": "Wolken",
+        "kind": "full",
+        "raw": null
+      },
+      "verification": "authored"
+    }
+  },
+  {
+    "id": "der-sturm",
+    "note": "plural not given in the source; authored pass",
+    "patch": {
+      "plural": {
+        "form": "Stürme",
+        "kind": "full",
+        "raw": null
+      },
+      "verification": "authored"
+    }
+  },
+  {
+    "id": "der-nebel",
+    "note": "plural not given in the source; authored pass",
+    "patch": {
+      "plural": {
+        "form": "Nebel",
+        "kind": "invariant",
+        "raw": null
+      },
+      "verification": "authored"
+    }
+  },
+  {
+    "id": "das-gewitter",
+    "note": "plural not given in the source; authored pass",
+    "patch": {
+      "plural": {
+        "form": "Gewitter",
+        "kind": "invariant",
+        "raw": null
+      },
+      "verification": "authored"
+    }
+  },
+  {
+    "id": "die-temperatur",
+    "note": "plural not given in the source; authored pass",
+    "patch": {
+      "plural": {
+        "form": "Temperaturen",
+        "kind": "full",
+        "raw": null
+      },
+      "verification": "authored"
+    }
+  },
+  {
+    "id": "das-kino",
+    "note": "plural not given in the source; authored pass",
+    "patch": {
+      "plural": {
+        "form": "Kinos",
+        "kind": "full",
+        "raw": null
+      },
+      "verification": "authored"
+    }
+  },
+  {
+    "id": "die-gitarre",
+    "note": "plural not given in the source; authored pass",
+    "patch": {
+      "plural": {
+        "form": "Gitarren",
+        "kind": "full",
+        "raw": null
+      },
+      "verification": "authored"
+    }
+  },
+  {
+    "id": "das-klavier",
+    "note": "plural not given in the source; authored pass",
+    "patch": {
+      "plural": {
+        "form": "Klaviere",
+        "kind": "full",
+        "raw": null
+      },
+      "verification": "authored"
+    }
+  },
+  {
+    "id": "das-spiel",
+    "note": "plural not given in the source; authored pass",
+    "patch": {
+      "plural": {
+        "form": "Spiele",
+        "kind": "full",
+        "raw": null
+      },
+      "verification": "authored"
+    }
+  },
+  {
+    "id": "der-flug",
+    "note": "plural not given in the source; authored pass",
+    "patch": {
+      "plural": {
+        "form": "Flüge",
+        "kind": "full",
+        "raw": null
+      },
+      "verification": "authored"
+    }
+  },
+  {
+    "id": "die-fahrt",
+    "note": "plural not given in the source; authored pass",
+    "patch": {
+      "plural": {
+        "form": "Fahrten",
+        "kind": "full",
+        "raw": null
+      },
+      "verification": "authored"
+    }
+  },
+  {
+    "id": "die-reise",
+    "note": "plural not given in the source; authored pass",
+    "patch": {
+      "plural": {
+        "form": "Reisen",
+        "kind": "full",
+        "raw": null
+      },
+      "verification": "authored"
+    }
+  },
+  {
+    "id": "die-karte",
+    "note": "plural not given in the source; authored pass",
+    "patch": {
+      "plural": {
+        "form": "Karten",
+        "kind": "full",
+        "raw": null
+      },
+      "verification": "authored"
+    }
+  },
+  {
+    "id": "der-koffer",
+    "note": "plural not given in the source; authored pass",
+    "patch": {
+      "plural": {
+        "form": "Koffer",
+        "kind": "invariant",
+        "raw": null
+      },
+      "verification": "authored"
+    }
+  },
+  {
+    "id": "das-hotel",
+    "note": "plural not given in the source; authored pass",
+    "patch": {
+      "plural": {
+        "form": "Hotels",
+        "kind": "full",
+        "raw": null
+      },
+      "verification": "authored"
+    }
+  },
+  {
+    "id": "der-pass",
+    "note": "plural not given in the source; authored pass",
+    "patch": {
+      "plural": {
+        "form": "Pässe",
+        "kind": "full",
+        "raw": null
+      },
+      "verification": "authored"
+    }
+  },
+  {
+    "id": "der-weg",
+    "note": "plural not given in the source; authored pass",
+    "patch": {
+      "plural": {
+        "form": "Wege",
+        "kind": "full",
+        "raw": null
+      },
+      "verification": "authored"
+    }
+  },
+  {
+    "id": "die-kreuzung",
+    "note": "plural not given in the source; authored pass",
+    "patch": {
+      "plural": {
+        "form": "Kreuzungen",
+        "kind": "full",
+        "raw": null
+      },
+      "verification": "authored"
+    }
+  },
+  {
+    "id": "die-bruecke",
+    "note": "plural not given in the source; authored pass",
+    "patch": {
+      "plural": {
+        "form": "Brücken",
+        "kind": "full",
+        "raw": null
+      },
+      "verification": "authored"
+    }
+  },
+  {
+    "id": "die-ampel",
+    "note": "plural not given in the source; authored pass",
+    "patch": {
+      "plural": {
+        "form": "Ampeln",
+        "kind": "full",
+        "raw": null
+      },
+      "verification": "authored"
+    }
+  },
+  {
+    "id": "der-platz",
+    "note": "plural not given in the source; authored pass",
+    "patch": {
+      "plural": {
+        "form": "Plätze",
+        "kind": "full",
+        "raw": null
+      },
+      "verification": "authored"
+    }
+  },
+  {
+    "id": "die-ecke",
+    "note": "plural not given in the source; authored pass",
+    "patch": {
+      "plural": {
+        "form": "Ecken",
+        "kind": "full",
+        "raw": null
+      },
+      "verification": "authored"
+    }
+  },
+  {
+    "id": "der-beginn",
+    "note": "plural not given in the source; authored pass",
+    "patch": {
+      "plural": {
+        "form": "Beginne",
+        "kind": "full",
+        "raw": null
+      },
+      "verification": "authored"
+    }
+  },
+  {
+    "id": "der-besuch",
+    "note": "plural not given in the source; authored pass",
+    "patch": {
+      "plural": {
+        "form": "Besuche",
+        "kind": "full",
+        "raw": null
+      },
+      "verification": "authored"
+    }
+  },
+  {
+    "id": "die-ordnung",
+    "note": "plural not given in the source; authored pass",
+    "patch": {
+      "plural": {
+        "form": "Ordnungen",
+        "kind": "full",
+        "raw": null
+      },
+      "verification": "authored"
+    }
+  },
+  {
+    "id": "die-wohnung",
+    "note": "plural not given in the source; authored pass",
+    "patch": {
+      "plural": {
+        "form": "Wohnungen",
+        "kind": "full",
+        "raw": null
+      },
+      "verification": "authored"
+    }
+  },
+  {
+    "id": "die-erklaerung",
+    "note": "plural not given in the source; authored pass",
+    "patch": {
+      "plural": {
+        "form": "Erklärungen",
+        "kind": "full",
+        "raw": null
+      },
+      "verification": "authored"
+    }
+  },
+  {
+    "id": "die-moeglichkeit",
+    "note": "plural not given in the source; authored pass",
+    "patch": {
+      "plural": {
+        "form": "Möglichkeiten",
+        "kind": "full",
+        "raw": null
+      },
+      "verification": "authored"
+    }
+  },
+  {
+    "id": "die-krankheit",
+    "note": "plural not given in the source; authored pass",
+    "patch": {
+      "plural": {
+        "form": "Krankheiten",
+        "kind": "full",
+        "raw": null
+      },
+      "verification": "authored"
+    }
+  },
+  {
+    "id": "die-schwierigkeit",
+    "note": "plural not given in the source; authored pass",
+    "patch": {
+      "plural": {
+        "form": "Schwierigkeiten",
+        "kind": "full",
+        "raw": null
+      },
+      "verification": "authored"
+    }
+  },
+  {
+    "id": "die-aeusserung",
+    "note": "plural not given in the source; authored pass",
+    "patch": {
+      "plural": {
+        "form": "Äußerungen",
+        "kind": "full",
+        "raw": null
+      },
+      "verification": "authored"
+    }
+  },
+  {
+    "id": "die-beantwortung",
+    "note": "plural not given in the source; authored pass",
+    "patch": {
+      "plural": {
+        "form": "Beantwortungen",
+        "kind": "full",
+        "raw": null
+      },
+      "verification": "authored"
+    }
+  },
+  {
+    "id": "die-beruecksichtigung",
+    "note": "plural not given in the source; authored pass",
+    "patch": {
+      "plural": {
+        "form": "Berücksichtigungen",
+        "kind": "full",
+        "raw": null
+      },
+      "verification": "authored"
+    }
+  },
+  {
+    "id": "die-darstellung",
+    "note": "plural not given in the source; authored pass",
+    "patch": {
+      "plural": {
+        "form": "Darstellungen",
+        "kind": "full",
+        "raw": null
+      },
+      "verification": "authored"
+    }
+  },
+  {
+    "id": "die-durchfuehrung",
+    "note": "plural not given in the source; authored pass",
+    "patch": {
+      "plural": {
+        "form": "Durchführungen",
+        "kind": "full",
+        "raw": null
+      },
+      "verification": "authored"
+    }
+  },
+  {
+    "id": "die-einfuehrung",
+    "note": "plural not given in the source; authored pass",
+    "patch": {
+      "plural": {
+        "form": "Einführungen",
+        "kind": "full",
+        "raw": null
+      },
+      "verification": "authored"
+    }
+  },
+  {
+    "id": "die-erwartung",
+    "note": "plural not given in the source; authored pass",
+    "patch": {
+      "plural": {
+        "form": "Erwartungen",
+        "kind": "full",
+        "raw": null
+      },
+      "verification": "authored"
+    }
+  },
+  {
+    "id": "die-feststellung",
+    "note": "plural not given in the source; authored pass",
+    "patch": {
+      "plural": {
+        "form": "Feststellungen",
+        "kind": "full",
+        "raw": null
+      },
+      "verification": "authored"
+    }
+  },
+  {
+    "id": "die-forderung",
+    "note": "plural not given in the source; authored pass",
+    "patch": {
+      "plural": {
+        "form": "Forderungen",
+        "kind": "full",
+        "raw": null
+      },
+      "verification": "authored"
+    }
+  },
+  {
+    "id": "die-foerderung",
+    "note": "plural not given in the source; authored pass",
+    "patch": {
+      "plural": {
+        "form": "Förderungen",
+        "kind": "full",
+        "raw": null
+      },
+      "verification": "authored"
+    }
+  },
+  {
+    "id": "die-verwirklichung",
+    "note": "plural not given in the source; authored pass",
+    "patch": {
+      "plural": {
+        "form": "Verwirklichungen",
+        "kind": "full",
+        "raw": null
+      },
+      "verification": "authored"
+    }
+  },
+  {
+    "id": "das-schreiben",
+    "note": "plural not given in the source; authored pass",
+    "patch": {
+      "plural": {
+        "form": "Schreiben",
+        "kind": "invariant",
+        "raw": null
+      },
+      "verification": "authored"
+    }
+  },
+  {
+    "id": "das-anliegen",
+    "note": "plural not given in the source; authored pass",
+    "patch": {
+      "plural": {
+        "form": "Anliegen",
+        "kind": "invariant",
+        "raw": null
+      },
+      "verification": "authored"
+    }
+  },
+  {
+    "id": "der-sachverhalt",
+    "note": "plural not given in the source; authored pass",
+    "patch": {
+      "plural": {
+        "form": "Sachverhalte",
+        "kind": "full",
+        "raw": null
+      },
+      "verification": "authored"
+    }
+  },
+  {
+    "id": "die-mappe",
+    "note": "plural not given in the source; authored pass",
+    "patch": {
+      "plural": {
+        "form": "Mappen",
+        "kind": "full",
+        "raw": null
+      },
+      "verification": "authored"
+    }
+  },
+  {
+    "id": "der-sekt",
+    "note": "plural not given in the source; authored pass",
+    "patch": {
+      "plural": {
+        "form": "Sekte",
+        "kind": "full",
+        "raw": null
+      },
+      "verification": "authored"
+    }
+  },
+  {
+    "id": "die-fabrik",
+    "note": "plural not given in the source; authored pass",
+    "patch": {
+      "plural": {
+        "form": "Fabriken",
+        "kind": "full",
+        "raw": null
+      },
+      "verification": "authored"
+    }
+  },
+  {
+    "id": "der-leiter",
+    "note": "plural not given in the source; authored pass",
+    "patch": {
+      "plural": {
+        "form": "Leiter",
+        "kind": "invariant",
+        "raw": null
+      },
+      "verification": "authored"
+    }
+  },
+  {
+    "id": "die-sympathie",
+    "note": "plural not given in the source; authored pass",
+    "patch": {
+      "plural": {
+        "form": "Sympathien",
+        "kind": "full",
+        "raw": null
+      },
+      "verification": "authored"
+    }
+  },
+  {
+    "id": "das-fieber",
+    "note": "singular-only; authored pass",
+    "patch": {
+      "plural": {
+        "form": null,
+        "kind": "none",
+        "raw": "no pl."
+      },
+      "verification": "authored"
+    }
+  },
+  {
+    "id": "der-husten",
+    "note": "singular-only; authored pass",
+    "patch": {
+      "plural": {
+        "form": null,
+        "kind": "none",
+        "raw": "no pl."
+      },
+      "verification": "authored"
+    }
+  },
+  {
+    "id": "der-schnupfen",
+    "note": "singular-only; authored pass",
+    "patch": {
+      "plural": {
+        "form": null,
+        "kind": "none",
+        "raw": "no pl."
+      },
+      "verification": "authored"
+    }
+  },
+  {
+    "id": "das-wetter",
+    "note": "singular-only; authored pass",
+    "patch": {
+      "plural": {
+        "form": null,
+        "kind": "none",
+        "raw": "no pl."
+      },
+      "verification": "authored"
+    }
+  },
+  {
+    "id": "der-regen",
+    "note": "singular-only; authored pass",
+    "patch": {
+      "plural": {
+        "form": null,
+        "kind": "none",
+        "raw": "no pl."
+      },
+      "verification": "authored"
+    }
+  },
+  {
+    "id": "der-schnee",
+    "note": "singular-only; authored pass",
+    "patch": {
+      "plural": {
+        "form": null,
+        "kind": "none",
+        "raw": "no pl."
+      },
+      "verification": "authored"
+    }
+  },
+  {
+    "id": "das-eis",
+    "note": "singular-only; authored pass",
+    "patch": {
+      "plural": {
+        "form": null,
+        "kind": "none",
+        "raw": "no pl."
+      },
+      "verification": "authored"
+    }
+  },
+  {
+    "id": "das-gepaeck",
+    "note": "singular-only; authored pass",
+    "patch": {
+      "plural": {
+        "form": null,
+        "kind": "none",
+        "raw": "no pl."
+      },
+      "verification": "authored"
+    }
+  },
+  {
+    "id": "die-gesundheit",
+    "note": "singular-only; authored pass",
+    "patch": {
+      "plural": {
+        "form": null,
+        "kind": "none",
+        "raw": "no pl."
+      },
+      "verification": "authored"
+    }
+  },
+  {
+    "id": "die-wichtigkeit",
+    "note": "singular-only; authored pass",
+    "patch": {
+      "plural": {
+        "form": null,
+        "kind": "none",
+        "raw": "no pl."
+      },
+      "verification": "authored"
+    }
+  },
+  {
+    "id": "die-einsamkeit",
+    "note": "singular-only; authored pass",
+    "patch": {
+      "plural": {
+        "form": null,
+        "kind": "none",
+        "raw": "no pl."
+      },
+      "verification": "authored"
+    }
+  },
+  {
+    "id": "die-dunkelheit",
+    "note": "singular-only; authored pass",
+    "patch": {
+      "plural": {
+        "form": null,
+        "kind": "none",
+        "raw": "no pl."
+      },
+      "verification": "authored"
+    }
+  },
+  {
+    "id": "der-mist",
+    "note": "singular-only; authored pass",
+    "patch": {
+      "plural": {
+        "form": null,
+        "kind": "none",
+        "raw": "no pl."
+      },
+      "verification": "authored"
+    }
+  },
+  {
+    "id": "der-rat",
+    "note": "singular-only; authored pass",
+    "patch": {
+      "plural": {
+        "form": null,
+        "kind": "none",
+        "raw": "no pl."
+      },
+      "verification": "authored"
+    }
+  },
+  {
+    "id": "die-software",
+    "note": "singular-only; authored pass",
+    "patch": {
+      "plural": {
+        "form": null,
+        "kind": "none",
+        "raw": "no pl."
+      },
+      "verification": "authored"
+    }
+  },
+  {
+    "id": "der-muell",
+    "note": "singular-only; authored pass",
+    "patch": {
+      "plural": {
+        "form": null,
+        "kind": "none",
+        "raw": "no pl."
+      },
+      "verification": "authored"
+    }
+  },
+  {
+    "id": "die-work-life-balance",
+    "note": "singular-only; authored pass",
+    "patch": {
+      "plural": {
+        "form": null,
+        "kind": "none",
+        "raw": "no pl."
+      },
+      "verification": "authored"
+    }
+  },
+  {
+    "id": "das-gewissen",
+    "note": "singular-only; authored pass",
+    "patch": {
+      "plural": {
+        "form": null,
+        "kind": "none",
+        "raw": "no pl."
+      },
+      "verification": "authored"
+    }
+  },
+  {
+    "id": "der-frieden",
+    "note": "singular-only; authored pass",
+    "patch": {
+      "plural": {
+        "form": null,
+        "kind": "none",
+        "raw": "no pl."
+      },
+      "verification": "authored"
+    }
+  },
+  {
+    "id": "die-wuerde",
+    "note": "singular-only; authored pass",
+    "patch": {
+      "plural": {
+        "form": null,
+        "kind": "none",
+        "raw": "no pl."
+      },
+      "verification": "authored"
+    }
+  },
+  {
+    "id": "die-armut",
+    "note": "singular-only; authored pass",
+    "patch": {
+      "plural": {
+        "form": null,
+        "kind": "none",
+        "raw": "no pl."
+      },
+      "verification": "authored"
+    }
+  },
+  {
+    "id": "die-verantwortung",
+    "note": "singular-only; authored pass",
+    "patch": {
+      "plural": {
+        "form": null,
+        "kind": "none",
+        "raw": "no pl."
+      },
+      "verification": "authored"
+    }
+  },
+  {
+    "id": "die-teamarbeit",
+    "note": "singular-only; authored pass",
+    "patch": {
+      "plural": {
+        "form": null,
+        "kind": "none",
+        "raw": "no pl."
+      },
+      "verification": "authored"
+    }
+  },
+  {
+    "id": "das-personal",
+    "note": "singular-only; authored pass",
+    "patch": {
+      "plural": {
+        "form": null,
+        "kind": "none",
+        "raw": "no pl."
+      },
+      "verification": "authored"
+    }
+  },
+  {
+    "id": "die-kreativitaet",
+    "note": "singular-only; authored pass",
+    "patch": {
+      "plural": {
+        "form": null,
+        "kind": "none",
+        "raw": "no pl."
+      },
+      "verification": "authored"
+    }
+  },
+  {
+    "id": "die-zufriedenheit",
+    "note": "singular-only; authored pass",
+    "patch": {
+      "plural": {
+        "form": null,
+        "kind": "none",
+        "raw": "no pl."
+      },
+      "verification": "authored"
+    }
+  },
+  {
+    "id": "der-euro",
+    "note": "Duden: Euro (invariant); corpus L2 Euros is colloquial",
+    "patch": {
+      "plural": {
+        "form": "Euro",
+        "kind": "invariant",
+        "raw": "-"
+      },
+      "verification": "authored"
+    }
+  },
+  {
+    "id": "die-erneuerbare-energie",
+    "note": "merge-found erratum: L12 has it right, L10 dative-looking form wrong",
+    "patch": {
+      "plural": {
+        "form": "erneuerbare Energien",
+        "kind": "full",
+        "raw": "erneuerbare Energien"
+      },
+      "verification": "authored"
+    }
+  }
+]

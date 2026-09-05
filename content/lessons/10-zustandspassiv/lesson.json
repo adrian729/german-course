@@ -1,0 +1,20 @@
+{
+  "id": "10-zustandspassiv",
+  "number": 10,
+  "title": "Zustandspassiv, Participial Constructions & Konjunktiv II Past",
+  "shortTitle": "Zustandspassiv",
+  "level": "B2",
+  "summary": "The state passive, advanced passive constructions, participial adjectives and extended participial phrases, and past unreal Konjunktiv II.",
+  "status": "extracted",
+  "topicOrder": [
+    "10-zustandspassiv/01-zustandspassiv",
+    "10-zustandspassiv/02-advanced-passive-constructions",
+    "10-zustandspassiv/03-participial-adjectives",
+    "10-zustandspassiv/04-extended-participial-constructions-erweiterte-partizipialattribute",
+    "10-zustandspassiv/05-konjunktiv-ii",
+    "10-zustandspassiv/06-vocabulary",
+    "10-zustandspassiv/07-applied-skills",
+    "10-zustandspassiv/08-practice"
+  ],
+  "sourceFile": "week_10.md"
+}

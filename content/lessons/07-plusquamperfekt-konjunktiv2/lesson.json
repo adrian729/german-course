@@ -1,0 +1,18 @@
+{
+  "id": "07-plusquamperfekt-konjunktiv2",
+  "number": 7,
+  "title": "Plusquamperfekt, Konjunktiv II & Vorgangspassiv",
+  "shortTitle": "Plusquamperfekt",
+  "level": "B1",
+  "summary": "The past perfect, the subjunctive of unreality (Konjunktiv II) for hypotheticals and politeness, and the process passive.",
+  "status": "extracted",
+  "topicOrder": [
+    "07-plusquamperfekt-konjunktiv2/01-plusquamperfekt",
+    "07-plusquamperfekt-konjunktiv2/02-konjunktiv-ii",
+    "07-plusquamperfekt-konjunktiv2/03-vorgangspassiv",
+    "07-plusquamperfekt-konjunktiv2/04-vocabulary",
+    "07-plusquamperfekt-konjunktiv2/05-applied-skills",
+    "07-plusquamperfekt-konjunktiv2/06-practice"
+  ],
+  "sourceFile": "week_7.md"
+}

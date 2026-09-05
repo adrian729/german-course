@@ -1,0 +1,22 @@
+{
+  "id": "01-foundations-and-core-grammar",
+  "number": 1,
+  "title": "Foundations & Core Grammar",
+  "shortTitle": "Foundations",
+  "level": "A1",
+  "summary": "Pronunciation, the first 150 words, numbers and calendar, personal pronouns and the present tense, the nominative and accusative cases, the V2 rule, negation, and es gibt.",
+  "status": "extracted",
+  "topicOrder": [
+    "01-foundations-and-core-grammar/01-german-pronunciation-guide",
+    "01-foundations-and-core-grammar/02-vocabulary",
+    "01-foundations-and-core-grammar/03-numbers-calendar",
+    "01-foundations-and-core-grammar/04-personal-pronouns-present-tense-praesens",
+    "01-foundations-and-core-grammar/05-nominative-case",
+    "01-foundations-and-core-grammar/06-accusative-case",
+    "01-foundations-and-core-grammar/07-word-order",
+    "01-foundations-and-core-grammar/08-negation",
+    "01-foundations-and-core-grammar/09-es-gibt-impersonal-es",
+    "01-foundations-and-core-grammar/10-practice"
+  ],
+  "sourceFile": "week_1.md"
+}

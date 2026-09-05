@@ -1,0 +1,3016 @@
+[
+  {
+    "id": "1-conjugation-of-sein",
+    "title": "Conjugation of sein",
+    "kind": "verb",
+    "rows": [
+      "ich",
+      "du",
+      "er/sie/es",
+      "wir",
+      "ihr",
+      "sie/Sie"
+    ],
+    "cols": [
+      "Person",
+      "Conjugation"
+    ],
+    "cells": [
+      [
+        "ich",
+        "bin"
+      ],
+      [
+        "du",
+        "bist"
+      ],
+      [
+        "er/sie/es",
+        "ist"
+      ],
+      [
+        "wir",
+        "sind"
+      ],
+      [
+        "ihr",
+        "seid"
+      ],
+      [
+        "sie/Sie",
+        "sind"
+      ]
+    ],
+    "topicId": "01-foundations-and-core-grammar/04-personal-pronouns-present-tense-praesens",
+    "verification": "extracted"
+  },
+  {
+    "id": "1-conjugation-of-haben",
+    "title": "Conjugation of haben",
+    "kind": "verb",
+    "rows": [
+      "ich",
+      "du",
+      "er/sie/es",
+      "wir",
+      "ihr",
+      "sie/Sie"
+    ],
+    "cols": [
+      "Person",
+      "Conjugation"
+    ],
+    "cells": [
+      [
+        "ich",
+        "habe"
+      ],
+      [
+        "du",
+        "hast"
+      ],
+      [
+        "er/sie/es",
+        "hat"
+      ],
+      [
+        "wir",
+        "haben"
+      ],
+      [
+        "ihr",
+        "habt"
+      ],
+      [
+        "sie/Sie",
+        "haben"
+      ]
+    ],
+    "topicId": "01-foundations-and-core-grammar/04-personal-pronouns-present-tense-praesens",
+    "verification": "extracted"
+  },
+  {
+    "id": "1-regular-weak-verb-pattern",
+    "title": "Regular (Weak) Verb Pattern",
+    "kind": "verb",
+    "rows": [
+      "ich",
+      "du",
+      "er/sie/es",
+      "wir",
+      "ihr",
+      "sie/Sie"
+    ],
+    "cols": [
+      "Person",
+      "Ending",
+      "spielen (play)",
+      "machen (do)",
+      "lernen (learn)"
+    ],
+    "cells": [
+      [
+        "ich",
+        "-e",
+        "spiele",
+        "mache",
+        "lerne"
+      ],
+      [
+        "du",
+        "-st",
+        "spielst",
+        "machst",
+        "lernst"
+      ],
+      [
+        "er/sie/es",
+        "-t",
+        "spielt",
+        "macht",
+        "lernt"
+      ],
+      [
+        "wir",
+        "-en",
+        "spielen",
+        "machen",
+        "lernen"
+      ],
+      [
+        "ihr",
+        "-t",
+        "spielt",
+        "macht",
+        "lernt"
+      ],
+      [
+        "sie/Sie",
+        "-en",
+        "spielen",
+        "machen",
+        "lernen"
+      ]
+    ],
+    "topicId": "01-foundations-and-core-grammar/04-personal-pronouns-present-tense-praesens",
+    "verification": "extracted"
+  },
+  {
+    "id": "1-key-irregular-verbs-in-praesens-with-vowel-changes",
+    "title": "Key Irregular Verbs in Präsens with Vowel Changes",
+    "kind": "verb",
+    "rows": [
+      "ich",
+      "du",
+      "er/sie/es",
+      "wir",
+      "ihr",
+      "sie/Sie"
+    ],
+    "cols": [
+      "Person",
+      "sehen (e→ie)",
+      "essen (e→i)",
+      "sprechen (e→i)",
+      "laufen (au→äu)",
+      "nehmen (e→i)",
+      "geben (e→i)",
+      "helfen (e→i)"
+    ],
+    "cells": [
+      [
+        "ich",
+        "sehe",
+        "esse",
+        "spreche",
+        "laufe",
+        "nehme",
+        "gebe",
+        "helfe"
+      ],
+      [
+        "du",
+        "siehst",
+        "isst",
+        "sprichst",
+        "läufst",
+        "nimmst",
+        "gibst",
+        "hilfst"
+      ],
+      [
+        "er/sie/es",
+        "sieht",
+        "isst",
+        "spricht",
+        "läuft",
+        "nimmt",
+        "gibt",
+        "hilft"
+      ],
+      [
+        "wir",
+        "sehen",
+        "essen",
+        "sprechen",
+        "laufen",
+        "nehmen",
+        "geben",
+        "helfen"
+      ],
+      [
+        "ihr",
+        "seht",
+        "esst",
+        "sprecht",
+        "lauft",
+        "nehmt",
+        "gebt",
+        "helft"
+      ],
+      [
+        "sie/Sie",
+        "sehen",
+        "essen",
+        "sprechen",
+        "laufen",
+        "nehmen",
+        "geben",
+        "helfen"
+      ]
+    ],
+    "topicId": "01-foundations-and-core-grammar/04-personal-pronouns-present-tense-praesens",
+    "verification": "extracted"
+  },
+  {
+    "id": "1-kein-keine-negating-nouns",
+    "title": "kein/keine — Negating Nouns",
+    "kind": "article",
+    "rows": [
+      "Nominative",
+      "Accusative"
+    ],
+    "cols": [
+      "Case",
+      "Masculine",
+      "Feminine",
+      "Neuter",
+      "Plural"
+    ],
+    "cells": [
+      [
+        "Nominative",
+        "kein",
+        "keine",
+        "kein",
+        "keine"
+      ],
+      [
+        "Accusative",
+        "keinen",
+        "keine",
+        "kein",
+        "keine"
+      ]
+    ],
+    "topicId": "01-foundations-and-core-grammar/08-negation",
+    "verification": "extracted"
+  },
+  {
+    "id": "2-dative-article-forms",
+    "title": "Dative Article Forms",
+    "kind": "article",
+    "rows": [
+      "Nominative",
+      "Accusative",
+      "Dative"
+    ],
+    "cols": [
+      "Case",
+      "Masculine",
+      "Feminine",
+      "Neuter",
+      "Plural"
+    ],
+    "cells": [
+      [
+        "Nominative",
+        "der / ein",
+        "die / eine",
+        "das / ein",
+        "die"
+      ],
+      [
+        "Accusative",
+        "den / einen",
+        "die / eine",
+        "das / ein",
+        "die"
+      ],
+      [
+        "Dative",
+        "dem / einem",
+        "der / einer",
+        "dem / einem",
+        "den (+n)"
+      ]
+    ],
+    "topicId": "02-dative-modals-perfekt/01-dative-case",
+    "verification": "extracted"
+  },
+  {
+    "id": "2-possessive-articles",
+    "title": "Possessive Articles",
+    "kind": "verb",
+    "rows": [
+      "ich",
+      "du",
+      "er",
+      "sie (she)",
+      "es",
+      "wir",
+      "ihr",
+      "sie (they)",
+      "Sie (formal)"
+    ],
+    "cols": [
+      "Person",
+      "Possessive",
+      "English"
+    ],
+    "cells": [
+      [
+        "ich",
+        "mein",
+        "my"
+      ],
+      [
+        "du",
+        "dein",
+        "your (informal sg.)"
+      ],
+      [
+        "er",
+        "sein",
+        "his / its"
+      ],
+      [
+        "sie (she)",
+        "ihr",
+        "her"
+      ],
+      [
+        "es",
+        "sein",
+        "its"
+      ],
+      [
+        "wir",
+        "unser",
+        "our"
+      ],
+      [
+        "ihr",
+        "euer",
+        "your (informal pl.)"
+      ],
+      [
+        "sie (they)",
+        "ihr",
+        "their"
+      ],
+      [
+        "Sie (formal)",
+        "Ihr",
+        "your (formal)"
+      ]
+    ],
+    "topicId": "02-dative-modals-perfekt/02-possessive-articles-der-words",
+    "verification": "extracted"
+  },
+  {
+    "id": "2-der-word-declension-table",
+    "title": "Der-Word Declension Table",
+    "kind": "article",
+    "rows": [
+      "Nom",
+      "Acc",
+      "Dat"
+    ],
+    "cols": [
+      "Case",
+      "Masculine",
+      "Feminine",
+      "Neuter",
+      "Plural"
+    ],
+    "cells": [
+      [
+        "Nom",
+        "dieser",
+        "diese",
+        "dieses",
+        "diese"
+      ],
+      [
+        "Acc",
+        "diesen",
+        "diese",
+        "dieses",
+        "diese"
+      ],
+      [
+        "Dat",
+        "diesem",
+        "dieser",
+        "diesem",
+        "diesen"
+      ]
+    ],
+    "topicId": "02-dative-modals-perfekt/02-possessive-articles-der-words",
+    "verification": "extracted"
+  },
+  {
+    "id": "2-examples-using-possessives-der-words-in-all-three-cases",
+    "title": "Examples Using Possessives & Der-Words in All Three Cases",
+    "kind": "article",
+    "rows": [
+      "Nom",
+      "Nom",
+      "Acc",
+      "Acc",
+      "Dat",
+      "Dat"
+    ],
+    "cols": [
+      "Case",
+      "Example"
+    ],
+    "cells": [
+      [
+        "Nom",
+        "Mein Bruder ist groß. (My brother is tall.)"
+      ],
+      [
+        "Nom",
+        "Unsere Mutter kocht gut. (Our mother cooks well.)"
+      ],
+      [
+        "Acc",
+        "Ich sehe deinen Hund. (I see your dog.)"
+      ],
+      [
+        "Acc",
+        "Sie hat ihren Schlüssel. (She has her key.)"
+      ],
+      [
+        "Dat",
+        "Ich helfe meinem Freund. (I help my friend.)"
+      ],
+      [
+        "Dat",
+        "Er gibt seiner Schwester das Buch. (He gives his sister the book.)"
+      ]
+    ],
+    "topicId": "02-dative-modals-perfekt/02-possessive-articles-der-words",
+    "verification": "extracted"
+  },
+  {
+    "id": "2-conjugation-charts",
+    "title": "Conjugation Charts",
+    "kind": "verb",
+    "rows": [
+      "ich",
+      "du",
+      "er/sie/es",
+      "wir",
+      "ihr",
+      "sie/Sie"
+    ],
+    "cols": [
+      "Person",
+      "können",
+      "wollen",
+      "müssen",
+      "sollen",
+      "dürfen",
+      "mögen"
+    ],
+    "cells": [
+      [
+        "ich",
+        "kann",
+        "will",
+        "muss",
+        "soll",
+        "darf",
+        "mag"
+      ],
+      [
+        "du",
+        "kannst",
+        "willst",
+        "musst",
+        "sollst",
+        "darfst",
+        "magst"
+      ],
+      [
+        "er/sie/es",
+        "kann",
+        "will",
+        "muss",
+        "soll",
+        "darf",
+        "mag"
+      ],
+      [
+        "wir",
+        "können",
+        "wollen",
+        "müssen",
+        "sollen",
+        "dürfen",
+        "mögen"
+      ],
+      [
+        "ihr",
+        "könnt",
+        "wollt",
+        "müsst",
+        "sollt",
+        "dürft",
+        "mögt"
+      ],
+      [
+        "sie/Sie",
+        "können",
+        "wollen",
+        "müssen",
+        "sollen",
+        "dürfen",
+        "mögen"
+      ]
+    ],
+    "topicId": "02-dative-modals-perfekt/03-modal-verbs-all-six",
+    "verification": "extracted"
+  },
+  {
+    "id": "2-weak-endings-after-der-words",
+    "title": "Weak Endings After der-Words",
+    "kind": "article",
+    "rows": [
+      "Nom",
+      "Acc"
+    ],
+    "cols": [
+      "Case",
+      "Masculine",
+      "Feminine",
+      "Neuter",
+      "Plural"
+    ],
+    "cells": [
+      [
+        "Nom",
+        "-e",
+        "-e",
+        "-e",
+        "-en"
+      ],
+      [
+        "Acc",
+        "-en",
+        "-e",
+        "-e",
+        "-en"
+      ]
+    ],
+    "topicId": "02-dative-modals-perfekt/07-adjective-endings",
+    "verification": "extracted"
+  },
+  {
+    "id": "2-strong-endings-without-article",
+    "title": "Strong Endings Without Article",
+    "kind": "article",
+    "rows": [
+      "Nom",
+      "Acc"
+    ],
+    "cols": [
+      "Case",
+      "Masculine",
+      "Feminine",
+      "Neuter",
+      "Plural"
+    ],
+    "cells": [
+      [
+        "Nom",
+        "-er",
+        "-e",
+        "-es",
+        "-e"
+      ],
+      [
+        "Acc",
+        "-en",
+        "-e",
+        "-es",
+        "-e"
+      ]
+    ],
+    "topicId": "02-dative-modals-perfekt/07-adjective-endings",
+    "verification": "extracted"
+  },
+  {
+    "id": "3-praeteritum-of-sein",
+    "title": "Präteritum of sein",
+    "kind": "verb",
+    "rows": [
+      "ich",
+      "du",
+      "er/sie/es",
+      "wir",
+      "ihr",
+      "sie/Sie"
+    ],
+    "cols": [
+      "Person",
+      "Präteritum",
+      "English"
+    ],
+    "cells": [
+      [
+        "ich",
+        "war",
+        "I was"
+      ],
+      [
+        "du",
+        "warst",
+        "you were"
+      ],
+      [
+        "er/sie/es",
+        "war",
+        "he/she/it was"
+      ],
+      [
+        "wir",
+        "waren",
+        "we were"
+      ],
+      [
+        "ihr",
+        "wart",
+        "you (pl.) were"
+      ],
+      [
+        "sie/Sie",
+        "waren",
+        "they/you (formal) were"
+      ]
+    ],
+    "topicId": "03-praeteritum-and-reflexives/01-praeteritum",
+    "verification": "extracted"
+  },
+  {
+    "id": "3-praeteritum-of-haben",
+    "title": "Präteritum of haben",
+    "kind": "verb",
+    "rows": [
+      "ich",
+      "du",
+      "er/sie/es",
+      "wir",
+      "ihr",
+      "sie/Sie"
+    ],
+    "cols": [
+      "Person",
+      "Präteritum",
+      "English"
+    ],
+    "cells": [
+      [
+        "ich",
+        "hatte",
+        "I had"
+      ],
+      [
+        "du",
+        "hattest",
+        "you had"
+      ],
+      [
+        "er/sie/es",
+        "hatte",
+        "he/she/it had"
+      ],
+      [
+        "wir",
+        "hatten",
+        "we had"
+      ],
+      [
+        "ihr",
+        "hattet",
+        "you (pl.) had"
+      ],
+      [
+        "sie/Sie",
+        "hatten",
+        "they/you (formal) had"
+      ]
+    ],
+    "topicId": "03-praeteritum-and-reflexives/01-praeteritum",
+    "verification": "extracted"
+  },
+  {
+    "id": "3-praeteritum-of-all-six-modal-verbs",
+    "title": "Präteritum of All Six Modal Verbs",
+    "kind": "verb",
+    "rows": [
+      "ich",
+      "du",
+      "er/sie/es",
+      "wir",
+      "ihr",
+      "sie/Sie"
+    ],
+    "cols": [
+      "Person",
+      "können → konnte",
+      "wollen → wollte",
+      "müssen → musste",
+      "sollen → sollte",
+      "dürfen → durfte",
+      "mögen → mochte"
+    ],
+    "cells": [
+      [
+        "ich",
+        "konnte",
+        "wollte",
+        "musste",
+        "sollte",
+        "durfte",
+        "mochte"
+      ],
+      [
+        "du",
+        "konntest",
+        "wolltest",
+        "musstest",
+        "solltest",
+        "durftest",
+        "mochtest"
+      ],
+      [
+        "er/sie/es",
+        "konnte",
+        "wollte",
+        "musste",
+        "sollte",
+        "durfte",
+        "mochte"
+      ],
+      [
+        "wir",
+        "konnten",
+        "wollten",
+        "mussten",
+        "sollten",
+        "durften",
+        "mochten"
+      ],
+      [
+        "ihr",
+        "konntet",
+        "wolltet",
+        "musstet",
+        "solltet",
+        "durftet",
+        "mochtet"
+      ],
+      [
+        "sie/Sie",
+        "konnten",
+        "wollten",
+        "mussten",
+        "sollten",
+        "durften",
+        "mochten"
+      ]
+    ],
+    "topicId": "03-praeteritum-and-reflexives/01-praeteritum",
+    "verification": "extracted"
+  },
+  {
+    "id": "3-weak-verb-praeteritum-pattern",
+    "title": "Weak Verb Präteritum Pattern",
+    "kind": "verb",
+    "rows": [
+      "ich",
+      "du",
+      "er/sie/es",
+      "wir",
+      "ihr",
+      "sie/Sie"
+    ],
+    "cols": [
+      "Person",
+      "Ending",
+      "machen → machte",
+      "spielen → spielte"
+    ],
+    "cells": [
+      [
+        "ich",
+        "-te",
+        "machte",
+        "spielte"
+      ],
+      [
+        "du",
+        "-test",
+        "machtest",
+        "spieltest"
+      ],
+      [
+        "er/sie/es",
+        "-te",
+        "machte",
+        "spielte"
+      ],
+      [
+        "wir",
+        "-ten",
+        "machten",
+        "spielten"
+      ],
+      [
+        "ihr",
+        "-tet",
+        "machtet",
+        "spieltet"
+      ],
+      [
+        "sie/Sie",
+        "-ten",
+        "machten",
+        "spielten"
+      ]
+    ],
+    "topicId": "03-praeteritum-and-reflexives/01-praeteritum",
+    "verification": "extracted"
+  },
+  {
+    "id": "3-praeteritum-of-20-strong-verbs",
+    "title": "Präteritum of 20 Strong Verbs",
+    "kind": "verb",
+    "rows": [
+      "gehen",
+      "kommen",
+      "sehen",
+      "sprechen",
+      "geben",
+      "nehmen",
+      "finden",
+      "stehen",
+      "liegen",
+      "schreiben",
+      "lesen",
+      "fahren",
+      "tragen",
+      "schlafen",
+      "rufen",
+      "fliegen",
+      "helfen",
+      "sterben",
+      "ziehen",
+      "trinken"
+    ],
+    "cols": [
+      "Infinitive",
+      "Meaning",
+      "Präteritum (er/sie/es)",
+      "Full Pattern"
+    ],
+    "cells": [
+      [
+        "gehen",
+        "to go",
+        "ging",
+        "ich ging, du gingst, er ging, wir gingen, ihr gingt, sie gingen"
+      ],
+      [
+        "kommen",
+        "to come",
+        "kam",
+        "ich kam, du kamst, er kam, wir kamen, ihr kamt, sie kamen"
+      ],
+      [
+        "sehen",
+        "to see",
+        "sah",
+        "ich sah, du sahst, er sah, wir sahen, ihr saht, sie sahen"
+      ],
+      [
+        "sprechen",
+        "to speak",
+        "sprach",
+        "ich sprach, du sprachst, er sprach, wir sprachen, ihr spracht, sie sprachen"
+      ],
+      [
+        "geben",
+        "to give",
+        "gab",
+        "ich gab, du gabst, er gab, wir gaben, ihr gabt, sie gaben"
+      ],
+      [
+        "nehmen",
+        "to take",
+        "nahm",
+        "ich nahm, du nahmst, er nahm, wir nahmen, ihr nahmt, sie nahmen"
+      ],
+      [
+        "finden",
+        "to find",
+        "fand",
+        "ich fand, du fandest, er fand, wir fanden, ihr fandet, sie fanden"
+      ],
+      [
+        "stehen",
+        "to stand",
+        "stand",
+        "ich stand, du standest, er stand, wir standen, ihr standet, sie standen"
+      ],
+      [
+        "liegen",
+        "to lie (down)",
+        "lag",
+        "ich lag, du lagst, er lag, wir lagen, ihr lagt, sie lagen"
+      ],
+      [
+        "schreiben",
+        "to write",
+        "schrieb",
+        "ich schrieb, du schriebst, er schrieb, wir schrieben, ihr schriebt, sie schrieben"
+      ],
+      [
+        "lesen",
+        "to read",
+        "las",
+        "ich las, du last, er las, wir lasen, ihr last, sie lasen"
+      ],
+      [
+        "fahren",
+        "to drive/travel",
+        "fuhr",
+        "ich fuhr, du fuhrst, er fuhr, wir fuhren, ihr fuhrt, sie fuhren"
+      ],
+      [
+        "tragen",
+        "to carry/wear",
+        "trug",
+        "ich trug, du trugst, er trug, wir trugen, ihr trugt, sie trugen"
+      ],
+      [
+        "schlafen",
+        "to sleep",
+        "schlief",
+        "ich schlief, du schliefst, er schlief, wir schliefen, ihr schlieft, sie schliefen"
+      ],
+      [
+        "rufen",
+        "to call",
+        "rief",
+        "ich rief, du riefst, er rief, wir riefen, ihr rieft, sie riefen"
+      ],
+      [
+        "fliegen",
+        "to fly",
+        "flog",
+        "ich flog, du flogst, er flog, wir flogen, ihr flogt, sie flogen"
+      ],
+      [
+        "helfen",
+        "to help",
+        "half",
+        "ich half, du halfst, er half, wir halfen, ihr halft, sie halfen"
+      ],
+      [
+        "sterben",
+        "to die",
+        "starb",
+        "ich starb, du starbst, er starb, wir starben, ihr starbt, sie starben"
+      ],
+      [
+        "ziehen",
+        "to pull/move",
+        "zog",
+        "ich zog, du zogst, er zog, wir zogen, ihr zogt, sie zogen"
+      ],
+      [
+        "trinken",
+        "to drink",
+        "trank",
+        "ich trank, du trankst, er trank, wir tranken, ihr trankt, sie tranken"
+      ]
+    ],
+    "topicId": "03-praeteritum-and-reflexives/01-praeteritum",
+    "verification": "extracted"
+  },
+  {
+    "id": "3-accusative-reflexive-pronouns",
+    "title": "Accusative Reflexive Pronouns",
+    "kind": "verb",
+    "rows": [
+      "ich",
+      "du",
+      "er/sie/es",
+      "wir",
+      "ihr",
+      "sie/Sie"
+    ],
+    "cols": [
+      "Person",
+      "Personal Pronoun",
+      "Reflexive Pronoun"
+    ],
+    "cells": [
+      [
+        "ich",
+        "mich",
+        "mich"
+      ],
+      [
+        "du",
+        "dich",
+        "dich"
+      ],
+      [
+        "er/sie/es",
+        "ihn/sie/es",
+        "sich"
+      ],
+      [
+        "wir",
+        "uns",
+        "uns"
+      ],
+      [
+        "ihr",
+        "euch",
+        "euch"
+      ],
+      [
+        "sie/Sie",
+        "sie/Sie",
+        "sich"
+      ]
+    ],
+    "topicId": "03-praeteritum-and-reflexives/02-reflexive-verbs",
+    "verification": "extracted"
+  },
+  {
+    "id": "3-dative-reflexive-pronouns",
+    "title": "Dative Reflexive Pronouns",
+    "kind": "verb",
+    "rows": [
+      "ich",
+      "du",
+      "er/sie/es",
+      "wir",
+      "ihr",
+      "sie/Sie"
+    ],
+    "cols": [
+      "Person",
+      "Accusative Reflexive",
+      "Dative Reflexive"
+    ],
+    "cells": [
+      [
+        "ich",
+        "mich",
+        "mir"
+      ],
+      [
+        "du",
+        "dich",
+        "dir"
+      ],
+      [
+        "er/sie/es",
+        "sich",
+        "sich"
+      ],
+      [
+        "wir",
+        "uns",
+        "uns"
+      ],
+      [
+        "ihr",
+        "euch",
+        "euch"
+      ],
+      [
+        "sie/Sie",
+        "sich",
+        "sich"
+      ]
+    ],
+    "topicId": "03-praeteritum-and-reflexives/02-reflexive-verbs",
+    "verification": "extracted"
+  },
+  {
+    "id": "3-jemand-niemand",
+    "title": "jemand / niemand",
+    "kind": "article",
+    "rows": [
+      "Nom",
+      "Acc",
+      "Dat"
+    ],
+    "cols": [
+      "Case",
+      "jemand",
+      "niemand"
+    ],
+    "cells": [
+      [
+        "Nom",
+        "jemand",
+        "niemand"
+      ],
+      [
+        "Acc",
+        "jemand / jemanden",
+        "niemand / niemanden"
+      ],
+      [
+        "Dat",
+        "jemand / jemandem",
+        "niemand / niemandem"
+      ]
+    ],
+    "topicId": "03-praeteritum-and-reflexives/03-indefinite-pronouns",
+    "verification": "extracted"
+  },
+  {
+    "id": "3-weak-endings-after-der-words-complete-table",
+    "title": "Weak Endings After der-Words — Complete Table",
+    "kind": "article",
+    "rows": [
+      "Nom",
+      "Acc",
+      "Dat"
+    ],
+    "cols": [
+      "Case",
+      "Masculine",
+      "Feminine",
+      "Neuter",
+      "Plural"
+    ],
+    "cells": [
+      [
+        "Nom",
+        "-e",
+        "-e",
+        "-e",
+        "-en"
+      ],
+      [
+        "Acc",
+        "-en",
+        "-e",
+        "-e",
+        "-en"
+      ],
+      [
+        "Dat",
+        "-en",
+        "-en",
+        "-en",
+        "-en"
+      ]
+    ],
+    "topicId": "03-praeteritum-and-reflexives/04-adjective-declension",
+    "verification": "extracted"
+  },
+  {
+    "id": "3-mixed-endings-after-ein-words-complete-table",
+    "title": "Mixed Endings After ein-Words — Complete Table",
+    "kind": "article",
+    "rows": [
+      "Nom",
+      "Acc",
+      "Dat"
+    ],
+    "cols": [
+      "Case",
+      "Masculine",
+      "Feminine",
+      "Neuter",
+      "Plural (kein/possessives only)"
+    ],
+    "cells": [
+      [
+        "Nom",
+        "-er",
+        "-e",
+        "-es",
+        "-en"
+      ],
+      [
+        "Acc",
+        "-en",
+        "-e",
+        "-es",
+        "-en"
+      ],
+      [
+        "Dat",
+        "-en",
+        "-en",
+        "-en",
+        "-en"
+      ]
+    ],
+    "topicId": "03-praeteritum-and-reflexives/04-adjective-declension",
+    "verification": "extracted"
+  },
+  {
+    "id": "3-strong-endings-without-article-complete-table",
+    "title": "Strong Endings Without Article — Complete Table",
+    "kind": "article",
+    "rows": [
+      "Nom",
+      "Acc",
+      "Dat"
+    ],
+    "cols": [
+      "Case",
+      "Masculine",
+      "Feminine",
+      "Neuter",
+      "Plural"
+    ],
+    "cells": [
+      [
+        "Nom",
+        "-er",
+        "-e",
+        "-es",
+        "-e"
+      ],
+      [
+        "Acc",
+        "-en",
+        "-e",
+        "-es",
+        "-e"
+      ],
+      [
+        "Dat",
+        "-em",
+        "-er",
+        "-em",
+        "-en"
+      ]
+    ],
+    "topicId": "03-praeteritum-and-reflexives/04-adjective-declension",
+    "verification": "extracted"
+  },
+  {
+    "id": "4-complete-four-case-article-table",
+    "title": "Complete Four-Case Article Table",
+    "kind": "article",
+    "rows": [
+      "Nom",
+      "Acc",
+      "Dat",
+      "Gen"
+    ],
+    "cols": [
+      "Case",
+      "Masc. (der)",
+      "Fem. (die)",
+      "Neut. (das)",
+      "Plural (die)"
+    ],
+    "cells": [
+      [
+        "Nom",
+        "der",
+        "die",
+        "das",
+        "die"
+      ],
+      [
+        "Acc",
+        "den",
+        "die",
+        "das",
+        "die"
+      ],
+      [
+        "Dat",
+        "dem",
+        "der",
+        "dem",
+        "den (+n)"
+      ],
+      [
+        "Gen",
+        "des",
+        "der",
+        "des",
+        "der"
+      ]
+    ],
+    "topicId": "04-genitive-comparative/01-genitive-case",
+    "verification": "extracted"
+  },
+  {
+    "id": "4-genitive-adjective-endings-completing-week-3-s-tables",
+    "title": "Genitive Adjective Endings — Completing Lesson 3's Tables",
+    "kind": "article",
+    "rows": [
+      "Gen"
+    ],
+    "cols": [
+      "Case",
+      "Masculine",
+      "Feminine",
+      "Neuter",
+      "Plural"
+    ],
+    "cells": [
+      [
+        "Gen",
+        "-en",
+        "-en",
+        "-en",
+        "-en"
+      ]
+    ],
+    "topicId": "04-genitive-comparative/01-genitive-case",
+    "verification": "extracted"
+  },
+  {
+    "id": "4-full-declension-pattern",
+    "title": "Full Declension Pattern",
+    "kind": "article",
+    "rows": [
+      "Nom",
+      "Acc",
+      "Dat",
+      "Gen"
+    ],
+    "cols": [
+      "Case",
+      "Singular",
+      "Plural"
+    ],
+    "cells": [
+      [
+        "Nom",
+        "der Junge",
+        "die Jungen"
+      ],
+      [
+        "Acc",
+        "den Jungen",
+        "die Jungen"
+      ],
+      [
+        "Dat",
+        "dem Jungen",
+        "den Jungen"
+      ],
+      [
+        "Gen",
+        "des Jungen",
+        "der Jungen"
+      ]
+    ],
+    "topicId": "04-genitive-comparative/03-n-deklination-weak-masculine-nouns",
+    "verification": "extracted"
+  },
+  {
+    "id": "5-separable-verbs-in-perfekt-ge-between-prefix-and-stem",
+    "title": "Separable Verbs in Perfekt: ge- Between Prefix and Stem",
+    "kind": "verb",
+    "rows": [
+      "aufstehen",
+      "anfangen",
+      "mitnehmen",
+      "einkaufen",
+      "zuhören",
+      "aufmachen",
+      "ankommen",
+      "ausgehen",
+      "aufräumen",
+      "zurückkommen"
+    ],
+    "cols": [
+      "Infinitive",
+      "Partizip II",
+      "Perfekt Example",
+      "English"
+    ],
+    "cells": [
+      [
+        "aufstehen",
+        "aufgestanden",
+        "Ich bin um sechs aufgestanden.",
+        "I got up at six."
+      ],
+      [
+        "anfangen",
+        "angefangen",
+        "Sie hat mit der Arbeit angefangen.",
+        "She started work."
+      ],
+      [
+        "mitnehmen",
+        "mitgenommen",
+        "Ich habe den Regenschirm mitgenommen.",
+        "I took the umbrella with me."
+      ],
+      [
+        "einkaufen",
+        "eingekauft",
+        "Wir haben im Supermarkt eingekauft.",
+        "We shopped in the supermarket."
+      ],
+      [
+        "zuhören",
+        "zugehört",
+        "Er hat dem Lehrer zugehört.",
+        "He listened to the teacher."
+      ],
+      [
+        "aufmachen",
+        "aufgemacht",
+        "Sie hat das Fenster aufgemacht.",
+        "She opened the window."
+      ],
+      [
+        "ankommen",
+        "angekommen",
+        "Der Zug ist angekommen.",
+        "The train arrived."
+      ],
+      [
+        "ausgehen",
+        "ausgegangen",
+        "Wir sind gestern ausgegangen.",
+        "We went out yesterday."
+      ],
+      [
+        "aufräumen",
+        "aufgeräumt",
+        "Ich habe das Zimmer aufgeräumt.",
+        "I tidied the room."
+      ],
+      [
+        "zurückkommen",
+        "zurückgekommen",
+        "Sie ist spät zurückgekommen.",
+        "She came back late."
+      ]
+    ],
+    "topicId": "05-separable-verbs/01-separable-prefix-verbs",
+    "verification": "extracted"
+  },
+  {
+    "id": "5-table-of-20-high-frequency-separable-verbs",
+    "title": "Table of 20 High-Frequency Separable Verbs",
+    "kind": "verb",
+    "rows": [
+      "aufstehen",
+      "anfangen",
+      "aufhören",
+      "ankommen",
+      "aufmachen",
+      "zumachen",
+      "einkaufen",
+      "mitnehmen",
+      "zurückkommen",
+      "ausgehen",
+      "einladen",
+      "anrufen",
+      "aufräumen",
+      "umziehen",
+      "abfahren",
+      "einschlafen",
+      "vorstellen",
+      "vorbereiten",
+      "teilnehmen",
+      "stattfinden"
+    ],
+    "cols": [
+      "Verb",
+      "Partizip II",
+      "Meaning",
+      "Example"
+    ],
+    "cells": [
+      [
+        "aufstehen",
+        "aufgestanden",
+        "to get up",
+        "Ich stehe früh auf."
+      ],
+      [
+        "anfangen",
+        "angefangen",
+        "to begin, start",
+        "Der Film fängt um acht an."
+      ],
+      [
+        "aufhören",
+        "aufgehört",
+        "to stop, cease",
+        "Es hört bald auf zu regnen."
+      ],
+      [
+        "ankommen",
+        "angekommen",
+        "to arrive",
+        "Der Zug kommt um zehn an."
+      ],
+      [
+        "aufmachen",
+        "aufgemacht",
+        "to open",
+        "Mach das Fenster auf!"
+      ],
+      [
+        "zumachen",
+        "zugemacht",
+        "to close, shut",
+        "Mach die Tür zu!"
+      ],
+      [
+        "einkaufen",
+        "eingekauft",
+        "to shop, do the shopping",
+        "Wir kaufen am Samstag ein."
+      ],
+      [
+        "mitnehmen",
+        "mitgenommen",
+        "to take along",
+        "Nimm einen Regenschirm mit!"
+      ],
+      [
+        "zurückkommen",
+        "zurückgekommen",
+        "to come back",
+        "Sie kommt morgen zurück."
+      ],
+      [
+        "ausgehen",
+        "ausgegangen",
+        "to go out",
+        "Wir gehen am Freitag aus."
+      ],
+      [
+        "einladen",
+        "eingeladen",
+        "to invite",
+        "Er lädt seine Freunde ein."
+      ],
+      [
+        "anrufen",
+        "angerufen",
+        "to call (on the phone)",
+        "Ich rufe dich heute an."
+      ],
+      [
+        "aufräumen",
+        "aufgeräumt",
+        "to tidy up",
+        "Ich räume mein Zimmer auf."
+      ],
+      [
+        "umziehen",
+        "umgezogen",
+        "to move (house)",
+        "Wir ziehen nächste Woche um."
+      ],
+      [
+        "abfahren",
+        "abgefahren",
+        "to depart",
+        "Der Bus fährt um neun ab."
+      ],
+      [
+        "einschlafen",
+        "eingeschlafen",
+        "to fall asleep",
+        "Das Kind schläft schnell ein."
+      ],
+      [
+        "vorstellen",
+        "vorgestellt",
+        "to introduce; to imagine",
+        "Darf ich mich vorstellen?"
+      ],
+      [
+        "vorbereiten",
+        "vorbereitet",
+        "to prepare",
+        "Ich bereite das Essen vor."
+      ],
+      [
+        "teilnehmen",
+        "teilgenommen",
+        "to participate",
+        "Ich nehme an dem Kurs teil."
+      ],
+      [
+        "stattfinden",
+        "stattgefunden",
+        "to take place",
+        "Das Konzert findet am Samstag statt."
+      ]
+    ],
+    "topicId": "05-separable-verbs/01-separable-prefix-verbs",
+    "verification": "extracted"
+  },
+  {
+    "id": "5-no-ge-in-the-partizip-ii",
+    "title": "No ge- in the Partizip II",
+    "kind": "verb",
+    "rows": [
+      "verstehen",
+      "bekommen",
+      "empfehlen",
+      "erzählen",
+      "beginnen",
+      "entscheiden",
+      "vergessen",
+      "zerstören",
+      "entdecken",
+      "versprechen"
+    ],
+    "cols": [
+      "Infinitive",
+      "Partizip II",
+      "Perfekt Example",
+      "English"
+    ],
+    "cells": [
+      [
+        "verstehen",
+        "verstanden",
+        "Ich habe die Frage verstanden.",
+        "I understood the question."
+      ],
+      [
+        "bekommen",
+        "bekommen",
+        "Er hat ein Geschenk bekommen.",
+        "He received a gift."
+      ],
+      [
+        "empfehlen",
+        "empfohlen",
+        "Sie hat den Film empfohlen.",
+        "She recommended the film."
+      ],
+      [
+        "erzählen",
+        "erzählt",
+        "Ich habe eine Geschichte erzählt.",
+        "I told a story."
+      ],
+      [
+        "beginnen",
+        "begonnen",
+        "Der Kurs hat begonnen.",
+        "The course has begun."
+      ],
+      [
+        "entscheiden",
+        "entschieden",
+        "Wir haben uns entschieden.",
+        "We have decided."
+      ],
+      [
+        "vergessen",
+        "vergessen",
+        "Ich habe den Schlüssel vergessen.",
+        "I forgot the key."
+      ],
+      [
+        "zerstören",
+        "zerstört",
+        "Der Sturm hat das Haus zerstört.",
+        "The storm destroyed the house."
+      ],
+      [
+        "entdecken",
+        "entdeckt",
+        "Er hat eine neue Idee entdeckt.",
+        "He discovered a new idea."
+      ],
+      [
+        "versprechen",
+        "versprochen",
+        "Sie hat es versprochen.",
+        "She promised it."
+      ]
+    ],
+    "topicId": "05-separable-verbs/02-inseparable-prefix-verbs",
+    "verification": "extracted"
+  },
+  {
+    "id": "5-15-high-frequency-inseparable-verbs",
+    "title": "15 High-Frequency Inseparable Verbs",
+    "kind": "verb",
+    "rows": [
+      "verstehen",
+      "bekommen",
+      "besuchen",
+      "beginnen",
+      "empfehlen",
+      "erzählen",
+      "entscheiden",
+      "vergessen",
+      "erklären",
+      "erinnern",
+      "gehören",
+      "versuchen",
+      "zerstören",
+      "entdecken",
+      "missverstehen"
+    ],
+    "cols": [
+      "Verb",
+      "Partizip II",
+      "Meaning",
+      "Example"
+    ],
+    "cells": [
+      [
+        "verstehen",
+        "verstanden",
+        "to understand",
+        "Ich verstehe die Frage."
+      ],
+      [
+        "bekommen",
+        "bekommen",
+        "to receive, get",
+        "Er bekommt ein Geschenk."
+      ],
+      [
+        "besuchen",
+        "besucht",
+        "to visit",
+        "Wir besuchen die Großeltern."
+      ],
+      [
+        "beginnen",
+        "begonnen",
+        "to begin",
+        "Der Unterricht beginnt um neun."
+      ],
+      [
+        "empfehlen",
+        "empfohlen",
+        "to recommend",
+        "Ich empfehle das Restaurant."
+      ],
+      [
+        "erzählen",
+        "erzählt",
+        "to tell, narrate",
+        "Sie erzählt eine Geschichte."
+      ],
+      [
+        "entscheiden",
+        "entschieden",
+        "to decide",
+        "Wir entscheiden uns morgen."
+      ],
+      [
+        "vergessen",
+        "vergessen",
+        "to forget",
+        "Ich vergesse nie deinen Namen."
+      ],
+      [
+        "erklären",
+        "erklärt",
+        "to explain",
+        "Er erklärt die Regel."
+      ],
+      [
+        "erinnern",
+        "erinnert",
+        "to remember",
+        "Ich erinnere mich an dich."
+      ],
+      [
+        "gehören",
+        "gehört",
+        "to belong",
+        "Das Buch gehört mir."
+      ],
+      [
+        "versuchen",
+        "versucht",
+        "to try",
+        "Ich versuche es noch einmal."
+      ],
+      [
+        "zerstören",
+        "zerstört",
+        "to destroy",
+        "Der Sturm zerstört das Haus."
+      ],
+      [
+        "entdecken",
+        "entdeckt",
+        "to discover",
+        "Er entdeckt eine neue Stadt."
+      ],
+      [
+        "missverstehen",
+        "missverstanden",
+        "to misunderstand",
+        "Du missverstehst mich."
+      ]
+    ],
+    "topicId": "05-separable-verbs/02-inseparable-prefix-verbs",
+    "verification": "extracted"
+  },
+  {
+    "id": "6-werden-as-main-verb-to-become",
+    "title": "werden as Main Verb: to Become",
+    "kind": "verb",
+    "rows": [
+      "ich",
+      "du",
+      "er/sie/es",
+      "wir",
+      "ihr",
+      "sie/Sie"
+    ],
+    "cols": [
+      "Person",
+      "werden (Präsens)",
+      "English"
+    ],
+    "cells": [
+      [
+        "ich",
+        "werde",
+        "I become"
+      ],
+      [
+        "du",
+        "wirst",
+        "you become"
+      ],
+      [
+        "er/sie/es",
+        "wird",
+        "he/she/it becomes"
+      ],
+      [
+        "wir",
+        "werden",
+        "we become"
+      ],
+      [
+        "ihr",
+        "werdet",
+        "you (pl.) become"
+      ],
+      [
+        "sie/Sie",
+        "werden",
+        "they/you (formal) become"
+      ]
+    ],
+    "topicId": "06-futur-and-zu-infinitiv/01-werden",
+    "verification": "extracted"
+  },
+  {
+    "id": "6-full-conjugation-of-werden",
+    "title": "Full Conjugation of werden",
+    "kind": "verb",
+    "rows": [
+      "ich",
+      "du",
+      "er/sie/es",
+      "wir",
+      "ihr",
+      "sie/Sie"
+    ],
+    "cols": [
+      "Person",
+      "werden",
+      "Example (Futur I)",
+      "English"
+    ],
+    "cells": [
+      [
+        "ich",
+        "werde",
+        "Ich werde morgen kommen.",
+        "I will come tomorrow."
+      ],
+      [
+        "du",
+        "wirst",
+        "Du wirst es schaffen.",
+        "You will manage it."
+      ],
+      [
+        "er/sie/es",
+        "wird",
+        "Er wird bald da sein.",
+        "He will be here soon."
+      ],
+      [
+        "wir",
+        "werden",
+        "Wir werden helfen.",
+        "We will help."
+      ],
+      [
+        "ihr",
+        "werdet",
+        "Ihr werdet staunen.",
+        "You (pl.) will be amazed."
+      ],
+      [
+        "sie/Sie",
+        "werden",
+        "Sie werden gewinnen.",
+        "They will win. / You (formal) will win."
+      ]
+    ],
+    "topicId": "06-futur-and-zu-infinitiv/02-futur-i",
+    "verification": "extracted"
+  },
+  {
+    "id": "6-zu-with-separable-verbs",
+    "title": "zu with Separable Verbs",
+    "kind": "verb",
+    "rows": [
+      "aufstehen",
+      "anfangen",
+      "mitnehmen",
+      "anrufen",
+      "aufräumen"
+    ],
+    "cols": [
+      "Infinitive",
+      "with zu",
+      "Never"
+    ],
+    "cells": [
+      [
+        "aufstehen",
+        "aufzustehen",
+        "~~zu aufstehen~~"
+      ],
+      [
+        "anfangen",
+        "anzufangen",
+        "~~zu anfangen~~"
+      ],
+      [
+        "mitnehmen",
+        "mitzunehmen",
+        "~~zu mitnehmen~~"
+      ],
+      [
+        "anrufen",
+        "anzurufen",
+        "~~zu anrufen~~"
+      ],
+      [
+        "aufräumen",
+        "aufzuräumen",
+        "~~zu aufräumen~~"
+      ]
+    ],
+    "topicId": "06-futur-and-zu-infinitiv/03-zu-infinitiv-constructions",
+    "verification": "extracted"
+  },
+  {
+    "id": "6-the-relative-pronoun-declension-table",
+    "title": "The Relative Pronoun Declension Table",
+    "kind": "article",
+    "rows": [
+      "Nom",
+      "Acc",
+      "Dat",
+      "Gen"
+    ],
+    "cols": [
+      "Case",
+      "Masculine",
+      "Feminine",
+      "Neuter",
+      "Plural"
+    ],
+    "cells": [
+      [
+        "Nom",
+        "der",
+        "die",
+        "das",
+        "die"
+      ],
+      [
+        "Acc",
+        "den",
+        "die",
+        "das",
+        "die"
+      ],
+      [
+        "Dat",
+        "dem",
+        "der",
+        "dem",
+        "denen"
+      ],
+      [
+        "Gen",
+        "dessen",
+        "deren",
+        "dessen",
+        "deren"
+      ]
+    ],
+    "topicId": "06-futur-and-zu-infinitiv/04-relative-clauses-relativsaetze",
+    "verification": "extracted"
+  },
+  {
+    "id": "7-formation-hatte-war-partizip-ii-at-the-end",
+    "title": "Formation: hatte/war + Partizip II at the End",
+    "kind": "verb",
+    "rows": [
+      "ich",
+      "du",
+      "er/sie/es",
+      "wir",
+      "ihr",
+      "sie/Sie"
+    ],
+    "cols": [
+      "Person",
+      "hatte",
+      "war",
+      "English"
+    ],
+    "cells": [
+      [
+        "ich",
+        "hatte",
+        "war",
+        "I had / I was"
+      ],
+      [
+        "du",
+        "hattest",
+        "warst",
+        "you had / you were"
+      ],
+      [
+        "er/sie/es",
+        "hatte",
+        "war",
+        "he/she/it had / was"
+      ],
+      [
+        "wir",
+        "hatten",
+        "waren",
+        "we had / were"
+      ],
+      [
+        "ihr",
+        "hattet",
+        "wart",
+        "you (pl.) had / were"
+      ],
+      [
+        "sie/Sie",
+        "hatten",
+        "waren",
+        "they/you (formal) had / were"
+      ]
+    ],
+    "topicId": "07-plusquamperfekt-konjunktiv2/01-plusquamperfekt",
+    "verification": "extracted"
+  },
+  {
+    "id": "7-contrast-perfekt-vs-praeteritum-vs-plusquamperfekt-on-a-timeline",
+    "title": "Contrast: Perfekt vs. Präteritum vs. Plusquamperfekt on a Timeline",
+    "kind": "verb",
+    "rows": [
+      "Perfekt",
+      "Präteritum",
+      "Plusquamperfekt"
+    ],
+    "cols": [
+      "Tense",
+      "What it does",
+      "Example"
+    ],
+    "cells": [
+      [
+        "Perfekt",
+        "spoken past; completed action relevant to now",
+        "Ich habe gegessen. (I have eaten.)"
+      ],
+      [
+        "Präteritum",
+        "written/narrative past; the storyline",
+        "Ich aß und ging dann nach Hause. (I ate and then went home.)"
+      ],
+      [
+        "Plusquamperfekt",
+        "past of the past; before another past event",
+        "Ich hatte schon gegessen, als er kam. (I had already eaten when he came.)"
+      ]
+    ],
+    "topicId": "07-plusquamperfekt-konjunktiv2/01-plusquamperfekt",
+    "verification": "extracted"
+  },
+  {
+    "id": "7-wuerde-infinitiv-the-standard-form",
+    "title": "würde + Infinitiv — The Standard Form",
+    "kind": "verb",
+    "rows": [
+      "ich",
+      "du",
+      "er/sie/es",
+      "wir",
+      "ihr",
+      "sie/Sie"
+    ],
+    "cols": [
+      "Person",
+      "würde",
+      "Example",
+      "English"
+    ],
+    "cells": [
+      [
+        "ich",
+        "würde",
+        "Ich würde kommen.",
+        "I would come."
+      ],
+      [
+        "du",
+        "würdest",
+        "Du würdest helfen.",
+        "You would help."
+      ],
+      [
+        "er/sie/es",
+        "würde",
+        "Er würde bleiben.",
+        "He would stay."
+      ],
+      [
+        "wir",
+        "würden",
+        "Wir würden reisen.",
+        "We would travel."
+      ],
+      [
+        "ihr",
+        "würdet",
+        "Ihr würdet lachen.",
+        "You (pl.) would laugh."
+      ],
+      [
+        "sie/Sie",
+        "würden",
+        "Sie würden gewinnen.",
+        "They would win. / You (formal) would win."
+      ]
+    ],
+    "topicId": "07-plusquamperfekt-konjunktiv2/02-konjunktiv-ii",
+    "verification": "extracted"
+  },
+  {
+    "id": "7-synthetic-forms-sein-waere-haben-haette",
+    "title": "Synthetic Forms: sein → wäre, haben → hätte",
+    "kind": "verb",
+    "rows": [
+      "ich",
+      "du",
+      "er/sie/es",
+      "wir",
+      "ihr",
+      "sie/Sie"
+    ],
+    "cols": [
+      "Person",
+      "wäre",
+      "English"
+    ],
+    "cells": [
+      [
+        "ich",
+        "wäre",
+        "I would be"
+      ],
+      [
+        "du",
+        "wärest / wärst",
+        "you would be"
+      ],
+      [
+        "er/sie/es",
+        "wäre",
+        "he/she/it would be"
+      ],
+      [
+        "wir",
+        "wären",
+        "we would be"
+      ],
+      [
+        "ihr",
+        "wärt",
+        "you (pl.) would be"
+      ],
+      [
+        "sie/Sie",
+        "wären",
+        "they/you (formal) would be"
+      ]
+    ],
+    "topicId": "07-plusquamperfekt-konjunktiv2/02-konjunktiv-ii",
+    "verification": "extracted"
+  },
+  {
+    "id": "7-synthetic-forms-of-the-modal-verbs",
+    "title": "Synthetic Forms of the Modal Verbs",
+    "kind": "verb",
+    "rows": [
+      "ich",
+      "du",
+      "er/sie/es",
+      "wir",
+      "ihr",
+      "sie/Sie"
+    ],
+    "cols": [
+      "Person",
+      "könnte",
+      "dürfte",
+      "müsste",
+      "sollte"
+    ],
+    "cells": [
+      [
+        "ich",
+        "könnte",
+        "dürfte",
+        "müsste",
+        "sollte"
+      ],
+      [
+        "du",
+        "könntest",
+        "dürftest",
+        "müsstest",
+        "solltest"
+      ],
+      [
+        "er/sie/es",
+        "könnte",
+        "dürfte",
+        "müsste",
+        "sollte"
+      ],
+      [
+        "wir",
+        "könnten",
+        "dürften",
+        "müssten",
+        "sollten"
+      ],
+      [
+        "ihr",
+        "könntet",
+        "dürftet",
+        "müsstet",
+        "solltet"
+      ],
+      [
+        "sie/Sie",
+        "könnten",
+        "dürften",
+        "müssten",
+        "sollten"
+      ]
+    ],
+    "topicId": "07-plusquamperfekt-konjunktiv2/02-konjunktiv-ii",
+    "verification": "extracted"
+  },
+  {
+    "id": "7-formation-werden-partizip-ii",
+    "title": "Formation: werden + Partizip II",
+    "kind": "verb",
+    "rows": [
+      "Präsens",
+      "Präteritum",
+      "Perfekt"
+    ],
+    "cols": [
+      "Tense",
+      "Passive form",
+      "Example",
+      "English"
+    ],
+    "cells": [
+      [
+        "Präsens",
+        "wird + Partizip II",
+        "Das Haus wird gebaut.",
+        "The house is being built."
+      ],
+      [
+        "Präteritum",
+        "wurde + Partizip II",
+        "Das Haus wurde gebaut.",
+        "The house was built."
+      ],
+      [
+        "Perfekt",
+        "ist + Partizip II + worden",
+        "Das Haus ist gebaut worden.",
+        "The house has been built."
+      ]
+    ],
+    "topicId": "07-plusquamperfekt-konjunktiv2/03-vorgangspassiv",
+    "verification": "extracted"
+  },
+  {
+    "id": "9-the-full-sein-paradigm",
+    "title": "The Full sein Paradigm",
+    "kind": "verb",
+    "rows": [
+      "ich",
+      "du",
+      "er/sie/es",
+      "wir",
+      "ihr",
+      "sie/Sie"
+    ],
+    "cols": [
+      "Person",
+      "Konjunktiv I",
+      "English"
+    ],
+    "cells": [
+      [
+        "ich",
+        "ich sei",
+        "I am (as reported)"
+      ],
+      [
+        "du",
+        "du seiest",
+        "you are (as reported)"
+      ],
+      [
+        "er/sie/es",
+        "er sei",
+        "he/she/it is (as reported)"
+      ],
+      [
+        "wir",
+        "wir seien",
+        "we are (as reported)"
+      ],
+      [
+        "ihr",
+        "ihr seiet",
+        "you (pl.) are (as reported)"
+      ],
+      [
+        "sie/Sie",
+        "sie seien",
+        "they/you (formal) are (as reported)"
+      ]
+    ],
+    "topicId": "09-konjunktiv1/01-indirect-speech-konjunktiv-i-introduction",
+    "verification": "extracted"
+  },
+  {
+    "id": "9-formation-werden-partizip-ii-haben-sein-at-the-end",
+    "title": "Formation: werden + Partizip II + haben/sein at the End",
+    "kind": "verb",
+    "rows": [
+      "ich",
+      "du",
+      "er/sie/es",
+      "wir",
+      "ihr",
+      "sie/Sie"
+    ],
+    "cols": [
+      "Person",
+      "werden",
+      "Example",
+      "English"
+    ],
+    "cells": [
+      [
+        "ich",
+        "werde",
+        "Ich werde gegessen haben.",
+        "I will have eaten."
+      ],
+      [
+        "du",
+        "wirst",
+        "Du wirst geschlafen haben.",
+        "You will have slept."
+      ],
+      [
+        "er/sie/es",
+        "wird",
+        "Er wird angekommen sein.",
+        "He will have arrived."
+      ],
+      [
+        "wir",
+        "werden",
+        "Wir werden gewartet haben.",
+        "We will have waited."
+      ],
+      [
+        "ihr",
+        "werdet",
+        "Ihr werdet gearbeitet haben.",
+        "You (pl.) will have worked."
+      ],
+      [
+        "sie/Sie",
+        "werden",
+        "Sie werden es gemacht haben.",
+        "They will have done it."
+      ]
+    ],
+    "topicId": "09-konjunktiv1/02-futur-ii",
+    "verification": "extracted"
+  },
+  {
+    "id": "9-the-six-tenses-at-a-glance",
+    "title": "The Six Tenses at a Glance",
+    "kind": "verb",
+    "rows": [
+      "Präsens",
+      "Perfekt",
+      "Präteritum",
+      "Plusquamperfekt",
+      "Futur I",
+      "Futur II"
+    ],
+    "cols": [
+      "Tense",
+      "Formation",
+      "Example",
+      "English"
+    ],
+    "cells": [
+      [
+        "Präsens",
+        "Infinitivstamm + Endung",
+        "Er lernt Deutsch.",
+        "He learns German."
+      ],
+      [
+        "Perfekt",
+        "haben/sein + Partizip II",
+        "Er hat Deutsch gelernt.",
+        "He has learned German."
+      ],
+      [
+        "Präteritum",
+        "Präteritumstamm + Endung",
+        "Er lernte Deutsch.",
+        "He learned German."
+      ],
+      [
+        "Plusquamperfekt",
+        "hatte/war + Partizip II",
+        "Er hatte Deutsch gelernt.",
+        "He had learned German."
+      ],
+      [
+        "Futur I",
+        "werden + Infinitiv",
+        "Er wird Deutsch lernen.",
+        "He will learn German."
+      ],
+      [
+        "Futur II",
+        "werden + Partizip II + haben/sein",
+        "Er wird Deutsch gelernt haben.",
+        "He will have learned German."
+      ]
+    ],
+    "topicId": "09-konjunktiv1/05-complete-tense-system-review",
+    "verification": "extracted"
+  },
+  {
+    "id": "10-zustandspassiv-across-tenses-chart-and-3-examples",
+    "title": "Zustandspassiv Across Tenses: Chart and 3 Examples",
+    "kind": "verb",
+    "rows": [
+      "Präsens",
+      "Präteritum",
+      "Perfekt",
+      "Plusquamperfekt",
+      "Futur I"
+    ],
+    "cols": [
+      "Tense",
+      "Form",
+      "Example"
+    ],
+    "cells": [
+      [
+        "Präsens",
+        "ist + geöffnet",
+        "Das Fenster ist geöffnet."
+      ],
+      [
+        "Präteritum",
+        "war + geöffnet",
+        "Das Fenster war geöffnet."
+      ],
+      [
+        "Perfekt",
+        "ist + geöffnet gewesen",
+        "Das Fenster ist geöffnet gewesen."
+      ],
+      [
+        "Plusquamperfekt",
+        "war + geöffnet gewesen",
+        "Das Fenster war geöffnet gewesen."
+      ],
+      [
+        "Futur I",
+        "wird + geöffnet sein",
+        "Das Fenster wird geöffnet sein."
+      ]
+    ],
+    "topicId": "10-zustandspassiv/01-zustandspassiv",
+    "verification": "extracted"
+  },
+  {
+    "id": "10-formation-haette-waere-partizip-ii",
+    "title": "Formation: hätte/wäre + Partizip II",
+    "kind": "verb",
+    "rows": [
+      "haben",
+      "sein",
+      "gehen",
+      "machen",
+      "lesen",
+      "kommen"
+    ],
+    "cols": [
+      "Verb",
+      "Perfekt (indicative)",
+      "Konjunktiv II Past"
+    ],
+    "cells": [
+      [
+        "haben",
+        "ich habe gehabt",
+        "ich hätte gehabt"
+      ],
+      [
+        "sein",
+        "ich bin gewesen",
+        "ich wäre gewesen"
+      ],
+      [
+        "gehen",
+        "ich bin gegangen",
+        "ich wäre gegangen"
+      ],
+      [
+        "machen",
+        "ich habe gemacht",
+        "ich hätte gemacht"
+      ],
+      [
+        "lesen",
+        "ich habe gelesen",
+        "ich hätte gelesen"
+      ],
+      [
+        "kommen",
+        "ich bin gekommen",
+        "ich wäre gekommen"
+      ]
+    ],
+    "topicId": "10-zustandspassiv/05-konjunktiv-ii",
+    "verification": "extracted"
+  },
+  {
+    "id": "11-conjugation-tables-sein-haben-werden-koennen-gehen",
+    "title": "Conjugation Tables: sein, haben, werden, können, gehen",
+    "kind": "verb",
+    "rows": [
+      "ich",
+      "du",
+      "er/sie/es",
+      "wir",
+      "ihr",
+      "sie"
+    ],
+    "cols": [
+      "Person",
+      "Konjunktiv I",
+      "English"
+    ],
+    "cells": [
+      [
+        "ich",
+        "sei",
+        "be"
+      ],
+      [
+        "du",
+        "seiest",
+        "be"
+      ],
+      [
+        "er/sie/es",
+        "sei",
+        "be"
+      ],
+      [
+        "wir",
+        "seien",
+        "be"
+      ],
+      [
+        "ihr",
+        "seiet",
+        "be"
+      ],
+      [
+        "sie",
+        "seien",
+        "be"
+      ]
+    ],
+    "notes": {
+      "ich": "no",
+      "du": "no",
+      "er/sie/es": "no",
+      "wir": "no",
+      "ihr": "no",
+      "sie": "no"
+    },
+    "topicId": "11-konjunktiv1-nominalstil/01-konjunktiv-i",
+    "verification": "extracted"
+  },
+  {
+    "id": "11-substitution-konjunktiv-i-konjunktiv-ii",
+    "title": "Substitution: Konjunktiv I → Konjunktiv II",
+    "kind": "verb",
+    "rows": [
+      "haben",
+      "sein",
+      "gehen",
+      "kommen",
+      "sagen",
+      "gesagt haben",
+      "sein (Präteritum content)"
+    ],
+    "cols": [
+      "Verb",
+      "K1 (3rd person plural)",
+      "K2 substitute used in reports"
+    ],
+    "cells": [
+      [
+        "haben",
+        "sie haben",
+        "sie hätten"
+      ],
+      [
+        "sein",
+        "sie seien",
+        "— (only *sie wären* if doubt is expressed)"
+      ],
+      [
+        "gehen",
+        "sie gehen",
+        "sie würden gehen"
+      ],
+      [
+        "kommen",
+        "sie kommen",
+        "sie kämen"
+      ],
+      [
+        "sagen",
+        "sie sagen",
+        "sie würden sagen"
+      ],
+      [
+        "gesagt haben",
+        "sie haben gesagt",
+        "sie hätten gesagt"
+      ],
+      [
+        "sein (Präteritum content)",
+        "sie seien gewesen",
+        "—"
+      ]
+    ],
+    "notes": {
+      "haben": "yes",
+      "sein": "no",
+      "gehen": "yes",
+      "kommen": "yes",
+      "sagen": "yes",
+      "gesagt haben": "yes",
+      "sein (Präteritum content)": "no"
+    },
+    "topicId": "11-konjunktiv1-nominalstil/01-konjunktiv-i",
+    "verification": "extracted"
+  },
+  {
+    "id": "11-declension-tables-singular-plural",
+    "title": "Declension Tables: Singular & Plural",
+    "kind": "article",
+    "rows": [
+      "Nominativ",
+      "Akkusativ",
+      "Dativ",
+      "Genitiv"
+    ],
+    "cols": [
+      "Case",
+      "Singular",
+      "Plural"
+    ],
+    "cells": [
+      [
+        "Nominativ",
+        "der Junge",
+        "die Jungen"
+      ],
+      [
+        "Akkusativ",
+        "den Jungen",
+        "die Jungen"
+      ],
+      [
+        "Dativ",
+        "dem Jungen",
+        "den Jungen"
+      ],
+      [
+        "Genitiv",
+        "des Jungen",
+        "der Jungen"
+      ]
+    ],
+    "topicId": "11-konjunktiv1-nominalstil/02-n-deklination",
+    "verification": "extracted"
+  },
+  {
+    "id": "11-the-irregular-group-herr-name-herz",
+    "title": "The Irregular Group: Herr, Name, Herz",
+    "kind": "article",
+    "rows": [
+      "Nominativ",
+      "Akkusativ",
+      "Dativ",
+      "Genitiv"
+    ],
+    "cols": [
+      "Case",
+      "Singular",
+      "Plural"
+    ],
+    "cells": [
+      [
+        "Nominativ",
+        "der Herr",
+        "die Herren"
+      ],
+      [
+        "Akkusativ",
+        "den Herrn",
+        "die Herren"
+      ],
+      [
+        "Dativ",
+        "dem Herrn",
+        "den Herren"
+      ],
+      [
+        "Genitiv",
+        "des Herrn",
+        "der Herren"
+      ]
+    ],
+    "topicId": "11-konjunktiv1-nominalstil/02-n-deklination",
+    "verification": "extracted"
+  },
+  {
+    "id": "12-the-case-system-four-cases-4x4",
+    "title": "The Case System: Four Cases (4x4)",
+    "kind": "article",
+    "rows": [
+      "Nominativ",
+      "Akkusativ",
+      "Dativ",
+      "Genitiv"
+    ],
+    "cols": [
+      "Case",
+      "masculine",
+      "feminine",
+      "neuter",
+      "plural"
+    ],
+    "cells": [
+      [
+        "Nominativ",
+        "der",
+        "die",
+        "das",
+        "die"
+      ],
+      [
+        "Akkusativ",
+        "den",
+        "die",
+        "das",
+        "die"
+      ],
+      [
+        "Dativ",
+        "dem",
+        "der",
+        "dem",
+        "den"
+      ],
+      [
+        "Genitiv",
+        "des",
+        "der",
+        "des",
+        "der"
+      ]
+    ],
+    "topicId": "12-integration/08-complete-grammar-reference-tables",
+    "verification": "extracted"
+  },
+  {
+    "id": "12-the-six-tenses-formation-example-use",
+    "title": "The Six Tenses: Formation, Example, Use",
+    "kind": "verb",
+    "rows": [
+      "Präsens",
+      "Perfekt",
+      "Präteritum",
+      "Plusquamperfekt",
+      "Futur I",
+      "Futur II"
+    ],
+    "cols": [
+      "Tense",
+      "Formation",
+      "Example",
+      "Primary Use"
+    ],
+    "cells": [
+      [
+        "Präsens",
+        "verb stem + -e, -st, -t, -en, -t, -en",
+        "Ich lerne Deutsch.",
+        "present facts, habits; future with an explicit time word"
+      ],
+      [
+        "Perfekt",
+        "haben/sein (present) + Partizip II",
+        "Ich habe gegessen.",
+        "the spoken past; finished actions in conversation"
+      ],
+      [
+        "Präteritum",
+        "stem + -te (weak); vowel change (strong)",
+        "Ich lernte. / Ich ging.",
+        "the written past; narration; sein, haben, modals in speech"
+      ],
+      [
+        "Plusquamperfekt",
+        "hatte/war + Partizip II",
+        "Ich hatte gegessen.",
+        "an event before another past event"
+      ],
+      [
+        "Futur I",
+        "werden (present) + Infinitiv",
+        "Ich werde kommen.",
+        "future events, intentions, assumptions"
+      ],
+      [
+        "Futur II",
+        "werden (present) + Infinitiv Perfekt",
+        "Ich werde gekommen sein.",
+        "a completed future event; an assumption about the past"
+      ]
+    ],
+    "topicId": "12-integration/08-complete-grammar-reference-tables",
+    "verification": "extracted"
+  },
+  {
+    "id": "12-konjunktiv-i-and-konjunktiv-ii-side-by-side",
+    "title": "Konjunktiv I and Konjunktiv II: Side by Side",
+    "kind": "verb",
+    "rows": [
+      "Function",
+      "sein",
+      "haben",
+      "werden",
+      "Past",
+      "Passive",
+      "Substitute"
+    ],
+    "cols": [
+      "Aspect",
+      "Konjunktiv I",
+      "Konjunktiv II"
+    ],
+    "cells": [
+      [
+        "Function",
+        "indirect speech: *Er sagt, er sei krank.*",
+        "unreality, hypotheses, politeness: *Wenn ich Zeit hätte, ...*"
+      ],
+      [
+        "sein",
+        "sei, seiest, sei, seien, seiet, seien",
+        "wäre, wärest, wäre, wären, wäret, wären"
+      ],
+      [
+        "haben",
+        "habe, habest, habe, haben, habet, haben",
+        "hätte, hättest, hätte, hätten, hättet, hätten"
+      ],
+      [
+        "werden",
+        "werde, werdest, werde, werden, werdet, werden",
+        "würde, würdest, würde, würden, würdet, würden"
+      ],
+      [
+        "Past",
+        "sei/habe + Partizip II",
+        "hätte/wäre + Partizip II"
+      ],
+      [
+        "Passive",
+        "werde + Partizip II + worden",
+        "würde + Partizip II + werden"
+      ],
+      [
+        "Substitute",
+        "K2 when the K1 form equals the indicative (Lesson 11, §1.4)",
+        "würde + Infinitiv for regular verbs in speech"
+      ]
+    ],
+    "topicId": "12-integration/08-complete-grammar-reference-tables",
+    "verification": "extracted"
+  }
+]

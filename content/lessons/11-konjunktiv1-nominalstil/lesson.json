@@ -1,0 +1,18 @@
+{
+  "id": "11-konjunktiv1-nominalstil",
+  "number": 11,
+  "title": "Konjunktiv I Complete, N-Declension Review & Nominalstil",
+  "shortTitle": "Konjunktiv I Complete",
+  "level": "B2",
+  "summary": "The complete Konjunktiv I system for reported speech, a comprehensive N-declension review, and nominal style (Nominalstil).",
+  "status": "extracted",
+  "topicOrder": [
+    "11-konjunktiv1-nominalstil/01-konjunktiv-i",
+    "11-konjunktiv1-nominalstil/02-n-deklination",
+    "11-konjunktiv1-nominalstil/03-nominalstil",
+    "11-konjunktiv1-nominalstil/04-vocabulary",
+    "11-konjunktiv1-nominalstil/05-applied-skills",
+    "11-konjunktiv1-nominalstil/06-practice"
+  ],
+  "sourceFile": "week_11.md"
+}

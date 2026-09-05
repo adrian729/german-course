@@ -1,0 +1,1120 @@
+[
+  {
+    "id": "present-tense",
+    "term": "Präsens",
+    "englishTerm": "present tense",
+    "aliases": [
+      "present",
+      "Gegenwart"
+    ],
+    "definition": "The Präsens is the German present tense, used for things happening now, habitually, or (unlike English) even for the near future: \"Ich lerne Deutsch\" can mean \"I learn/am learning German\" or \"I'm going to learn German.\" Regular (weak) verbs drop -en from the infinitive and add person endings (-e, -st, -t, -en, -t, -en); seven high-frequency strong verbs additionally change their stem vowel in the du and er/sie/es forms only, e.g. sehen → du siehst, er sieht.",
+    "lessonId": "01-foundations-and-core-grammar",
+    "topicId": "01-foundations-and-core-grammar/04-personal-pronouns-present-tense-prasens",
+    "confusableWith": [
+      "praeteritum",
+      "perfekt"
+    ],
+    "level": "A1",
+    "themes": [
+      "basics"
+    ]
+  },
+  {
+    "id": "personalpronomen",
+    "term": "Personalpronomen",
+    "englishTerm": "personal pronoun",
+    "aliases": [
+      "personal pronouns"
+    ],
+    "definition": "German has nine personal pronoun forms because formal \"you\" (Sie) is grammatically distinct from informal du/ihr, and \"she\" and \"they\" share the identical form sie (only context or the verb ending distinguishes them: sie kommt = she comes, sie kommen = they come). Sie meaning \"you\" (formal) is always capitalized, in every position in the sentence, which is how a reader tells it apart from sie meaning \"she\"/\"they.\"",
+    "lessonId": "01-foundations-and-core-grammar",
+    "topicId": "01-foundations-and-core-grammar/04-personal-pronouns-present-tense-prasens",
+    "confusableWith": [],
+    "level": "A1",
+    "themes": [
+      "basics"
+    ]
+  },
+  {
+    "id": "artikel",
+    "term": "bestimmter und unbestimmter Artikel",
+    "englishTerm": "definite and indefinite article",
+    "aliases": [
+      "der die das",
+      "ein eine ein",
+      "articles"
+    ],
+    "definition": "German marks every noun's gender with an article: der (masculine), die (feminine), das (neuter), die (plural) for \"the\"; ein, eine, ein for \"a/an\" (with no plural — Kinder, not \"ein Kinder\"). The article, not the noun's ending, is usually the only overt signal of gender, which is why gender is learned per noun, e.g. der Mann, die Frau, das Kind.",
+    "lessonId": "01-foundations-and-core-grammar",
+    "topicId": "01-foundations-and-core-grammar/05-nominative-case",
+    "confusableWith": [
+      "nominative-case",
+      "accusative-case",
+      "dative-case"
+    ],
+    "level": "A1",
+    "themes": [
+      "basics"
+    ]
+  },
+  {
+    "id": "nominative-case",
+    "term": "Nominativ",
+    "englishTerm": "nominative case",
+    "aliases": [
+      "nominative",
+      "subject case"
+    ],
+    "definition": "The nominative case marks the subject of the sentence — whoever or whatever performs the action — and is the form found by asking wer? (who?) or was? (what?): Wer spielt? → Der Mann spielt. It is the citation form of the article and the case a noun takes with no other case assigned to it, e.g. der Mann, die Frau, das Kind.",
+    "lessonId": "01-foundations-and-core-grammar",
+    "topicId": "01-foundations-and-core-grammar/05-nominative-case",
+    "confusableWith": [
+      "accusative-case",
+      "dative-case",
+      "genitive-case"
+    ],
+    "level": "A1",
+    "themes": [
+      "basics"
+    ]
+  },
+  {
+    "id": "accusative-case",
+    "term": "Akkusativ",
+    "englishTerm": "accusative case",
+    "aliases": [
+      "accusative",
+      "direct object case"
+    ],
+    "definition": "The accusative case marks the direct object of a transitive verb — the thing directly acted upon — found by asking wen? (whom?) or was? (what?): Ich sehe wen? → Ich sehe den Mann. Only the masculine article changes from the nominative (der→den, ein→einen); feminine, neuter and plural articles are identical in nominative and accusative.",
+    "lessonId": "01-foundations-and-core-grammar",
+    "topicId": "01-foundations-and-core-grammar/06-accusative-case",
+    "confusableWith": [
+      "nominative-case",
+      "dative-case",
+      "genitive-case"
+    ],
+    "level": "A1",
+    "themes": [
+      "basics"
+    ]
+  },
+  {
+    "id": "v2-word-order",
+    "term": "Verb-Zweit-Stellung (V2)",
+    "englishTerm": "verb-second word order",
+    "aliases": [
+      "V2 rule",
+      "verb second"
+    ],
+    "definition": "In every German main clause the conjugated verb sits in position 2, no matter what occupies position 1. If something other than the subject — a time phrase, an adverb — takes position 1, the subject does not move to position 1 as in English; it moves to position 3, right after the verb: Heute lerne ich Deutsch (lit. \"Today learn I German\"), not *Heute ich lerne Deutsch. This subject-verb swap is called inversion, and it is a direct, mechanical consequence of V2, not a separate rule.",
+    "lessonId": "01-foundations-and-core-grammar",
+    "topicId": "01-foundations-and-core-grammar/07-word-order",
+    "confusableWith": [
+      "w-fragen"
+    ],
+    "level": "A1",
+    "themes": [
+      "basics"
+    ]
+  },
+  {
+    "id": "w-fragen",
+    "term": "W-Fragen",
+    "englishTerm": "W-questions",
+    "aliases": [
+      "question words",
+      "wer wo was wann"
+    ],
+    "definition": "W-questions (wer, was, wo, wann, warum, wie, woher, wohin) put the question word in position 1 and the verb in position 2, so V2 word order is preserved: Wo wohnst du? Yes/no questions instead move the verb itself to position 1 with no question word: Wohnst du in Berlin?",
+    "lessonId": "01-foundations-and-core-grammar",
+    "topicId": "01-foundations-and-core-grammar/07-word-order",
+    "confusableWith": [
+      "v2-word-order"
+    ],
+    "level": "A1",
+    "themes": [
+      "basics"
+    ]
+  },
+  {
+    "id": "negation",
+    "term": "Negation: nicht vs. kein",
+    "englishTerm": "negation with nicht and kein",
+    "aliases": [
+      "nicht",
+      "kein",
+      "keine"
+    ],
+    "definition": "German splits negation between two words depending on what is negated. kein negates a noun that would otherwise carry ein/eine or no article at all (Ich habe ein Buch → Ich habe kein Buch; Er trinkt Milch → Er trinkt keine Milch); nicht negates everything else — verbs, adjectives, adverbs, and nouns that already have der/die/das (Das Buch ist nicht gut). kein declines exactly like ein plus a plural, so keine also negates plural nouns that have no singular indefinite article.",
+    "lessonId": "01-foundations-and-core-grammar",
+    "topicId": "01-foundations-and-core-grammar/08-negation",
+    "confusableWith": [
+      "dass-vs-das"
+    ],
+    "level": "A1",
+    "themes": [
+      "basics"
+    ]
+  },
+  {
+    "id": "es-gibt",
+    "term": "es gibt",
+    "englishTerm": "there is / there are",
+    "aliases": [
+      "there is",
+      "there are"
+    ],
+    "definition": "es gibt (literally \"it gives\") is the fixed idiom for \"there is/are,\" and it always takes an accusative object regardless of number: Es gibt einen Park hier (There is a park here); Es gibt viele Bäume (There are many trees) — gibt never agrees with the following noun, only with the invariant subject es. It is one of several fixed uses of impersonal es, alongside weather expressions like Es regnet and set phrases like Es tut mir leid.",
+    "lessonId": "01-foundations-and-core-grammar",
+    "topicId": "01-foundations-and-core-grammar/09-es-gibt-impersonal-es",
+    "confusableWith": [
+      "accusative-case"
+    ],
+    "level": "A1",
+    "themes": [
+      "basics"
+    ]
+  },
+  {
+    "id": "dative-case",
+    "term": "Dativ",
+    "englishTerm": "dative case",
+    "aliases": [
+      "dative",
+      "indirect object case"
+    ],
+    "definition": "The dative case marks the indirect object — the person who receives or benefits from the direct object — found by asking wem? (to/for whom?): Ich gebe dem Kind ein Buch. A handful of verbs (helfen, antworten, gefallen) take ONLY a dative object with no accusative at all, which trips up learners expecting a direct object. Dative plural nouns add -n unless they already end in -n or -s: die Kinder → den Kindern, but die Frauen → den Frauen.",
+    "lessonId": "02-dative-modals-perfekt",
+    "topicId": "02-dative-modals-perfekt/01-dative-case",
+    "confusableWith": [
+      "accusative-case",
+      "genitive-case",
+      "two-way-prepositions"
+    ],
+    "level": "A1",
+    "themes": [
+      "basics"
+    ]
+  },
+  {
+    "id": "possessivartikel",
+    "term": "Possessivartikel",
+    "englishTerm": "possessive article",
+    "aliases": [
+      "possessive adjective",
+      "mein dein sein"
+    ],
+    "definition": "Possessive articles (mein, dein, sein, ihr, unser, euer, ihr, Ihr) decline exactly like ein across all cases — mein, meinen, meinem — so once a learner knows the ein-endings, the possessives are the same table with a different stem. euer is the one irregular: it drops its own -e- before any ending (euer → eure, euren, eurem), to avoid the awkward *eueren.",
+    "lessonId": "02-dative-modals-perfekt",
+    "topicId": "02-dative-modals-perfekt/02-possessive-articles-der-words",
+    "confusableWith": [
+      "der-woerter",
+      "mixed-adjective-endings"
+    ],
+    "level": "A1",
+    "themes": [
+      "family"
+    ]
+  },
+  {
+    "id": "der-woerter",
+    "term": "Der-Wörter",
+    "englishTerm": "der-words",
+    "aliases": [
+      "dieser jeder welcher",
+      "demonstrative determiners"
+    ],
+    "definition": "Der-words (dieser \"this,\" jeder \"every/each,\" welcher \"which\") decline exactly like the definite article der/die/das rather than like ein — so dieser mirrors der, diese mirrors die, and so on through all three cases (dieser Mann, diesen Mann, diesem Mann). jeder has no plural form, since \"every\" is inherently singular.",
+    "lessonId": "02-dative-modals-perfekt",
+    "topicId": "02-dative-modals-perfekt/02-possessive-articles-der-words",
+    "confusableWith": [
+      "possessivartikel"
+    ],
+    "level": "A1",
+    "themes": [
+      "basics"
+    ]
+  },
+  {
+    "id": "modal-verbs",
+    "term": "Modalverben",
+    "englishTerm": "modal verbs",
+    "aliases": [
+      "modals",
+      "können wollen müssen sollen dürfen mögen"
+    ],
+    "definition": "The six modal verbs (können, wollen, müssen, sollen, dürfen, mögen, plus the subjunctive-derived möchten) all change their stem vowel in the singular (ich/du/er) while keeping the infinitive vowel in the plural, and ich and er/sie/es are always identical: ich kann, du kannst, er kann, wir können. A modal occupies the normal V2 verb slot while the main verb it governs is pushed to the very end of the clause as a bare infinitive: Ich kann Deutsch sprechen.",
+    "lessonId": "02-dative-modals-perfekt",
+    "topicId": "02-dative-modals-perfekt/03-modal-verbs-all-six",
+    "confusableWith": [
+      "double-infinitive"
+    ],
+    "sequence": [
+      "Conjugate the modal for the subject (ich kann)",
+      "Place the modal in V2",
+      "Push the full main verb to the end as a bare infinitive"
+    ],
+    "level": "A1",
+    "themes": [
+      "basics"
+    ]
+  },
+  {
+    "id": "perfekt",
+    "term": "Perfekt",
+    "englishTerm": "present perfect / conversational past",
+    "aliases": [
+      "conversational past",
+      "compound past"
+    ],
+    "definition": "The Perfekt is the everyday past tense of spoken German, built from a conjugated auxiliary (haben or sein) in V2 plus the Partizip II at the very end of the clause: Ich habe Fußball gespielt; Er ist nach Berlin gefahren. Unlike English, choice of auxiliary is not free — it is fixed per verb, mainly by whether the verb expresses movement/change of state (sein) or not (haben).",
+    "lessonId": "02-dative-modals-perfekt",
+    "topicId": "02-dative-modals-perfekt/04-perfekt",
+    "confusableWith": [
+      "praeteritum",
+      "partizip-ii",
+      "plusquamperfekt"
+    ],
+    "sequence": [
+      "Pick haben or sein based on the verb",
+      "Conjugate that auxiliary for the subject and place it in V2",
+      "Form the Partizip II of the main verb and place it at the end"
+    ],
+    "level": "A2",
+    "themes": [
+      "basics"
+    ]
+  },
+  {
+    "id": "partizip-ii",
+    "term": "Partizip II",
+    "englishTerm": "past participle",
+    "aliases": [
+      "Partizip Perfekt",
+      "past participle II"
+    ],
+    "definition": "The Partizip II is the past-participle form used inside the Perfekt and Plusquamperfekt. Weak (regular) verbs form it as ge- + stem + -t (spielen → gespielt); strong (irregular) verbs form it as ge- + stem, often with a vowel change, + -en (sehen → gesehen), and must simply be memorized. Two groups drop the ge- entirely: verbs ending in -ieren (studieren → studiert) and verbs with an inseparable prefix be-/emp-/ent-/er-/ge-/miss-/ver-/zer- (verstehen → verstanden).",
+    "lessonId": "02-dative-modals-perfekt",
+    "topicId": "02-dative-modals-perfekt/04-perfekt",
+    "confusableWith": [
+      "perfekt",
+      "praeteritum"
+    ],
+    "level": "A2",
+    "themes": [
+      "basics"
+    ]
+  },
+  {
+    "id": "two-way-prepositions",
+    "term": "Wechselpräpositionen",
+    "englishTerm": "two-way prepositions",
+    "aliases": [
+      "two-way prepositions",
+      "an auf hinter in neben über unter vor zwischen"
+    ],
+    "definition": "Nine prepositions (an, auf, hinter, in, neben, über, unter, vor, zwischen) take either the accusative or the dative depending on meaning, not on the preposition itself: dative answers wo? (location — already there), accusative answers wohin? (direction — moving there). Compare Das Buch liegt auf dem Tisch (dative, static) with Ich lege das Buch auf den Tisch (accusative, movement onto).",
+    "lessonId": "02-dative-modals-perfekt",
+    "topicId": "02-dative-modals-perfekt/05-prepositions",
+    "confusableWith": [
+      "dative-case",
+      "accusative-case"
+    ],
+    "level": "A2",
+    "themes": [
+      "city-places"
+    ]
+  },
+  {
+    "id": "weak-adjective-endings",
+    "term": "schwache Adjektivendungen",
+    "englishTerm": "weak adjective endings",
+    "aliases": [
+      "weak endings",
+      "adjective endings after der-words"
+    ],
+    "definition": "When an attributive adjective follows a der-word (der, die, das, dieser, jeder, welcher), the article already signals gender and case, so the adjective needs only a minimal \"weak\" ending: -e almost everywhere, and -en for accusative masculine and every plural, e.g. der große Mann (nom.) but den großen Mann (acc.). The underlying logic — one case signal per noun phrase — is what the corpus calls the Signal Rule.",
+    "lessonId": "02-dative-modals-perfekt",
+    "topicId": "02-dative-modals-perfekt/07-adjective-endings",
+    "confusableWith": [
+      "strong-adjective-endings",
+      "mixed-adjective-endings"
+    ],
+    "level": "A2",
+    "themes": [
+      "abstract"
+    ]
+  },
+  {
+    "id": "strong-adjective-endings",
+    "term": "starke Adjektivendungen",
+    "englishTerm": "strong adjective endings",
+    "aliases": [
+      "strong endings",
+      "adjective endings without article"
+    ],
+    "definition": "When an attributive adjective has no article in front of it at all, it must carry the gender/case signal itself, so it takes a \"strong\" ending that mirrors the definite article's own endings: -er (like der), -e (like die), -es (like das), -en (like den), e.g. kalter Kaffee (nom. masc.) but kalten Kaffee (acc. masc.). This is the same Signal Rule as the weak endings, applied when no article is present to do the signaling.",
+    "lessonId": "02-dative-modals-perfekt",
+    "topicId": "02-dative-modals-perfekt/07-adjective-endings",
+    "confusableWith": [
+      "weak-adjective-endings",
+      "mixed-adjective-endings"
+    ],
+    "level": "A2",
+    "themes": [
+      "abstract"
+    ]
+  },
+  {
+    "id": "dass-vs-das",
+    "term": "dass vs. das",
+    "englishTerm": "\"that\" (conjunction) vs. \"the/that\" (article/pronoun)",
+    "aliases": [
+      "dass",
+      "das"
+    ],
+    "definition": "dass (double s) is the subordinating conjunction \"that,\" introducing a clause and pushing its verb to the end: Ich weiß, dass er morgen kommt. das (single s) is the neuter definite article or demonstrative pronoun \"the/that/it,\" which never sends a verb to the end: Das Buch ist gut. The two are spelled and pronounced identically apart from that one consonant, and confusing them is one of the most common native-writer as well as learner errors.",
+    "lessonId": "02-dative-modals-perfekt",
+    "topicId": "02-dative-modals-perfekt/08-sentence-connectors",
+    "confusableWith": [
+      "negation"
+    ],
+    "level": "A2",
+    "themes": [
+      "abstract"
+    ]
+  },
+  {
+    "id": "adjective-ending-signal",
+    "term": "Adjective Ending Signal",
+    "englishTerm": "Adjective Ending Signal",
+    "aliases": [],
+    "definition": "TODO: hand-author this grammar point (stub generated to unblock build; verify against source).",
+    "lessonId": "03-praeteritum-and-reflexives",
+    "topicId": "03-praeteritum-and-reflexives/04-adjective-declension",
+    "confusableWith": [],
+    "level": "A2",
+    "themes": []
+  },
+  {
+    "id": "adjektive-mit-praepositionen",
+    "term": "Adjektive Mit Praepositionen",
+    "englishTerm": "Adjektive Mit Praepositionen",
+    "aliases": [],
+    "definition": "TODO: hand-author this grammar point (stub generated to unblock build; verify against source).",
+    "lessonId": "08-double-infinitive",
+    "topicId": "08-double-infinitive/03-adjectives-with-fixed-prepositions",
+    "confusableWith": [],
+    "level": "B1",
+    "themes": []
+  },
+  {
+    "id": "als-vs-wenn",
+    "term": "Als Vs Wenn",
+    "englishTerm": "Als Vs Wenn",
+    "aliases": [],
+    "definition": "TODO: hand-author this grammar point (stub generated to unblock build; verify against source).",
+    "lessonId": "05-separable-verbs",
+    "topicId": "05-separable-verbs/05-expanded-conjunctions-adverbs",
+    "confusableWith": [],
+    "level": "A2",
+    "themes": []
+  },
+  {
+    "id": "apposition",
+    "term": "Apposition",
+    "englishTerm": "Apposition",
+    "aliases": [],
+    "definition": "TODO: hand-author this grammar point (stub generated to unblock build; verify against source).",
+    "lessonId": "09-konjunktiv1",
+    "topicId": "09-konjunktiv1/04-discourse-connectors-text-cohesion",
+    "confusableWith": [],
+    "level": "B1",
+    "themes": []
+  },
+  {
+    "id": "comparative",
+    "term": "Comparative",
+    "englishTerm": "Comparative",
+    "aliases": [],
+    "definition": "TODO: hand-author this grammar point (stub generated to unblock build; verify against source).",
+    "lessonId": "04-genitive-comparative",
+    "topicId": "04-genitive-comparative/02-comparative-superlative",
+    "confusableWith": [],
+    "level": "A2",
+    "themes": []
+  },
+  {
+    "id": "conditional-type-3",
+    "term": "Conditional Type 3",
+    "englishTerm": "Conditional Type 3",
+    "aliases": [],
+    "definition": "TODO: hand-author this grammar point (stub generated to unblock build; verify against source).",
+    "lessonId": "10-zustandspassiv",
+    "topicId": "10-zustandspassiv/05-konjunktiv-ii",
+    "confusableWith": [],
+    "level": "B2",
+    "themes": []
+  },
+  {
+    "id": "coordinating-adverb-inversion",
+    "term": "Coordinating Adverb Inversion",
+    "englishTerm": "Coordinating Adverb Inversion",
+    "aliases": [],
+    "definition": "TODO: hand-author this grammar point (stub generated to unblock build; verify against source).",
+    "lessonId": "05-separable-verbs",
+    "topicId": "05-separable-verbs/05-expanded-conjunctions-adverbs",
+    "confusableWith": [],
+    "level": "A2",
+    "themes": []
+  },
+  {
+    "id": "da-wo-kompositum",
+    "term": "Da Wo Kompositum",
+    "englishTerm": "Da Wo Kompositum",
+    "aliases": [],
+    "definition": "TODO: hand-author this grammar point (stub generated to unblock build; verify against source).",
+    "lessonId": "08-double-infinitive",
+    "topicId": "08-double-infinitive/02-verbs-with-fixed-prepositions",
+    "confusableWith": [],
+    "level": "B1",
+    "themes": []
+  },
+  {
+    "id": "dass-clause-vs-zu-infinitiv-choice",
+    "term": "Dass Clause Vs Zu Infinitiv Choice",
+    "englishTerm": "Dass Clause Vs Zu Infinitiv Choice",
+    "aliases": [],
+    "definition": "TODO: hand-author this grammar point (stub generated to unblock build; verify against source).",
+    "lessonId": "09-konjunktiv1",
+    "topicId": "09-konjunktiv1/03-verb-valency-patterns-verbvalenz",
+    "confusableWith": [],
+    "level": "B1",
+    "themes": []
+  },
+  {
+    "id": "dative-only-verbs",
+    "term": "Dative Only Verbs",
+    "englishTerm": "Dative Only Verbs",
+    "aliases": [],
+    "definition": "TODO: hand-author this grammar point (stub generated to unblock build; verify against source).",
+    "lessonId": "09-konjunktiv1",
+    "topicId": "09-konjunktiv1/03-verb-valency-patterns-verbvalenz",
+    "confusableWith": [],
+    "level": "B1",
+    "themes": []
+  },
+  {
+    "id": "discourse-connectors",
+    "term": "Discourse Connectors",
+    "englishTerm": "Discourse Connectors",
+    "aliases": [],
+    "definition": "TODO: hand-author this grammar point (stub generated to unblock build; verify against source).",
+    "lessonId": "09-konjunktiv1",
+    "topicId": "09-konjunktiv1/04-discourse-connectors-text-cohesion",
+    "confusableWith": [],
+    "level": "B1",
+    "themes": []
+  },
+  {
+    "id": "doppelinfinitiv-nebensatz",
+    "term": "Doppelinfinitiv Nebensatz",
+    "englishTerm": "Doppelinfinitiv Nebensatz",
+    "aliases": [],
+    "definition": "TODO: hand-author this grammar point (stub generated to unblock build; verify against source).",
+    "lessonId": "08-double-infinitive",
+    "topicId": "08-double-infinitive/01-double-infinitive-with-modals-in-perfekt",
+    "confusableWith": [],
+    "level": "B1",
+    "themes": []
+  },
+  {
+    "id": "double-infinitive",
+    "term": "Double Infinitive",
+    "englishTerm": "Double Infinitive",
+    "aliases": [],
+    "definition": "TODO: hand-author this grammar point (stub generated to unblock build; verify against source).",
+    "lessonId": "08-double-infinitive",
+    "topicId": "08-double-infinitive/01-double-infinitive-with-modals-in-perfekt",
+    "confusableWith": [],
+    "level": "B1",
+    "themes": []
+  },
+  {
+    "id": "extended-participial-construction",
+    "term": "Extended Participial Construction",
+    "englishTerm": "Extended Participial Construction",
+    "aliases": [],
+    "definition": "TODO: hand-author this grammar point (stub generated to unblock build; verify against source).",
+    "lessonId": "10-zustandspassiv",
+    "topicId": "10-zustandspassiv/04-extended-participial-constructions-erweiterte-partizipialattribute",
+    "confusableWith": [],
+    "level": "B2",
+    "themes": []
+  },
+  {
+    "id": "futur-i",
+    "term": "Futur I",
+    "englishTerm": "Futur I",
+    "aliases": [],
+    "definition": "TODO: hand-author this grammar point (stub generated to unblock build; verify against source).",
+    "lessonId": "06-futur-and-zu-infinitiv",
+    "topicId": "06-futur-and-zu-infinitiv/02-futur-i",
+    "confusableWith": [],
+    "level": "B1",
+    "themes": []
+  },
+  {
+    "id": "futur-ii",
+    "term": "Futur Ii",
+    "englishTerm": "Futur Ii",
+    "aliases": [],
+    "definition": "TODO: hand-author this grammar point (stub generated to unblock build; verify against source).",
+    "lessonId": "09-konjunktiv1",
+    "topicId": "09-konjunktiv1/02-futur-ii",
+    "confusableWith": [],
+    "level": "B1",
+    "themes": []
+  },
+  {
+    "id": "genitive-case",
+    "term": "Genitive Case",
+    "englishTerm": "Genitive Case",
+    "aliases": [],
+    "definition": "TODO: hand-author this grammar point (stub generated to unblock build; verify against source).",
+    "lessonId": "04-genitive-comparative",
+    "topicId": "04-genitive-comparative/01-genitive-case",
+    "confusableWith": [],
+    "level": "A2",
+    "themes": []
+  },
+  {
+    "id": "genitive-preposition",
+    "term": "Genitive Preposition",
+    "englishTerm": "Genitive Preposition",
+    "aliases": [],
+    "definition": "TODO: hand-author this grammar point (stub generated to unblock build; verify against source).",
+    "lessonId": "04-genitive-comparative",
+    "topicId": "04-genitive-comparative/01-genitive-case",
+    "confusableWith": [],
+    "level": "A2",
+    "themes": []
+  },
+  {
+    "id": "imperative-mood",
+    "term": "Imperative Mood",
+    "englishTerm": "Imperative Mood",
+    "aliases": [],
+    "definition": "TODO: hand-author this grammar point (stub generated to unblock build; verify against source).",
+    "lessonId": "05-separable-verbs",
+    "topicId": "05-separable-verbs/03-imperative-mood",
+    "confusableWith": [],
+    "level": "A2",
+    "themes": []
+  },
+  {
+    "id": "indefinite-pronoun",
+    "term": "Indefinite Pronoun",
+    "englishTerm": "Indefinite Pronoun",
+    "aliases": [],
+    "definition": "TODO: hand-author this grammar point (stub generated to unblock build; verify against source).",
+    "lessonId": "03-praeteritum-and-reflexives",
+    "topicId": "03-praeteritum-and-reflexives/03-indefinite-pronouns",
+    "confusableWith": [],
+    "level": "A2",
+    "themes": []
+  },
+  {
+    "id": "indem-satz",
+    "term": "Indem Satz",
+    "englishTerm": "Indem Satz",
+    "aliases": [],
+    "definition": "TODO: hand-author this grammar point (stub generated to unblock build; verify against source).",
+    "lessonId": "08-double-infinitive",
+    "topicId": "08-double-infinitive/04-adverbial-clauses-with-indem",
+    "confusableWith": [],
+    "level": "B1",
+    "themes": []
+  },
+  {
+    "id": "indirect-question",
+    "term": "Indirect Question",
+    "englishTerm": "Indirect Question",
+    "aliases": [],
+    "definition": "TODO: hand-author this grammar point (stub generated to unblock build; verify against source).",
+    "lessonId": "05-separable-verbs",
+    "topicId": "05-separable-verbs/04-indirect-questions-indirekte-fragen",
+    "confusableWith": [],
+    "level": "A2",
+    "themes": []
+  },
+  {
+    "id": "indirekte-rede",
+    "term": "Indirekte Rede",
+    "englishTerm": "Indirekte Rede",
+    "aliases": [],
+    "definition": "TODO: hand-author this grammar point (stub generated to unblock build; verify against source).",
+    "lessonId": "09-konjunktiv1",
+    "topicId": "09-konjunktiv1/01-indirect-speech-konjunktiv-i-introduction",
+    "confusableWith": [],
+    "level": "B1",
+    "themes": []
+  },
+  {
+    "id": "inseparable-prefix-verb",
+    "term": "Inseparable Prefix Verb",
+    "englishTerm": "Inseparable Prefix Verb",
+    "aliases": [],
+    "definition": "TODO: hand-author this grammar point (stub generated to unblock build; verify against source).",
+    "lessonId": "05-separable-verbs",
+    "topicId": "05-separable-verbs/02-inseparable-prefix-verbs",
+    "confusableWith": [],
+    "level": "A2",
+    "themes": []
+  },
+  {
+    "id": "irreale-bedingungssaetze-typ-2",
+    "term": "Irreale Bedingungssaetze Typ 2",
+    "englishTerm": "Irreale Bedingungssaetze Typ 2",
+    "aliases": [],
+    "definition": "TODO: hand-author this grammar point (stub generated to unblock build; verify against source).",
+    "lessonId": "07-plusquamperfekt-konjunktiv2",
+    "topicId": "07-plusquamperfekt-konjunktiv2/02-konjunktiv-ii",
+    "confusableWith": [],
+    "level": "B1",
+    "themes": []
+  },
+  {
+    "id": "je-desto-construction",
+    "term": "Je Desto Construction",
+    "englishTerm": "Je Desto Construction",
+    "aliases": [],
+    "definition": "TODO: hand-author this grammar point (stub generated to unblock build; verify against source).",
+    "lessonId": "04-genitive-comparative",
+    "topicId": "04-genitive-comparative/02-comparative-superlative",
+    "confusableWith": [],
+    "level": "A2",
+    "themes": []
+  },
+  {
+    "id": "konjunktiv-i",
+    "term": "Konjunktiv I",
+    "englishTerm": "Konjunktiv I",
+    "aliases": [],
+    "definition": "TODO: hand-author this grammar point (stub generated to unblock build; verify against source).",
+    "lessonId": "09-konjunktiv1",
+    "topicId": "09-konjunktiv1/01-indirect-speech-konjunktiv-i-introduction",
+    "confusableWith": [],
+    "level": "B1",
+    "themes": []
+  },
+  {
+    "id": "konjunktiv-i-substitution",
+    "term": "Konjunktiv I Substitution",
+    "englishTerm": "Konjunktiv I Substitution",
+    "aliases": [],
+    "definition": "TODO: hand-author this grammar point (stub generated to unblock build; verify against source).",
+    "lessonId": "09-konjunktiv1",
+    "topicId": "09-konjunktiv1/01-indirect-speech-konjunktiv-i-introduction",
+    "confusableWith": [],
+    "level": "B1",
+    "themes": []
+  },
+  {
+    "id": "konjunktiv-ii",
+    "term": "Konjunktiv Ii",
+    "englishTerm": "Konjunktiv Ii",
+    "aliases": [],
+    "definition": "TODO: hand-author this grammar point (stub generated to unblock build; verify against source).",
+    "lessonId": "07-plusquamperfekt-konjunktiv2",
+    "topicId": "07-plusquamperfekt-konjunktiv2/02-konjunktiv-ii",
+    "confusableWith": [],
+    "level": "B1",
+    "themes": []
+  },
+  {
+    "id": "konjunktiv-ii-vergangenheit",
+    "term": "Konjunktiv Ii Vergangenheit",
+    "englishTerm": "Konjunktiv Ii Vergangenheit",
+    "aliases": [],
+    "definition": "TODO: hand-author this grammar point (stub generated to unblock build; verify against source).",
+    "lessonId": "10-zustandspassiv",
+    "topicId": "10-zustandspassiv/05-konjunktiv-ii",
+    "confusableWith": [],
+    "level": "B2",
+    "themes": []
+  },
+  {
+    "id": "man-as-passive-alternative",
+    "term": "Man As Passive Alternative",
+    "englishTerm": "Man As Passive Alternative",
+    "aliases": [],
+    "definition": "TODO: hand-author this grammar point (stub generated to unblock build; verify against source).",
+    "lessonId": "10-zustandspassiv",
+    "topicId": "10-zustandspassiv/02-advanced-passive-constructions",
+    "confusableWith": [],
+    "level": "B2",
+    "themes": []
+  },
+  {
+    "id": "mixed-adjective-endings",
+    "term": "Mixed Adjective Endings",
+    "englishTerm": "Mixed Adjective Endings",
+    "aliases": [],
+    "definition": "TODO: hand-author this grammar point (stub generated to unblock build; verify against source).",
+    "lessonId": "03-praeteritum-and-reflexives",
+    "topicId": "03-praeteritum-and-reflexives/04-adjective-declension",
+    "confusableWith": [],
+    "level": "A2",
+    "themes": []
+  },
+  {
+    "id": "n-deklination",
+    "term": "N Deklination",
+    "englishTerm": "N Deklination",
+    "aliases": [],
+    "definition": "TODO: hand-author this grammar point (stub generated to unblock build; verify against source).",
+    "lessonId": "04-genitive-comparative",
+    "topicId": "04-genitive-comparative/03-n-deklination-weak-masculine-nouns",
+    "confusableWith": [],
+    "level": "A2",
+    "themes": []
+  },
+  {
+    "id": "partizip-i-as-adjective",
+    "term": "Partizip I As Adjective",
+    "englishTerm": "Partizip I As Adjective",
+    "aliases": [],
+    "definition": "TODO: hand-author this grammar point (stub generated to unblock build; verify against source).",
+    "lessonId": "10-zustandspassiv",
+    "topicId": "10-zustandspassiv/03-participial-adjectives",
+    "confusableWith": [],
+    "level": "B2",
+    "themes": []
+  },
+  {
+    "id": "partizip-ii-as-adjective",
+    "term": "Partizip Ii As Adjective",
+    "englishTerm": "Partizip Ii As Adjective",
+    "aliases": [],
+    "definition": "TODO: hand-author this grammar point (stub generated to unblock build; verify against source).",
+    "lessonId": "10-zustandspassiv",
+    "topicId": "10-zustandspassiv/03-participial-adjectives",
+    "confusableWith": [],
+    "level": "B2",
+    "themes": []
+  },
+  {
+    "id": "passiv-agens-von-durch-mit",
+    "term": "Passiv Agens Von Durch Mit",
+    "englishTerm": "Passiv Agens Von Durch Mit",
+    "aliases": [],
+    "definition": "TODO: hand-author this grammar point (stub generated to unblock build; verify against source).",
+    "lessonId": "07-plusquamperfekt-konjunktiv2",
+    "topicId": "07-plusquamperfekt-konjunktiv2/03-vorgangspassiv",
+    "confusableWith": [],
+    "level": "B1",
+    "themes": []
+  },
+  {
+    "id": "passiv-perfekt-worden",
+    "term": "Passiv Perfekt Worden",
+    "englishTerm": "Passiv Perfekt Worden",
+    "aliases": [],
+    "definition": "TODO: hand-author this grammar point (stub generated to unblock build; verify against source).",
+    "lessonId": "07-plusquamperfekt-konjunktiv2",
+    "topicId": "07-plusquamperfekt-konjunktiv2/03-vorgangspassiv",
+    "confusableWith": [],
+    "level": "B1",
+    "themes": []
+  },
+  {
+    "id": "passive-with-modals",
+    "term": "Passive With Modals",
+    "englishTerm": "Passive With Modals",
+    "aliases": [],
+    "definition": "TODO: hand-author this grammar point (stub generated to unblock build; verify against source).",
+    "lessonId": "10-zustandspassiv",
+    "topicId": "10-zustandspassiv/02-advanced-passive-constructions",
+    "confusableWith": [],
+    "level": "B2",
+    "themes": []
+  },
+  {
+    "id": "plusquamperfekt",
+    "term": "Plusquamperfekt",
+    "englishTerm": "Plusquamperfekt",
+    "aliases": [],
+    "definition": "TODO: hand-author this grammar point (stub generated to unblock build; verify against source).",
+    "lessonId": "07-plusquamperfekt-konjunktiv2",
+    "topicId": "07-plusquamperfekt-konjunktiv2/01-plusquamperfekt",
+    "confusableWith": [],
+    "level": "B1",
+    "themes": []
+  },
+  {
+    "id": "praeteritum",
+    "term": "Praeteritum",
+    "englishTerm": "Praeteritum",
+    "aliases": [],
+    "definition": "TODO: hand-author this grammar point (stub generated to unblock build; verify against source).",
+    "lessonId": "03-praeteritum-and-reflexives",
+    "topicId": "03-praeteritum-and-reflexives/01-praeteritum",
+    "confusableWith": [],
+    "level": "A2",
+    "themes": []
+  },
+  {
+    "id": "reflexive-pronoun-case",
+    "term": "Reflexive Pronoun Case",
+    "englishTerm": "Reflexive Pronoun Case",
+    "aliases": [],
+    "definition": "TODO: hand-author this grammar point (stub generated to unblock build; verify against source).",
+    "lessonId": "03-praeteritum-and-reflexives",
+    "topicId": "03-praeteritum-and-reflexives/02-reflexive-verbs",
+    "confusableWith": [],
+    "level": "A2",
+    "themes": []
+  },
+  {
+    "id": "reflexive-verb",
+    "term": "Reflexive Verb",
+    "englishTerm": "Reflexive Verb",
+    "aliases": [],
+    "definition": "TODO: hand-author this grammar point (stub generated to unblock build; verify against source).",
+    "lessonId": "03-praeteritum-and-reflexives",
+    "topicId": "03-praeteritum-and-reflexives/02-reflexive-verbs",
+    "confusableWith": [],
+    "level": "A2",
+    "themes": []
+  },
+  {
+    "id": "relative-clause",
+    "term": "Relative Clause",
+    "englishTerm": "Relative Clause",
+    "aliases": [],
+    "definition": "TODO: hand-author this grammar point (stub generated to unblock build; verify against source).",
+    "lessonId": "06-futur-and-zu-infinitiv",
+    "topicId": "06-futur-and-zu-infinitiv/04-relative-clauses-relativsatze",
+    "confusableWith": [],
+    "level": "B1",
+    "themes": []
+  },
+  {
+    "id": "relative-pronoun-wo-was-wer",
+    "term": "Relative Pronoun Wo Was Wer",
+    "englishTerm": "Relative Pronoun Wo Was Wer",
+    "aliases": [],
+    "definition": "TODO: hand-author this grammar point (stub generated to unblock build; verify against source).",
+    "lessonId": "06-futur-and-zu-infinitiv",
+    "topicId": "06-futur-and-zu-infinitiv/04-relative-clauses-relativsatze",
+    "confusableWith": [],
+    "level": "B1",
+    "themes": []
+  },
+  {
+    "id": "sein-zu-infinitiv",
+    "term": "Sein Zu Infinitiv",
+    "englishTerm": "Sein Zu Infinitiv",
+    "aliases": [],
+    "definition": "TODO: hand-author this grammar point (stub generated to unblock build; verify against source).",
+    "lessonId": "10-zustandspassiv",
+    "topicId": "10-zustandspassiv/02-advanced-passive-constructions",
+    "confusableWith": [],
+    "level": "B2",
+    "themes": []
+  },
+  {
+    "id": "separable-prefix-verb",
+    "term": "Separable Prefix Verb",
+    "englishTerm": "Separable Prefix Verb",
+    "aliases": [],
+    "definition": "TODO: hand-author this grammar point (stub generated to unblock build; verify against source).",
+    "lessonId": "05-separable-verbs",
+    "topicId": "05-separable-verbs/01-separable-prefix-verbs",
+    "confusableWith": [],
+    "level": "A2",
+    "themes": []
+  },
+  {
+    "id": "sich-lassen-infinitiv",
+    "term": "Sich Lassen Infinitiv",
+    "englishTerm": "Sich Lassen Infinitiv",
+    "aliases": [],
+    "definition": "TODO: hand-author this grammar point (stub generated to unblock build; verify against source).",
+    "lessonId": "10-zustandspassiv",
+    "topicId": "10-zustandspassiv/02-advanced-passive-constructions",
+    "confusableWith": [],
+    "level": "B2",
+    "themes": []
+  },
+  {
+    "id": "superlative",
+    "term": "Superlative",
+    "englishTerm": "Superlative",
+    "aliases": [],
+    "definition": "TODO: hand-author this grammar point (stub generated to unblock build; verify against source).",
+    "lessonId": "04-genitive-comparative",
+    "topicId": "04-genitive-comparative/02-comparative-superlative",
+    "confusableWith": [],
+    "level": "A2",
+    "themes": []
+  },
+  {
+    "id": "synthetische-konjunktiv-ii-formen",
+    "term": "Synthetische Konjunktiv Ii Formen",
+    "englishTerm": "Synthetische Konjunktiv Ii Formen",
+    "aliases": [],
+    "definition": "TODO: hand-author this grammar point (stub generated to unblock build; verify against source).",
+    "lessonId": "07-plusquamperfekt-konjunktiv2",
+    "topicId": "07-plusquamperfekt-konjunktiv2/02-konjunktiv-ii",
+    "confusableWith": [],
+    "level": "B1",
+    "themes": []
+  },
+  {
+    "id": "two-accusative-verbs",
+    "term": "Two Accusative Verbs",
+    "englishTerm": "Two Accusative Verbs",
+    "aliases": [],
+    "definition": "TODO: hand-author this grammar point (stub generated to unblock build; verify against source).",
+    "lessonId": "09-konjunktiv1",
+    "topicId": "09-konjunktiv1/03-verb-valency-patterns-verbvalenz",
+    "confusableWith": [],
+    "level": "B1",
+    "themes": []
+  },
+  {
+    "id": "um-zu-clause",
+    "term": "Um Zu Clause",
+    "englishTerm": "Um Zu Clause",
+    "aliases": [],
+    "definition": "TODO: hand-author this grammar point (stub generated to unblock build; verify against source).",
+    "lessonId": "06-futur-and-zu-infinitiv",
+    "topicId": "06-futur-and-zu-infinitiv/03-zu-infinitiv-constructions",
+    "confusableWith": [],
+    "level": "B1",
+    "themes": []
+  },
+  {
+    "id": "unpersoenliches-passiv",
+    "term": "Unpersoenliches Passiv",
+    "englishTerm": "Unpersoenliches Passiv",
+    "aliases": [],
+    "definition": "TODO: hand-author this grammar point (stub generated to unblock build; verify against source).",
+    "lessonId": "07-plusquamperfekt-konjunktiv2",
+    "topicId": "07-plusquamperfekt-konjunktiv2/03-vorgangspassiv",
+    "confusableWith": [],
+    "level": "B1",
+    "themes": []
+  },
+  {
+    "id": "verb-valency",
+    "term": "Verb Valency",
+    "englishTerm": "Verb Valency",
+    "aliases": [],
+    "definition": "TODO: hand-author this grammar point (stub generated to unblock build; verify against source).",
+    "lessonId": "09-konjunktiv1",
+    "topicId": "09-konjunktiv1/03-verb-valency-patterns-verbvalenz",
+    "confusableWith": [],
+    "level": "B1",
+    "themes": []
+  },
+  {
+    "id": "verben-mit-praepositionen",
+    "term": "Verben Mit Praepositionen",
+    "englishTerm": "Verben Mit Praepositionen",
+    "aliases": [],
+    "definition": "TODO: hand-author this grammar point (stub generated to unblock build; verify against source).",
+    "lessonId": "08-double-infinitive",
+    "topicId": "08-double-infinitive/02-verbs-with-fixed-prepositions",
+    "confusableWith": [],
+    "level": "B1",
+    "themes": []
+  },
+  {
+    "id": "vorgangspassiv",
+    "term": "Vorgangspassiv",
+    "englishTerm": "Vorgangspassiv",
+    "aliases": [],
+    "definition": "TODO: hand-author this grammar point (stub generated to unblock build; verify against source).",
+    "lessonId": "07-plusquamperfekt-konjunktiv2",
+    "topicId": "07-plusquamperfekt-konjunktiv2/03-vorgangspassiv",
+    "confusableWith": [],
+    "level": "B1",
+    "themes": []
+  },
+  {
+    "id": "weil-vs-da",
+    "term": "Weil Vs Da",
+    "englishTerm": "Weil Vs Da",
+    "aliases": [],
+    "definition": "TODO: hand-author this grammar point (stub generated to unblock build; verify against source).",
+    "lessonId": "05-separable-verbs",
+    "topicId": "05-separable-verbs/05-expanded-conjunctions-adverbs",
+    "confusableWith": [],
+    "level": "A2",
+    "themes": []
+  },
+  {
+    "id": "werden-three-functions",
+    "term": "Werden Three Functions",
+    "englishTerm": "Werden Three Functions",
+    "aliases": [],
+    "definition": "TODO: hand-author this grammar point (stub generated to unblock build; verify against source).",
+    "lessonId": "06-futur-and-zu-infinitiv",
+    "topicId": "06-futur-and-zu-infinitiv/01-werden",
+    "confusableWith": [],
+    "level": "B1",
+    "themes": []
+  },
+  {
+    "id": "wuerde-infinitiv",
+    "term": "Wuerde Infinitiv",
+    "englishTerm": "Wuerde Infinitiv",
+    "aliases": [],
+    "definition": "TODO: hand-author this grammar point (stub generated to unblock build; verify against source).",
+    "lessonId": "07-plusquamperfekt-konjunktiv2",
+    "topicId": "07-plusquamperfekt-konjunktiv2/02-konjunktiv-ii",
+    "confusableWith": [],
+    "level": "B1",
+    "themes": []
+  },
+  {
+    "id": "zu-infinitiv",
+    "term": "Zu Infinitiv",
+    "englishTerm": "Zu Infinitiv",
+    "aliases": [],
+    "definition": "TODO: hand-author this grammar point (stub generated to unblock build; verify against source).",
+    "lessonId": "06-futur-and-zu-infinitiv",
+    "topicId": "06-futur-and-zu-infinitiv/03-zu-infinitiv-constructions",
+    "confusableWith": [],
+    "level": "B1",
+    "themes": []
+  },
+  {
+    "id": "zustandspassiv",
+    "term": "Zustandspassiv",
+    "englishTerm": "Zustandspassiv",
+    "aliases": [],
+    "definition": "TODO: hand-author this grammar point (stub generated to unblock build; verify against source).",
+    "lessonId": "10-zustandspassiv",
+    "topicId": "10-zustandspassiv/01-zustandspassiv",
+    "confusableWith": [],
+    "level": "B2",
+    "themes": []
+  },
+  {
+    "id": "zweiteilige-konjunktionen",
+    "term": "Zweiteilige Konjunktionen",
+    "englishTerm": "Zweiteilige Konjunktionen",
+    "aliases": [],
+    "definition": "TODO: hand-author this grammar point (stub generated to unblock build; verify against source).",
+    "lessonId": "08-double-infinitive",
+    "topicId": "08-double-infinitive/05-two-part-correlative-conjunctions",
+    "confusableWith": [],
+    "level": "B1",
+    "themes": []
+  }
+]

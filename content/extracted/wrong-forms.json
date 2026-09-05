@@ -1,0 +1,578 @@
+[
+  {
+    "id": "01-foundations-and-core-grammar:wf222-0",
+    "form": "ich aufstehe",
+    "scope": "sentence",
+    "correct": null,
+    "lexemeId": null,
+    "topicId": "01-foundations-and-core-grammar/02-vocabulary",
+    "context": "Note: *aufstehen* (#1) is a **separable verb** — its prefix splits off in conjugation (*ich stehe auf*, not [WRONG]). Separable verbs are fully explained in Lesson 5; for now, learn it as vocabulary."
+  },
+  {
+    "id": "01-foundations-and-core-grammar:wf335-0",
+    "form": "sechszehn",
+    "scope": "form",
+    "correct": null,
+    "lexemeId": null,
+    "topicId": "01-foundations-and-core-grammar/03-numbers-calendar",
+    "context": "dreizehn (13), vierzehn (14), fünfzehn (15), **sechzehn** (16, not [WRONG]), **siebzehn** (17, not [WRONG]), achtzehn (18), neunzehn (19)"
+  },
+  {
+    "id": "01-foundations-and-core-grammar:wf335-1",
+    "form": "siebenzehn",
+    "scope": "form",
+    "correct": null,
+    "lexemeId": null,
+    "topicId": "01-foundations-and-core-grammar/03-numbers-calendar",
+    "context": "dreizehn (13), vierzehn (14), fünfzehn (15), **sechzehn** (16, not [WRONG]), **siebzehn** (17, not [WRONG]), achtzehn (18), neunzehn (19)"
+  },
+  {
+    "id": "01-foundations-and-core-grammar:wf339-0",
+    "form": "dreizig",
+    "scope": "form",
+    "correct": null,
+    "lexemeId": null,
+    "topicId": "01-foundations-and-core-grammar/03-numbers-calendar",
+    "context": "zwanzig (20), **dreißig** (30, not [WRONG] — the only tens form with -ßig), vierzig (40), fünfzig (50), **sechzig** (60, not [WRONG]), **siebzig** (70, not [WRONG]), achtzig (80), neunzig (90), (ein)hundert (100)"
+  },
+  {
+    "id": "01-foundations-and-core-grammar:wf339-1",
+    "form": "sechszig",
+    "scope": "form",
+    "correct": null,
+    "lexemeId": null,
+    "topicId": "01-foundations-and-core-grammar/03-numbers-calendar",
+    "context": "zwanzig (20), **dreißig** (30, not [WRONG] — the only tens form with -ßig), vierzig (40), fünfzig (50), **sechzig** (60, not [WRONG]), **siebzig** (70, not [WRONG]), achtzig (80), neunzig (90), (ein)hundert (100)"
+  },
+  {
+    "id": "01-foundations-and-core-grammar:wf339-2",
+    "form": "siebenzig",
+    "scope": "form",
+    "correct": null,
+    "lexemeId": null,
+    "topicId": "01-foundations-and-core-grammar/03-numbers-calendar",
+    "context": "zwanzig (20), **dreißig** (30, not [WRONG] — the only tens form with -ßig), vierzig (40), fünfzig (50), **sechzig** (60, not [WRONG]), **siebzig** (70, not [WRONG]), achtzig (80), neunzig (90), (ein)hundert (100)"
+  },
+  {
+    "id": "01-foundations-and-core-grammar:wf363-0",
+    "form": "achtte",
+    "scope": "form",
+    "correct": null,
+    "lexemeId": null,
+    "topicId": "01-foundations-and-core-grammar/03-numbers-calendar",
+    "context": "Ordinals are formed by adding **-te** (1st–19th) or **-ste** (20th+) to the cardinal stem, plus an adjective ending. Three irregulars: **erste** (1st), **dritte** (3rd), **achte** (8th, not [WRONG])."
+  },
+  {
+    "id": "03-praeteritum-and-reflexives:wf201-0",
+    "form": "Ich bin gestern krank gewesen.",
+    "scope": "sentence",
+    "correct": "Ich war gestern krank.",
+    "lexemeId": null,
+    "topicId": "03-praeteritum-and-reflexives/01-praeteritum",
+    "context": "- Ich **war** gestern krank. (NOT: [WRONG])"
+  },
+  {
+    "id": "03-praeteritum-and-reflexives:wf202-0",
+    "form": "Er hat keine Zeit gehabt.",
+    "scope": "sentence",
+    "correct": "Er hatte keine Zeit.",
+    "lexemeId": null,
+    "topicId": "03-praeteritum-and-reflexives/01-praeteritum",
+    "context": "- Er **hatte** keine Zeit. (NOT: [WRONG])"
+  },
+  {
+    "id": "03-praeteritum-and-reflexives:wf203-0",
+    "form": "Sie hat nicht kommen können.",
+    "scope": "sentence",
+    "correct": "Sie konnte nicht kommen.",
+    "lexemeId": null,
+    "topicId": "03-praeteritum-and-reflexives/01-praeteritum",
+    "context": "- Sie **konnte** nicht kommen. (NOT: [WRONG])"
+  },
+  {
+    "id": "03-praeteritum-and-reflexives:wf295-0",
+    "form": "Jeden Morgen wasche mich ich.",
+    "scope": "sentence",
+    "correct": "With inversion (time phrase in position 1 — see Week 1, V2 rule): Jeden Morgen wasche ich mich.",
+    "lexemeId": null,
+    "topicId": "03-praeteritum-and-reflexives/02-reflexive-verbs",
+    "context": "With inversion (time phrase in position 1 — see Lesson 1, V2 rule): Jeden Morgen wasche **ich** **mich**. (NOT: [WRONG])"
+  },
+  {
+    "id": "04-genitive-comparative:wf208-0",
+    "form": "teuerer",
+    "scope": "form",
+    "correct": null,
+    "lexemeId": null,
+    "topicId": "04-genitive-comparative/02-comparative-superlative",
+    "context": "> **Note:** Adjectives ending in **-er** or **-el** drop the final **e** before adding -er: teuer → teu**r**er (not [WRONG]), dunkel → dunk**l**er."
+  },
+  {
+    "id": "04-genitive-comparative:wf229-0",
+    "form": "am größesten",
+    "scope": "sentence",
+    "correct": null,
+    "lexemeId": null,
+    "topicId": "04-genitive-comparative/02-comparative-superlative",
+    "context": "> **Exception to flag:** groß is the one common -ß adjective that does **not** take -esten (am größten, not [WRONG]). Compare heiß, which does take it regularly (am heißesten)."
+  },
+  {
+    "id": "04-genitive-comparative:wf241-0",
+    "form": "hoches",
+    "scope": "form",
+    "correct": null,
+    "lexemeId": null,
+    "topicId": "04-genitive-comparative/02-comparative-superlative",
+    "context": "> **hoch** drops its final **-ch** before the comparative ending (hoch → höh + er = höher) but keeps it in the superlative (am höch + sten = am höchsten). The same **hoch → hoh-** shortening happens whenever hoch takes a plain adjective ending before a noun, even in the positive (uncompared) form: ein **hohes** Haus, die **hohe** Miete (not [WRONG]/[WRONG]) — only the bare predicate form stays \"hoch\" (Das Haus ist hoch)."
+  },
+  {
+    "id": "04-genitive-comparative:wf241-1",
+    "form": "hoche",
+    "scope": "form",
+    "correct": null,
+    "lexemeId": null,
+    "topicId": "04-genitive-comparative/02-comparative-superlative",
+    "context": "> **hoch** drops its final **-ch** before the comparative ending (hoch → höh + er = höher) but keeps it in the superlative (am höch + sten = am höchsten). The same **hoch → hoh-** shortening happens whenever hoch takes a plain adjective ending before a noun, even in the positive (uncompared) form: ein **hohes** Haus, die **hohe** Miete (not [WRONG]/[WRONG]) — only the bare predicate form stays \"hoch\" (Das Haus ist hoch)."
+  },
+  {
+    "id": "04-genitive-comparative:wf306-0",
+    "form": "den Herzen",
+    "scope": "sentence",
+    "correct": null,
+    "lexemeId": null,
+    "topicId": "04-genitive-comparative/03-n-deklination-weak-masculine-nouns",
+    "context": "> **das Herz is doubly irregular:** it's the only common **neuter** noun that behaves like an N-declension noun, and unlike every masculine N-noun, its accusative stays bare (das Herz, not [WRONG]) — only dative and genitive take the ending, and the genitive adds an extra -s (Herzens, not [WRONG])."
+  },
+  {
+    "id": "04-genitive-comparative:wf306-1",
+    "form": "Herzen",
+    "scope": "form",
+    "correct": null,
+    "lexemeId": null,
+    "topicId": "04-genitive-comparative/03-n-deklination-weak-masculine-nouns",
+    "context": "> **das Herz is doubly irregular:** it's the only common **neuter** noun that behaves like an N-declension noun, and unlike every masculine N-noun, its accusative stays bare (das Herz, not [WRONG]) — only dative and genitive take the ending, and the genitive adds an extra -s (Herzens, not [WRONG])."
+  },
+  {
+    "id": "04-genitive-comparative:wf326-0",
+    "form": "des Namen",
+    "scope": "sentence",
+    "correct": null,
+    "lexemeId": null,
+    "topicId": "04-genitive-comparative/03-n-deklination-weak-masculine-nouns",
+    "context": "> **Note on der Name:** like das Herz, der Name has an irregular genitive with an extra -s: **des Namens** (not [WRONG]). Acc/Dat are regular: den Namen, dem Namen."
+  },
+  {
+    "id": "04-genitive-comparative:wf328-0",
+    "form": "Nachbaren",
+    "scope": "form",
+    "correct": null,
+    "lexemeId": null,
+    "topicId": "04-genitive-comparative/03-n-deklination-weak-masculine-nouns",
+    "context": "> **Note on der Nachbar:** like der Herr, der Nachbar takes only **-n** (not the \"regular\" -en) in every oblique case, singular and plural: den/dem/des **Nachbarn**, die **Nachbarn** (not [WRONG])."
+  },
+  {
+    "id": "04-genitive-comparative:wf339-0",
+    "form": "Herren/Nachbaren",
+    "scope": "form",
+    "correct": null,
+    "lexemeId": null,
+    "topicId": "04-genitive-comparative/03-n-deklination-weak-masculine-nouns",
+    "context": "> **A small \"-n only\" exception class:** der Herr and der Nachbar don't fit either pattern above, and both take just **-n** instead of the expected **-en** in the oblique cases (den Herrn/Nachbarn, not [WRONG] in the singular). There's no larger rule to derive this from — just memorize these two alongside the 15 core nouns."
+  },
+  {
+    "id": "05-separable-verbs:wf118-0",
+    "form": "geaufstanden",
+    "scope": "form",
+    "correct": null,
+    "lexemeId": null,
+    "topicId": "05-separable-verbs/01-separable-prefix-verbs",
+    "context": "- aufstehen → auf**ge**standen (not [WRONG])"
+  },
+  {
+    "id": "05-separable-verbs:wf310-0",
+    "form": "Isse!",
+    "scope": "form",
+    "correct": null,
+    "lexemeId": null,
+    "topicId": "05-separable-verbs/03-imperative-mood",
+    "context": "> **Why no -e?** For the e → i/ie verbs, adding -e would break the vowel change ([WRONG], [WRONG] are wrong). Sei is its own irregular form; the regular pattern would produce [WRONG], which is wrong."
+  },
+  {
+    "id": "05-separable-verbs:wf310-1",
+    "form": "Gibe!",
+    "scope": "form",
+    "correct": null,
+    "lexemeId": null,
+    "topicId": "05-separable-verbs/03-imperative-mood",
+    "context": "> **Why no -e?** For the e → i/ie verbs, adding -e would break the vowel change ([WRONG], [WRONG] are wrong). Sei is its own irregular form; the regular pattern would produce [WRONG], which is wrong."
+  },
+  {
+    "id": "05-separable-verbs:wf310-2",
+    "form": "Bist!",
+    "scope": "form",
+    "correct": null,
+    "lexemeId": null,
+    "topicId": "05-separable-verbs/03-imperative-mood",
+    "context": "> **Why no -e?** For the e → i/ie verbs, adding -e would break the vowel change ([WRONG], [WRONG] are wrong). Sei is its own irregular form; the regular pattern would produce [WRONG], which is wrong."
+  },
+  {
+    "id": "05-separable-verbs:wf338-0",
+    "form": "Sind Sie!",
+    "scope": "sentence",
+    "correct": null,
+    "lexemeId": null,
+    "topicId": "05-separable-verbs/03-imperative-mood",
+    "context": "> **Note:** The formal imperative of sein is **Seien Sie!** — Seien is the Konjunktiv I form of sein used for commands (full Konjunktiv I comes in Lesson 9). It never takes the -e-ending question: Seien Sie, not [WRONG]."
+  },
+  {
+    "id": "05-separable-verbs:wf385-0",
+    "form": "ab...fährt",
+    "scope": "form",
+    "correct": null,
+    "lexemeId": null,
+    "topicId": "05-separable-verbs/04-indirect-questions-indirekte-fragen",
+    "context": "> **Note on separable verbs:** in an indirect question the separable prefix stays attached to the verb at the end (§1.6): *Weißt du, wann der Zug **abfährt**?* — not [WRONG]."
+  },
+  {
+    "id": "05-separable-verbs:wf415-0",
+    "form": "Als ich Zeit habe",
+    "scope": "sentence",
+    "correct": null,
+    "lexemeId": null,
+    "topicId": "05-separable-verbs/05-expanded-conjunctions-adverbs",
+    "context": "> **als vs. wenn — the critical distinction:** use **als** for a **single, completed event in the past** (Als ich gestern ankam, ...). Use **wenn** for **repeated events** (Wenn es regnet, ...) and for **future or general** time (Wenn ich Zeit habe, ...). A sentence like [WRONG] is wrong — future/repeated requires wenn."
+  },
+  {
+    "id": "05-separable-verbs:wf465-0",
+    "form": "Wenn es regnet, wir bleiben zu Hause.",
+    "scope": "sentence",
+    "correct": null,
+    "lexemeId": null,
+    "topicId": "05-separable-verbs/05-expanded-conjunctions-adverbs",
+    "context": "> **Note:** do not put the subject before the verb in the main clause after a subordinate clause: [WRONG] is wrong. The verb comes first, then the subject."
+  },
+  {
+    "id": "06-futur-and-zu-infinitiv:wf211-0",
+    "form": "zu aufstehen",
+    "scope": "sentence",
+    "correct": null,
+    "lexemeId": null,
+    "topicId": "06-futur-and-zu-infinitiv/03-zu-infinitiv-constructions",
+    "context": "> **Key idea:** the sentence frame is the same as with modals (Lesson 2) — one conjugated verb in position 2, everything else before the final infinitive. The only addition is **zu**, which belongs directly to the infinitive and never separates from it: [WRONG] is wrong, **aufzustehen** is right (§3.7)."
+  },
+  {
+    "id": "06-futur-and-zu-infinitiv:wf230-0",
+    "form": "Er beginnt Deutsch lernen",
+    "scope": "sentence",
+    "correct": null,
+    "lexemeId": null,
+    "topicId": "06-futur-and-zu-infinitiv/03-zu-infinitiv-constructions",
+    "context": "> **Notes on the list:** beginnen and vergessen take **zu + Infinitiv** (German differs from English here — you cannot say [WRONG]). **brauchen** + zu is special: in standard German it appears almost only in **negative or restrictive** contexts — *Du brauchst **nicht** zu kommen* (you don't need to come) or *Ich brauche **nur** zu fragen* (I only need to ask). In affirmative sentences German prefers **müssen** (Lesson 2). The full brauchen + zu system returns in Lesson 12."
+  },
+  {
+    "id": "06-futur-and-zu-infinitiv:wf277-0",
+    "form": "zu aufstehen",
+    "scope": "sentence",
+    "correct": null,
+    "lexemeId": null,
+    "topicId": "06-futur-and-zu-infinitiv/03-zu-infinitiv-constructions",
+    "context": "When the infinitive is a **separable verb** (Lesson 5), **zu is inserted between the prefix and the verb stem**: aufstehen → **aufzustehen**, never [WRONG]. The zu belongs to the stem; the prefix stays glued in front of it."
+  },
+  {
+    "id": "06-futur-and-zu-infinitiv:wf281-0",
+    "form": "zu aufstehen",
+    "scope": "sentence",
+    "correct": null,
+    "lexemeId": null,
+    "topicId": "06-futur-and-zu-infinitiv/03-zu-infinitiv-constructions",
+    "context": "| aufstehen | **aufzustehen** | [WRONG] |"
+  },
+  {
+    "id": "06-futur-and-zu-infinitiv:wf282-0",
+    "form": "zu anfangen",
+    "scope": "sentence",
+    "correct": null,
+    "lexemeId": null,
+    "topicId": "06-futur-and-zu-infinitiv/03-zu-infinitiv-constructions",
+    "context": "| anfangen | **anzufangen** | [WRONG] |"
+  },
+  {
+    "id": "06-futur-and-zu-infinitiv:wf283-0",
+    "form": "zu mitnehmen",
+    "scope": "sentence",
+    "correct": null,
+    "lexemeId": null,
+    "topicId": "06-futur-and-zu-infinitiv/03-zu-infinitiv-constructions",
+    "context": "| mitnehmen | **mitzunehmen** | [WRONG] |"
+  },
+  {
+    "id": "06-futur-and-zu-infinitiv:wf284-0",
+    "form": "zu anrufen",
+    "scope": "sentence",
+    "correct": null,
+    "lexemeId": null,
+    "topicId": "06-futur-and-zu-infinitiv/03-zu-infinitiv-constructions",
+    "context": "| anrufen | **anzurufen** | [WRONG] |"
+  },
+  {
+    "id": "06-futur-and-zu-infinitiv:wf285-0",
+    "form": "zu aufräumen",
+    "scope": "sentence",
+    "correct": null,
+    "lexemeId": null,
+    "topicId": "06-futur-and-zu-infinitiv/03-zu-infinitiv-constructions",
+    "context": "| aufräumen | **aufzuräumen** | [WRONG] |"
+  },
+  {
+    "id": "07-plusquamperfekt-konjunktiv2:wf342-0",
+    "form": "geworden",
+    "scope": "form",
+    "correct": null,
+    "lexemeId": null,
+    "topicId": "07-plusquamperfekt-konjunktiv2/03-vorgangspassiv",
+    "context": "> **Trap (critical):** in the passive Perfekt the participle of werden is **worden** — never [WRONG]. **geworden** appears only when werden is the main verb meaning \"become\": *Er ist Lehrer **geworden**.* (He became a teacher.) Rule of thumb: whenever another Partizip II stands in the sentence, werden becomes worden."
+  },
+  {
+    "id": "08-double-infinitive:wf70-0",
+    "form": "Er hat kommen gekonnt",
+    "scope": "sentence",
+    "correct": null,
+    "lexemeId": null,
+    "topicId": "08-double-infinitive/01-double-infinitive-with-modals-in-perfekt",
+    "context": "> **Trap (critical):** the form *gekonnt* disappears when a main verb infinitive is present. **Er hat kommen können** is right; [WRONG] and [WRONG] are both wrong. The only place you will still see gekonnt is without a second verb: *Er hat es **gekonnt**.* (He was able to do it.) The same applies to all six modals: wollen, müssen, sollen, dürfen, mögen."
+  },
+  {
+    "id": "08-double-infinitive:wf70-1",
+    "form": "Er hat gekonnt kommen",
+    "scope": "sentence",
+    "correct": null,
+    "lexemeId": null,
+    "topicId": "08-double-infinitive/01-double-infinitive-with-modals-in-perfekt",
+    "context": "> **Trap (critical):** the form *gekonnt* disappears when a main verb infinitive is present. **Er hat kommen können** is right; [WRONG] and [WRONG] are both wrong. The only place you will still see gekonnt is without a second verb: *Er hat es **gekonnt**.* (He was able to do it.) The same applies to all six modals: wollen, müssen, sollen, dürfen, mögen."
+  },
+  {
+    "id": "08-double-infinitive:wf98-0",
+    "form": "dass er kommen können hat",
+    "scope": "sentence",
+    "correct": null,
+    "lexemeId": null,
+    "topicId": "08-double-infinitive/01-double-infinitive-with-modals-in-perfekt",
+    "context": "> **Trap (critical):** in subordinate clauses the order is **hat + Infinitive + Modal Infinitive** at the end: *dass er **hat kommen können*** — never [WRONG] and never [WRONG]. Compare the normal Perfekt without a modal: *dass er gekommen **ist*** — the auxiliary comes last only when there is no double infinitive."
+  },
+  {
+    "id": "08-double-infinitive:wf98-1",
+    "form": "dass er hat gekonnt kommen",
+    "scope": "sentence",
+    "correct": null,
+    "lexemeId": null,
+    "topicId": "08-double-infinitive/01-double-infinitive-with-modals-in-perfekt",
+    "context": "> **Trap (critical):** in subordinate clauses the order is **hat + Infinitive + Modal Infinitive** at the end: *dass er **hat kommen können*** — never [WRONG] and never [WRONG]. Compare the normal Perfekt without a modal: *dass er gekommen **ist*** — the auxiliary comes last only when there is no double infinitive."
+  },
+  {
+    "id": "08-double-infinitive:wf102-0",
+    "form": "gelassen",
+    "scope": "form",
+    "correct": null,
+    "lexemeId": null,
+    "topicId": "08-double-infinitive/01-double-infinitive-with-modals-in-perfekt",
+    "context": "The same replacement applies to two further verb groups that take an infinitive without zu: **lassen** (to have something done — Lesson 12 treats it fully) and the **perception verbs** sehen, hören, fühlen. In the Perfekt they appear as infinitives, never as Partizip II ([WRONG], [WRONG])."
+  },
+  {
+    "id": "08-double-infinitive:wf102-1",
+    "form": "gesehen",
+    "scope": "form",
+    "correct": null,
+    "lexemeId": null,
+    "topicId": "08-double-infinitive/01-double-infinitive-with-modals-in-perfekt",
+    "context": "The same replacement applies to two further verb groups that take an infinitive without zu: **lassen** (to have something done — Lesson 12 treats it fully) and the **perception verbs** sehen, hören, fühlen. In the Perfekt they appear as infinitives, never as Partizip II ([WRONG], [WRONG])."
+  },
+  {
+    "id": "08-double-infinitive:wf193-0",
+    "form": "darauf",
+    "scope": "form",
+    "correct": null,
+    "lexemeId": null,
+    "topicId": "08-double-infinitive/02-verbs-with-fixed-prepositions",
+    "context": "The da- and wo-compounds refer to **things and clauses only**. For **people**, German uses the ordinary **preposition + personal pronoun** (auf ihn, mit ihr, für uns) — never [WRONG] or [WRONG] when a person is meant."
+  },
+  {
+    "id": "08-double-infinitive:wf193-1",
+    "form": "worauf",
+    "scope": "form",
+    "correct": null,
+    "lexemeId": null,
+    "topicId": "08-double-infinitive/02-verbs-with-fixed-prepositions",
+    "context": "The da- and wo-compounds refer to **things and clauses only**. For **people**, German uses the ordinary **preposition + personal pronoun** (auf ihn, mit ihr, für uns) — never [WRONG] or [WRONG] when a person is meant."
+  },
+  {
+    "id": "08-double-infinitive:wf197-0",
+    "form": "darauf",
+    "scope": "form",
+    "correct": null,
+    "lexemeId": null,
+    "topicId": "08-double-infinitive/02-verbs-with-fixed-prepositions",
+    "context": "1. Ich freue mich **auf den Urlaub** → Ich freue mich **darauf**. (thing) — Ich freue mich **auf dich**. (person — never [WRONG])"
+  },
+  {
+    "id": "08-double-infinitive:wf200-0",
+    "form": "damit",
+    "scope": "form",
+    "correct": null,
+    "lexemeId": null,
+    "topicId": "08-double-infinitive/02-verbs-with-fixed-prepositions",
+    "context": "4. Wir sprechen **mit dem Lehrer** → with a person: Wir sprechen **mit ihm**. (person — never [WRONG])"
+  },
+  {
+    "id": "08-double-infinitive:wf320-0",
+    "form": "Ich trinke nicht weder Kaffee noch Tee",
+    "scope": "sentence",
+    "correct": null,
+    "lexemeId": null,
+    "topicId": "08-double-infinitive/05-two-part-correlative-conjunctions",
+    "context": "> **Trap:** [WRONG] is wrong. weder ... noch is fully negative on its own — the sentence is already negated by the conjunction."
+  },
+  {
+    "id": "09-konjunktiv1:wf271-0",
+    "form": "Das Buch kostet mir zwanzig Euro",
+    "scope": "sentence",
+    "correct": null,
+    "lexemeId": null,
+    "topicId": "09-konjunktiv1/03-verb-valency-patterns-verbvalenz",
+    "context": "> **Why it matters:** after nennen, kosten, lehren the person is *not* in the dative. [WRONG] and [WRONG] are both wrong. Only these three verbs, plus a few rare ones (abfragen, schelten), work this way — so treat the pattern as the exception that proves the Dativ + Akkusativ rule of §3.2."
+  },
+  {
+    "id": "09-konjunktiv1:wf271-1",
+    "form": "Ich nenne ihm einen guten Freund",
+    "scope": "sentence",
+    "correct": null,
+    "lexemeId": null,
+    "topicId": "09-konjunktiv1/03-verb-valency-patterns-verbvalenz",
+    "context": "> **Why it matters:** after nennen, kosten, lehren the person is *not* in the dative. [WRONG] and [WRONG] are both wrong. Only these three verbs, plus a few rare ones (abfragen, schelten), work this way — so treat the pattern as the exception that proves the Dativ + Akkusativ rule of §3.2."
+  },
+  {
+    "id": "10-zustandspassiv:wf104-0",
+    "form": "wird geöffnet werden sein",
+    "scope": "sentence",
+    "correct": null,
+    "lexemeId": null,
+    "topicId": "10-zustandspassiv/01-zustandspassiv",
+    "context": "> **Futur trap:** the Futur of the Zustandspassiv stacks **werden + sein**: *wird geöffnet sein*. Never write [WRONG] — that mixes the Vorgangspassiv into a Zustandspassiv future and is wrong."
+  },
+  {
+    "id": "10-zustandspassiv:wf123-0",
+    "form": "geworden",
+    "scope": "form",
+    "correct": null,
+    "lexemeId": null,
+    "topicId": "10-zustandspassiv/02-advanced-passive-constructions",
+    "context": "> **Trap (critical):** the passive marker is **werden as an infinitive at the very end** — never [WRONG], never *Das Buch wird gelesen müssen*. In the Perfekt the double-infinitive rule from Lesson 8 applies: *Das Buch **hat** gelesen **werden müssen**.* (The book had to be read.)"
+  },
+  {
+    "id": "10-zustandspassiv:wf245-0",
+    "form": "der gelesene gestern Roman",
+    "scope": "sentence",
+    "correct": null,
+    "lexemeId": null,
+    "topicId": "10-zustandspassiv/04-extended-participial-constructions-erweiterte-partizipialattribute",
+    "context": "> **Trap (critical):** all modifiers stay **between article and participle** — the construction is left-branching. [WRONG] is impossible; the adverb must precede the participle: *der **gestern gelesene** Roman*. Never copy a relative-clause order into the participle phrase."
+  },
+  {
+    "id": "11-konjunktiv1-nominalstil:wf203-0",
+    "form": "die Jünge",
+    "scope": "sentence",
+    "correct": null,
+    "lexemeId": null,
+    "topicId": "11-konjunktiv1-nominalstil/02-n-deklination",
+    "context": "An N-noun is a **masculine** noun that takes the ending **-(e)n in every case except the nominative singular**. In the plural the noun itself carries the ending -en, and the article does the work of showing the case. There are no umlaut plurals in the N-Deklination: *der Junge → die Jungen*, not [WRONG]."
+  },
+  {
+    "id": "11-konjunktiv1-nominalstil:wf223-0",
+    "form": "des Students",
+    "scope": "sentence",
+    "correct": null,
+    "lexemeId": null,
+    "topicId": "11-konjunktiv1-nominalstil/02-n-deklination",
+    "context": "> **Note (critical):** every non-nominative case adds **-en** (or just **-n** if the noun already ends in -e). There is no genitive -s anywhere in the regular N-Deklination: *des Student**en***, never [WRONG] and never [WRONG]. And the plural of an N-noun always ends in -en or -n."
+  },
+  {
+    "id": "11-konjunktiv1-nominalstil:wf223-1",
+    "form": "des Studentens",
+    "scope": "sentence",
+    "correct": null,
+    "lexemeId": null,
+    "topicId": "11-konjunktiv1-nominalstil/02-n-deklination",
+    "context": "> **Note (critical):** every non-nominative case adds **-en** (or just **-n** if the noun already ends in -e). There is no genitive -s anywhere in the regular N-Deklination: *des Student**en***, never [WRONG] and never [WRONG]. And the plural of an N-noun always ends in -en or -n."
+  },
+  {
+    "id": "11-konjunktiv1-nominalstil:wf262-0",
+    "form": "der Herrn",
+    "scope": "sentence",
+    "correct": null,
+    "lexemeId": null,
+    "topicId": "11-konjunktiv1-nominalstil/02-n-deklination",
+    "context": "> **Trap (critical):** the same irregular family contains **der Gedanke** (des Gedankens, den Gedanken) and **der Buchstabe** (des Buchstabens, den Buchstaben), which decline exactly like **Name**. And never put an -n on the nominative of Herr: *der **Herr***, not [WRONG]."
+  },
+  {
+    "id": "11-konjunktiv1-nominalstil:wf334-0",
+    "form": "des Politiken",
+    "scope": "sentence",
+    "correct": null,
+    "lexemeId": null,
+    "topicId": "11-konjunktiv1-nominalstil/02-n-deklination",
+    "context": "> **Trap (critical):** the most frequent learner error is treating a Rule-4 noun like an N-noun (*das Geschenk des Politikers* is correct as written; the error would be [WRONG]) or missing a Rule-1 noun (*das Buch des Kunde**n***, not [WRONG]). Run the four rules every time and the ending will be right."
+  },
+  {
+    "id": "11-konjunktiv1-nominalstil:wf334-1",
+    "form": "des Kundes",
+    "scope": "sentence",
+    "correct": null,
+    "lexemeId": null,
+    "topicId": "11-konjunktiv1-nominalstil/02-n-deklination",
+    "context": "> **Trap (critical):** the most frequent learner error is treating a Rule-4 noun like an N-noun (*das Geschenk des Politikers* is correct as written; the error would be [WRONG]) or missing a Rule-1 noun (*das Buch des Kunde**n***, not [WRONG]). Run the four rules every time and the ending will be right."
+  },
+  {
+    "id": "12-integration:wf120-0",
+    "form": "dass er kommt dass er sagt",
+    "scope": "sentence",
+    "correct": null,
+    "lexemeId": null,
+    "topicId": "12-integration/01-advanced-word-order",
+    "context": "> **Note (critical):** the innermost clause's verb is always the **last word** of the sentence, and every outer verb sits at the end of its own clause — which means *before* the embedded clause that follows it. Never write [WRONG]: the embedding order mirrors the logic, outer clause first, inner clause last."
+  },
+  {
+    "id": "12-integration:wf151-0",
+    "form": "Ich hoffe, er zu kommen",
+    "scope": "sentence",
+    "correct": null,
+    "lexemeId": null,
+    "topicId": "12-integration/01-advanced-word-order",
+    "context": "1. Same subject: **Ich hoffe, dass ich bald komme.** → **Ich hoffe, bald zu kommen.** (I hope to come soon.) — Different subject: **Ich hoffe, dass er bald kommt.** (I hope he comes soon. — zu + Infinitiv impossible: [WRONG])"
+  },
+  {
+    "id": "12-integration:wf185-0",
+    "form": "als er wäre",
+    "scope": "sentence",
+    "correct": null,
+    "lexemeId": null,
+    "topicId": "12-integration/02-als-ob",
+    "context": "> **Trap:** in the short form the verb is **first** and the subject comes **after** it — *als wäre er*, not [WRONG]. The verb keeps its K2 ending (*wüsste*, *wäre*, *hätte*); there is never a *zu* and never an infinitive at the end here."
+  },
+  {
+    "id": "12-integration:wf214-0",
+    "form": "Ich brauche zu gehen",
+    "scope": "sentence",
+    "correct": null,
+    "lexemeId": null,
+    "topicId": "12-integration/03-brauchen-zu-infinitiv",
+    "context": "> **Note (critical):** *brauchen + zu* is only negative or restricted. The affirmative sentence [WRONG] does not exist in standard German — the positive obligation is always **müssen** (*Ich muss gehen*). Keep *brauchen + zu* exclusively in negated, *nur*-restricted, *kaum*, or *erst*-contexts."
+  },
+  {
+    "id": "12-integration:wf288-0",
+    "form": "Ich habe das Auto reparieren gelassen",
+    "scope": "sentence",
+    "correct": null,
+    "lexemeId": null,
+    "topicId": "12-integration/04-lassen-infinitiv",
+    "context": "> **Trap (critical):** [WRONG] is wrong in the modern standard. The correct Perfekt is always the double infinitive *reparieren lassen*. The same happens with the modals (*Ich habe kommen müssen*, Lesson 8): whenever a modal or *lassen* depends on a full infinitive, the Perfekt uses the infinitive form of the modal/lassen itself."
+  }
+]

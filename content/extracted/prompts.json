@@ -1,0 +1,112 @@
+[
+  {
+    "id": "03-praeteritum-and-reflexives/06-applied-skills:prompt",
+    "topicId": "03-praeteritum-and-reflexives/06-applied-skills",
+    "title": "\"Mein letzter Urlaub\"",
+    "prompt": "Write **8–10 sentences** about your last vacation (real or imagined). Use:",
+    "requirements": [
+      "**Präteritum** for sein, haben, and modals (war, hatte, konnte...)",
+      "**Perfekt** for other verbs (Ich bin gefahren. Wir haben gesehen.)",
+      "At least **2 reflexive verbs** (sich freuen, sich fühlen, sich erholen...)",
+      "At least **3 adjectives with correct endings**"
+    ]
+  },
+  {
+    "id": "04-genitive-comparative/05-applied-skills:prompt",
+    "topicId": "04-genitive-comparative/05-applied-skills",
+    "title": "Compare Two Things",
+    "prompt": "Write **8–10 sentences** comparing two things (two cities, two houses, two friends, two jobs — your choice). Use:",
+    "requirements": [
+      "At least **3 comparative forms** (größer, teurer, besser...)",
+      "At least **1 superlative form** (am größten, die teuerste...)",
+      "At least **1 genitive construction** (die Farbe des Hauses, wegen des Wetters...)",
+      "At least **1 N-declension noun** in an oblique case (dem Studenten, des Nachbarn...)"
+    ]
+  },
+  {
+    "id": "05-separable-verbs/07-applied-skills:prompt",
+    "topicId": "05-separable-verbs/07-applied-skills",
+    "title": "A Set of Instructions",
+    "prompt": "Write **8–10 imperative sentences** giving instructions. Choose either a **recipe** (a simple dish) or your **morning daily routine**. Use:   Example start (recipe): *Nimm zwei Eier und eine Zwiebel. Schneide die Zwiebel klein. Erhitze das Öl in der Pfanne...*  Example start (routine): *Steh um sechs Uhr auf! Wasche dich und putze dir die Zähne. Frühstücke, bevor du zur Arbeit gehst...*",
+    "requirements": [
+      "At least **3 du-imperatives**, **2 ihr-imperatives**, and **1 Sie-imperative**",
+      "At least **2 separable verbs** in the imperative (Steh auf! Ruf an! Mach auf!)",
+      "At least **2 subordinate clauses** (bevor, wenn, bis, sobald...)",
+      "At least **1 main clause after a subordinate clause** with verb-first order"
+    ]
+  },
+  {
+    "id": "06-futur-and-zu-infinitiv/06-applied-skills:prompt",
+    "topicId": "06-futur-and-zu-infinitiv/06-applied-skills",
+    "title": "Meine Pläne für die Zukunft",
+    "prompt": "Write **10–12 sentences** about your plans for the future. Use:",
+    "requirements": [
+      "At least **3 Futur I constructions** (werden + Infinitiv)",
+      "At least **2 zu + Infinitiv constructions** (versuchen, planen, hoffen, vorhaben, Es ist wichtig, zu ...)",
+      "At least **2 relative clauses** (der/die/das/den/dem ...)",
+      "At least **1 um...zu construction** for purpose"
+    ]
+  },
+  {
+    "id": "07-plusquamperfekt-konjunktiv2/05-applied-skills:prompt",
+    "topicId": "07-plusquamperfekt-konjunktiv2/05-applied-skills",
+    "title": "\"Was würde ich tun, wenn...?\"",
+    "prompt": "Write **10–12 sentences** answering the question \"Was würde ich tun, wenn...?\" (What would I do if...?). Use:",
+    "requirements": [
+      "At least **3 Konjunktiv II constructions** (würde + Infinitiv, wäre, hätte)",
+      "At least **2 passive constructions** (Präsens, Präteritum, or Perfekt)",
+      "At least **1 wenn-clause** with verb-final order and **1 wenn-omission** with V1 inversion (Hätte ich ..., würde ich ...)",
+      "At least **1 modal subjunctive** (könnte, müsste, sollte)"
+    ]
+  },
+  {
+    "id": "08-double-infinitive/07-applied-skills:prompt",
+    "topicId": "08-double-infinitive/07-applied-skills",
+    "title": "A Formal Email Expressing an Opinion",
+    "prompt": "Write a **formal email of 10–12 sentences** to the local council (Stadtverwaltung) expressing your opinion about a proposed change in your city (for example: a new pedestrian zone, or new rules for online shopping). Use:",
+    "requirements": [
+      "A formal salutation (**Sehr geehrte Damen und Herren** / **Sehr geehrter Herr ...**) and a formal closing (**Mit freundlichen Grüßen**)",
+      "At least **2 two-part conjunctions** (sowohl...als auch, weder...noch, entweder...oder, nicht nur...sondern auch, zwar...aber)",
+      "At least **3 da-compounds** (dafür, darauf, darüber, damit, davon, darum, davor, dazu)",
+      "At least **2 verbs with fixed prepositions** from §2 (warten auf, sich freuen über, sich kümmern um, warnen vor, ...)"
+    ]
+  },
+  {
+    "id": "09-konjunktiv1/07-applied-skills:prompt",
+    "topicId": "09-konjunktiv1/07-applied-skills",
+    "title": "Summarize an Article in Indirect Speech",
+    "prompt": "Write **10–12 sentences** summarizing a short news article of your choice (or the text from §7.1) in indirect speech. Use:",
+    "requirements": [
+      "At least **5 Konjunktiv I forms** (sei, habe, könne, müsse, wolle, werde, gehe, komme) and at least **2 Konjunktiv II substitutes** for plural subjects (würden, hätten, wären, gingen)",
+      "At least **3 reporting verbs** from §1.6 (sagen, meinen, behaupten, erklären, berichten, betonen, hinzufügen)",
+      "At least **4 discourse connectors** from §4 (zunächst, danach, außerdem, allerdings, dennoch, folglich, zusammenfassend ...)",
+      "**No quotation marks:** everything is reported, nothing quoted directly"
+    ]
+  },
+  {
+    "id": "10-zustandspassiv/07-applied-skills:prompt",
+    "topicId": "10-zustandspassiv/07-applied-skills",
+    "title": "\"Was hätte ich anders gemacht?\"",
+    "prompt": "Write **12–15 sentences** answering the question **\"Was hätte ich anders gemacht?\"** about an experience of your choice: a failed exam, a missed opportunity, a quarrel, a move, a job you did not get. Use:",
+    "requirements": [
+      "At least **5 Type 3 conditionals** (Wenn ich ... gehabt hätte / gemacht hätte, hätte/wäre ich ...)",
+      "At least **2 Zustandspassiv or Vorgangspassiv forms** (ist geöffnet, wurde geplant, ...)",
+      "At least **3 participial adjectives** (Partizip I or II: das spannende Projekt, der verpasste Termin, ...)",
+      "At least **2 extended participial phrases** (der zu spät gelernte Stoff, die von mir übersehene Nachricht, ...)"
+    ]
+  },
+  {
+    "id": "11-konjunktiv1-nominalstil/05-applied-skills:prompt",
+    "topicId": "11-konjunktiv1-nominalstil/05-applied-skills",
+    "title": "From Interview to Newspaper Report",
+    "prompt": "The interview below was conducted by a local reporter with **Frau Berger, Leiterin der Stadtbibliothek**. Transform it into a **newspaper report** of **10–12 sentences**, using:    \"Der neue Lesesaal ist ein großer Erfolg. Die Sanierung hat acht Monate gedauert. Wir haben die Öffnungszeiten verlängert. Die Besucherzahlen werden weiter steigen. Uns fehlt es an Personal, aber das wird sich ändern. Wenn die Stadt die Mittel erhöht, können wir mehr Angebote machen.\"",
+    "requirements": [
+      "At least **5 Konjunktiv I forms** (Präsens, Perfekt, or Futur)",
+      "At least **2 K2 substitutes** for ambiguous plural forms",
+      "At least **3 nominal-style expressions** (die Verlängerung, die Eröffnung, der Rückgang, ...)",
+      "At least **2 connectors** of contrast or consequence (jedoch, demgegenüber, daher, sodass, ...)",
+      "**No quotation marks** — the entire report is indirect speech; indirect questions carry no question mark",
+      "**The interview (direct speech):**"
+    ]
+  }
+]

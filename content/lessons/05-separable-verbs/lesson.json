@@ -1,0 +1,20 @@
+{
+  "id": "05-separable-verbs",
+  "number": 5,
+  "title": "Separable Verbs, Imperative & Indirect Questions",
+  "shortTitle": "Separable Verbs",
+  "level": "A2",
+  "summary": "Separable and inseparable prefix verbs, the imperative mood, indirect questions, and expanded conjunctions and adverbs.",
+  "status": "extracted",
+  "topicOrder": [
+    "05-separable-verbs/01-separable-prefix-verbs",
+    "05-separable-verbs/02-inseparable-prefix-verbs",
+    "05-separable-verbs/03-imperative-mood",
+    "05-separable-verbs/04-indirect-questions-indirekte-fragen",
+    "05-separable-verbs/05-expanded-conjunctions-adverbs",
+    "05-separable-verbs/06-vocabulary",
+    "05-separable-verbs/07-applied-skills",
+    "05-separable-verbs/08-practice"
+  ],
+  "sourceFile": "week_5.md"
+}
