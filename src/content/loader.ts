@@ -38,6 +38,24 @@ export const getLesson = (id: LessonId): Lesson | undefined => lessons.find((l) 
 export const getTopic = (id: TopicId): Topic | undefined => topics[id]
 export const getPoint = (id: PointId): GrammarPoint | undefined => points[id]
 
+/** Build-time snapshot of what drillable material a topic contributes. A missing
+ *  entry means the index predates topicStats — assume drillable. */
+export function topicPracticeStats(id: TopicId) {
+  return contentIndex.topicStats?.[id]
+}
+
+export function topicHasPractice(id: TopicId): boolean {
+  const s = contentIndex.topicStats?.[id]
+  if (!s) return true
+  return s.entries > 0 || s.answerableDrills > 0 || s.wrongForms > 0
+}
+
+export function lessonHasPractice(id: LessonId): boolean {
+  const lesson = getLesson(id)
+  if (!lesson) return false
+  return lesson.topicOrder.some((tid) => topicHasPractice(tid))
+}
+
 export const topicsOfLesson = (lesson: Lesson): Topic[] =>
   lesson.topicOrder.map((id) => topics[id]).filter((t): t is Topic => Boolean(t))
 

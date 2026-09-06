@@ -266,7 +266,7 @@ export function conjugationCells(entries: VocabEntry[], paradigms: Paradigm[]): 
           origin: 'generated',
           sourceHref: sourceHref(topicId),
           speakPrompt: `${lemma} — ${person}`,
-          prompt: `${lemma} — ${person}, Präsens`,
+          prompt: `${lemma}, ${person} (Präsens) → ___`,
           accepted: [form],
           strictUmlaut: hasUmlaut(form),
           gradeCase: false,
@@ -315,7 +315,7 @@ export function conjugationCells(entries: VocabEntry[], paradigms: Paradigm[]): 
         origin: 'generated',
         sourceHref: sourceHref(topicId),
         speakPrompt: `${lemma} — er/sie/es`,
-        prompt: `${lemma} — er/sie/es, Präsens`,
+        prompt: `${lemma}, er/sie/es (Präsens) → ___`,
         accepted: [present3sg],
         strictUmlaut: hasUmlaut(present3sg),
         gradeCase: false,
@@ -333,7 +333,7 @@ export function conjugationCells(entries: VocabEntry[], paradigms: Paradigm[]): 
           origin: 'generated',
           sourceHref: sourceHref(topicId),
           speakPrompt: `${lemma} — du`,
-          prompt: `${lemma} — du, Präsens`,
+          prompt: `${lemma}, du (Präsens) → ___`,
           accepted: [duForm],
           strictUmlaut: hasUmlaut(duForm),
           gradeCase: false,
@@ -360,6 +360,7 @@ export function pluralForge(entries: VocabEntry[]): PluralItem[] {
        
       const singularBare = e.headword.replace(/^(der|die|das)\s+/i, '')
       const umlautIn = (s: string): boolean => /[äöüßÄÖÜẞ]/.test(s)
+      const pluralWithArticle = `die ${pluralForm}`
       return {
         id: `plural:${e.id}`,
         shape: 'typed',
@@ -370,8 +371,8 @@ export function pluralForge(entries: VocabEntry[]): PluralItem[] {
         origin: 'generated',
         sourceHref: sourceHref(topicId),
         speakPrompt: e.headword,
-        prompt: `${e.headword} → ?`,
-        accepted: [pluralForm],
+        prompt: `${e.headword} → ___ (plural)`,
+        accepted: [pluralWithArticle, pluralForm],
         strictUmlaut: umlautIn(pluralForm) && !umlautIn(singularBare),
         lexemeId: e.id,
       } as PluralItem

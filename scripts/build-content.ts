@@ -325,7 +325,10 @@ const usedIds = new Set<string>()
 for (const acc of mergeByKey.values()) {
   acc.occurrenceList.sort((a, b) => a.lessonNumber - b.lessonNumber || a.sourceLine - b.sourceLine)
   acc.glosses = [...new Set(acc.glosses)]
-  const glosses = acc.glosses.length ? acc.glosses : ['']
+  // Nouns drill gender: every German card front carries the article (die Tür),
+  // so its English meaning side must too — "door" alone silently drops it.
+  const nounGlosses = acc.glosses.length ? acc.glosses : ['']
+  const glosses = acc.pos === 'noun' ? nounGlosses.map((g) => (g && !/^(the|a|an)\s/i.test(g) ? `the ${g}` : g)) : nounGlosses
   const base = slugify(acc.headword)
   let id = base
   if ((baseCount.get(base) ?? 0) > 1) {
@@ -846,11 +849,24 @@ for (const d of drillsRaw) {
 const byVerification: Record<Verification, number> = { extracted: 0, reviewed: 0, authored: 0 }
 for (const e of entries) byVerification[e.verification]++
 
+const allSentences = [...sentencesById.values()]
+const topicStats: ContentIndex['topicStats'] = {}
+for (const topicId of Object.keys(topics)) {
+  topicStats[topicId] = {
+    entries: entries.filter((e) => e.occurrences.some((o) => o.topicId === topicId)).length,
+    sentences: allSentences.filter((s) => s.topicId === topicId).length,
+    drills: drillsRaw.filter((d) => d.topicId === topicId).length,
+    answerableDrills: drillsRaw.filter((d) => d.topicId === topicId && d.items.some((i) => i.expected.length > 0)).length,
+    wrongForms: wrongFormsRaw.filter((w) => w.topicId === topicId).length,
+  }
+}
+
 const index: ContentIndex = {
   lessons: Object.values(lessons).sort((a, b) => a.number - b.number),
   topics,
   points: Object.fromEntries(grammarPoints.map((p) => [p.id, p])),
   errata: Object.fromEntries(errata.map((e) => [e.id, e])),
+  topicStats,
   stats: {
     lexemes: entries.length,
     sentences: sentencesById.size,

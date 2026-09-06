@@ -335,11 +335,20 @@ export type WritingPrompt = {
  
 
 /** Eager — nav, headers, search, everything the shell renders. */
+export type TopicPracticeStats = {
+  entries: number
+  sentences: number
+  drills: number
+  answerableDrills: number
+  wrongForms: number
+}
+
 export type ContentIndex = {
   lessons: Lesson[]
   topics: Record<TopicId, Topic>
   points: Record<PointId, GrammarPoint>
   errata: Record<ErratumId, Erratum>
+  topicStats: Record<TopicId, TopicPracticeStats>
   stats: {
     lexemes: number
     sentences: number

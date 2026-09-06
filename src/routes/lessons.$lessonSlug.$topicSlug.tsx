@@ -1,6 +1,6 @@
 import { createFileRoute, Link, notFound } from '@tanstack/react-router'
 import { useEffect, useState } from 'react'
-import { getLesson, getTopic, loadApplied, loadTopicBody, resolveRevisits, topicPosition } from '@/content/loader'
+import { getLesson, getTopic, lessonHasPractice, loadApplied, loadTopicBody, resolveRevisits, topicHasPractice, topicPosition } from '@/content/loader'
 import type { ReadingText, WritingPrompt } from '@/content/types'
 import { MarkdownBody } from '@/components/markdown-body'
 import { VocabTable } from '@/components/vocab-table'
@@ -98,9 +98,15 @@ function TopicPage() {
         ) : (
           <span />
         )}
-        <Link to="/practice" search={{ topic: topic.id, mode: 'mixed' }} className="text-primary shrink-0 hover:underline">
-          Practice this topic →
-        </Link>
+        {topicHasPractice(topic.id) ? (
+          <Link to="/practice" search={{ topic: topic.id, mode: 'mixed' }} className="text-primary shrink-0 hover:underline">
+            Practice this topic →
+          </Link>
+        ) : lessonHasPractice(lesson.id) ? (
+          <Link to="/practice" search={{ lesson: lesson.id, mode: 'mixed' }} className="text-primary shrink-0 hover:underline">
+            Practice lesson {lesson.number} →
+          </Link>
+        ) : null}
         {pos.next ? (
           <Link
             to="/lessons/$lessonSlug/$topicSlug"

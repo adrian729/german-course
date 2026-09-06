@@ -4,7 +4,6 @@ import { allLessons, loadDrills, loadParadigms, loadSentences, loadVocab } from 
 import { POS, THEMES, type Pos, type Theme } from '@/content/types'
 import { buildDeck, type Bundles } from '@/lib/exercises/assemble'
 import { validateDeckSearch, type DeckFilters, type DeckMode, type DeckSize } from '@/lib/exercises/types'
-import { audioAvailable, initVoices } from '@/lib/tts'
 
 export const Route = createFileRoute('/practice/')({
   validateSearch: (s: Record<string, unknown>) => validateDeckSearch(s),
@@ -16,7 +15,6 @@ const MODES: Array<{ id: DeckMode; label: string }> = [
   { id: 'vocab', label: 'Vocab' },
   { id: 'grammar', label: 'Grammar' },
   { id: 'production', label: 'Production' },
-  { id: 'listening', label: 'Listening' },
 ]
 const SIZES: Array<{ id: DeckSize; label: string }> = [
   { id: 10, label: '10' },
@@ -28,15 +26,12 @@ const SIZES: Array<{ id: DeckSize; label: string }> = [
 function PracticePage() {
   const search = Route.useSearch() as DeckFilters
   const [bundles, setBundles] = useState<Bundles | null>(null)
-  const [audioOk, setAudioOk] = useState<boolean | null>(null)
 
   useEffect(() => {
     let alive = true
     Promise.all([loadVocab(), loadSentences(), loadDrills(), loadParadigms()]).then(([vocab, sentences, drills, paradigms]) => {
       if (alive) setBundles({ vocab, sentences, drills, paradigms })
     })
-    initVoices(() => setAudioOk(audioAvailable()))
-    setAudioOk(audioAvailable())
     return () => {
       alive = false
     }
@@ -56,12 +51,6 @@ function PracticePage() {
     <div className="mx-auto max-w-3xl px-4 py-8">
       <h1 className="text-2xl font-semibold tracking-tight">Practice</h1>
       <p className="text-muted-foreground mt-2 text-sm">Every deck is a bookmarkable URL — share it, pin it, repeat it.</p>
-
-      {audioOk === false && (
-        <p className="border-border mt-4 rounded-lg border p-3 text-sm">
-          No German voice found in this browser — listening kinds are hidden. Install a German TTS voice to enable them.
-        </p>
-      )}
 
       <div className="mt-6 flex flex-col gap-4">
         <div>
@@ -162,15 +151,22 @@ function PracticePage() {
 
         <div className="border-t pt-4">
           <p className="text-muted-foreground text-sm">
-            {preview ? `${preview.meta.total} items ready` : 'Loading preview…'}
-            {preview && Object.entries(preview.meta.byKind).filter(([, n]) => (n as number) > 0).length > 0 && (
+            {!preview
+              ? 'Loading preview…'
+              : preview.meta.total > 0
+                ? `${preview.meta.total} items ready`
+                : 'No drillable material for these filters. Pick a vocabulary topic or a lesson with authored drills.'}
+            {preview && preview.meta.total > 0 && Object.entries(preview.meta.byKind).filter(([, n]) => (n as number) > 0).length > 0 && (
               <span> · {Object.entries(preview.meta.byKind).filter(([, n]) => (n as number) > 0).map(([k, n]) => `${n} ${k}`).join(' · ')}</span>
             )}
           </p>
           <Link
             to="/practice/session"
             search={{ ...search } as never}
-            className="bg-primary text-primary-foreground mt-3 inline-block rounded-md px-4 py-2 text-sm font-medium"
+            aria-disabled={!preview || preview.meta.total === 0}
+            className={`mt-3 inline-block rounded-md px-4 py-2 text-sm font-medium ${
+              preview && preview.meta.total > 0 ? 'bg-primary text-primary-foreground' : 'bg-muted text-muted-foreground pointer-events-none'
+            }`}
           >
             Start session →
           </Link>

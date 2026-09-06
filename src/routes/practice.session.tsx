@@ -14,6 +14,7 @@ import { Provenance, Rubric } from '@/components/exercise/provenance'
 import { answerTextOf, promptTextOf } from '@/components/exercise/payload'
 import { getRate, initVoices, speak, stepRate, stopSpeaking } from '@/lib/tts'
 import { SpeakButton } from '@/components/speak-button'
+import { topicHasPractice } from '@/content/loader'
 
 export const Route = createFileRoute('/practice/session')({
   validateSearch: (s: Record<string, unknown>) => validateDeckSearch(s),
@@ -233,15 +234,21 @@ function SessionPage() {
   }
 
   if (!bundles) return <div className="text-muted-foreground mx-auto max-w-3xl px-4 py-8 text-sm">Building deck…</div>
-  if (total === 0)
+  if (total === 0) {
+    const topicDrillable = search.topic ? topicHasPractice(search.topic) : null
     return (
       <div className="mx-auto max-w-3xl px-4 py-8">
-        <p className="text-sm">No items match these filters.</p>
+        <p className="text-sm">
+          {search.topic && topicDrillable === false
+            ? 'This topic has no drillable material yet — the lesson pages were extracted from course sources that cover vocabulary and authored drills, and this topic is grammar/pronunciation prose only.'
+            : 'No items match these filters.'}
+        </p>
         <Link to="/practice" search={{ ...search } as never} className="text-primary text-sm hover:underline">
           ← Change deck
         </Link>
       </div>
     )
+  }
 
   if (done) {
     const all = history
