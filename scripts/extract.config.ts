@@ -192,9 +192,9 @@ export const TABLE_SHAPES: Array<{ match: string[]; shape: TableShape }> = [
 
 // ------------------------------------------------------------------ notation
 
-/** Verb 3sg stem-change stems, so `(wäscht)` reads as a conjugation cell and
- *  never as a plural. Lowercase German word, no spaces, no '+' → 3sg. */
-export const VERB_3SG_RE = /^[a-zäöüß]{2,}(st|t|t|en)$/i
+// NOTE: 3sg detection lives inline in parseParen (extract-corpus.ts) — it
+// needs separable-prefix and infinitive-exclusion logic a regex cannot hold.
+// Tune it there, not here.
 
 /** Valency patterns: `(+D)`, `(an + Acc)`, `(auf + Akk)`, `+ D + A`. */
 export const VALENCY_RE = /^[^)]*\+[^)]*$/

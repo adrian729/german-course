@@ -1,5 +1,5 @@
 // Practice exercise types — discriminated union over six response shapes.
-import type { Level, Pos, Theme, Verification } from '@/content/types'
+import type { Gender, Level, Pos, Theme, Verification } from '@/content/types'
 
 export type Shape = 'reveal' | 'choice' | 'typed' | 'slots' | 'order' | 'pair'
 
@@ -28,6 +28,8 @@ export type DeckFilters = {
   level?: Level
   point?: string
   lexeme?: string
+  gender?: Gender
+  q?: string
   mode?: DeckMode
   size?: DeckSize
   unverified?: boolean
@@ -124,7 +126,7 @@ export type PluralItem = BaseExercise & {
   kind: 'plural'
   prompt: string
   accepted: string[]
-  strictUmlaut: true
+  strictUmlaut: boolean
   lexemeId: string
 }
 
@@ -179,6 +181,7 @@ export type AuthoredItem = BaseExercise & {
   authoredShape: 'typed' | 'slots' | 'order'
   // for typed/slots grading
   accepted?: string[]
+  strictUmlaut?: boolean
   blanks?: Array<{ accepted: string[]; strictUmlaut?: boolean }>
   tokens?: string[]
   expectedOrder?: number[]
@@ -212,6 +215,8 @@ export function validateDeckSearch(search: Record<string, unknown>): DeckFilters
   if (typeof search.level === 'string' && search.level) out.level = search.level as Level
   if (typeof search.point === 'string' && search.point) out.point = search.point
   if (typeof search.lexeme === 'string' && search.lexeme) out.lexeme = search.lexeme
+  if (typeof search.gender === 'string' && (['m', 'f', 'n'] as string[]).includes(search.gender)) out.gender = search.gender as Gender
+  if (typeof search.q === 'string' && search.q.trim()) out.q = search.q.trim().slice(0, 80)
   if (typeof search.mode === 'string' && (MODES as string[]).includes(search.mode)) out.mode = search.mode as DeckMode
   else if (!search.mode) out.mode = 'mixed'
   if (search.size != null) {

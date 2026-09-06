@@ -348,6 +348,9 @@ export type ContentIndex = {
     unknownPlural: number
     unknownPos: number
     conflicts: number
+    /** Relation sources with no lexeme entry. Dropped from distractors;
+     *  listed on /status instead of warning per item at build. */
+    unresolvedRelations: Array<{ target: string; referrers: string[] }>
   }
 }
 

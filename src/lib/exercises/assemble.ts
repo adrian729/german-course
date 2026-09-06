@@ -1,8 +1,9 @@
 // Deck assembly: claim → cap → spread
 
 import { audioAvailable } from '@/lib/tts'
+import { foldForSearch } from '@/lib/normalise'
 import type { DrillBundle, ParadigmBundle, SentenceBundle, VocabBundle } from '@/content/types'
-import { getTopic, topics } from '@/content/loader'
+import { topics } from '@/content/loader'
 import type { Deck, DeckFilters, ExerciseItem } from './types'
 import {
   authoredItemsFromDrills,
@@ -50,19 +51,6 @@ function kindMatchesMode(kind: ExerciseItem['kind'], mode: DeckFilters['mode']):
   return true
 }
 
-function lessonOfTopic(topicId: string): string | undefined {
-  const t = topics[topicId]
-  return t?.lessonId
-}
-
-function topicMatchesLesson(item: ExerciseItem, lessonId: string): boolean {
-  // check sourceIds or sourceHref lesson prefix
-  if (item.sourceHref?.includes(lessonId)) return true
-  // Fallback: check if any sourceIds is a topicId containing lessonId? Not reliable.
-  // Use sourceHref only.
-  return false
-}
-
 export function buildDeck(filters: DeckFilters, bundles: Bundles, _options?: { seed?: number }): Deck {
   // Generate all pools
   const entries = bundles.vocab.entries
@@ -76,7 +64,14 @@ export function buildDeck(filters: DeckFilters, bundles: Bundles, _options?: { s
   if (filters.theme) filteredEntries = filteredEntries.filter((e) => e.themes.includes(filters.theme!))
   if (filters.pos) filteredEntries = filteredEntries.filter((e) => e.pos === filters.pos)
   if (filters.level) filteredEntries = filteredEntries.filter((e) => e.level === filters.level)
+  if (filters.gender) filteredEntries = filteredEntries.filter((e) => e.gender === filters.gender)
   if (filters.lexeme) filteredEntries = filteredEntries.filter((e) => e.id === filters.lexeme)
+  if (filters.q) {
+    const q = foldForSearch(filters.q)
+    filteredEntries = filteredEntries.filter(
+      (e) => foldForSearch(e.headword).includes(q) || foldForSearch(e.lemma).includes(q) || e.glosses.some((g) => foldForSearch(g).includes(q)),
+    )
+  }
   if (filters.lesson) {
     filteredEntries = filteredEntries.filter((e) => e.occurrences.some((o) => o.topicId.startsWith(filters.lesson!)))
   }
@@ -110,29 +105,35 @@ export function buildDeck(filters: DeckFilters, bundles: Bundles, _options?: { s
 
   const addPool = (kind: ExerciseItem['kind'], items: ExerciseItem[]) => {
     let filtered = items
-    // Apply lesson/topic filtering at item level when generators already used filteredEntries, but also ensure sourceHref filtering
+    // Pools are already built from lesson/topic-filtered entries and
+    // sentences; this only re-checks item-level hrefs with exact prefixes —
+    // slug-substring matching leaks across lessons (02-vocabulary repeats).
     if (filters.lesson) {
+      const prefix = `/lessons/${filters.lesson}/`
+      const entryIds = new Set(filteredEntries.map((e) => e.id))
       filtered = filtered.filter((it) => {
-        if (it.sourceHref?.includes(filters.lesson!)) return true
-        // For vocab items, check lexeme's occurrences lesson
+        if (it.sourceHref?.startsWith(prefix)) return true
+        // Vocab-sourced items whose href is missing: keep iff a source lexeme
+        // survived the entry filter (any, not just the first).
         if (it.sourceIds.length) {
-          // try to find vocab entry for first sourceId
+          if (it.sourceIds.some((sid) => entryIds.has(sid))) return true
           const entry = entries.find((e) => e.id === it.sourceIds[0])
-          if (entry) return entry.occurrences.some((o) => o.topicId.startsWith(filters.lesson!))
+          if (entry) return entry.occurrences.some((o) => o.topicId.startsWith(prefix.slice(9)))
         }
         return false
       })
     }
     if (filters.topic) {
-      const target = topics[filters.topic!]
+      const href = `/lessons/${filters.topic}`
+      const entryIds = new Set(filteredEntries.map((e) => e.id))
       filtered = filtered.filter((it) => {
-        if (it.sourceHref && target) {
-          if (it.sourceHref.includes(target.slug)) return true
-        }
+        if (it.sourceHref === href) return true
         // check via occurrences
-        const entry = entries.find((e) => e.id === it.sourceIds[0])
-        if (entry) return entry.occurrences.some((o) => o.topicId === filters.topic)
-        return it.sourceHref?.endsWith(filters.topic!.split('/')[1] ?? '') ?? false
+        if (it.sourceIds.some((sid) => entryIds.has(sid))) {
+          const entry = entries.find((e) => it.sourceIds.includes(e.id))
+          if (entry) return entry.occurrences.some((o) => o.topicId === filters.topic)
+        }
+        return false
       })
     }
     // unverified filtering: extracted = unverified, reviewed/authored = verified
@@ -250,8 +251,6 @@ export function buildDeck(filters: DeckFilters, bundles: Bundles, _options?: { s
 
   const lessonLabels: string[] = []
   if (filters.lesson) {
-    const lesson = getTopic(filters.lesson) ? undefined : undefined
-    void lesson
     // fallback: use lesson id
     lessonLabels.push(filters.lesson)
   } else {
@@ -303,7 +302,3 @@ function shuffle<T>(arr: T[]): T[] {
   }
   return a
 }
-
-// Helper unused but kept for potential lessonOfTopic expansion
-void lessonOfTopic
-void topicMatchesLesson

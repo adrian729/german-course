@@ -115,12 +115,11 @@ export function typedRecall(entries: VocabEntry[]): TypedRecallItem[] {
     .filter((e) => e.glosses.length > 0)
     .map((e) => {
       const english = e.glosses[0]!
+      // N3: the ONLY accepted form is the full headword. A bare lemma typed
+      // for a noun must grade article-miss (peach), never exact — accepting
+      // it here would return exact before article-miss is even considered.
       const accepts: string[] = [e.headword]
-      // N3: the bare lemma is accepted as a fallback but must grade as
-      // article-miss (not exact) when the noun expects an article. Keep both
-      // forms so the grader can diagnose a missing article instead of
-      // falling through to near/wrong.
-      if (e.lemma && e.lemma !== e.headword) accepts.push(e.lemma)
+      if (e.pos !== 'noun' && e.lemma && e.lemma !== e.headword) accepts.push(e.lemma)
       const uniq = [...new Set(accepts.filter(Boolean))]
       const expectsArticle = e.pos === 'noun' && !!e.gender
       // gradeCase true for nouns
@@ -200,10 +199,19 @@ export function meaningMCQ(entries: VocabEntry[]): MeaningMcqItem[] {
     .filter((e) => e.glosses.length > 0)
     .map((e) => {
       let distractors = pickDistractors(e, entries, 3)
+      // No two options may show the same label: a learner picking the right
+      // translation must never lose to a duplicate copy marked wrong.
+      const correctGloss = e.glosses[0]!
+      const seen = new Set([correctGloss.toLowerCase()])
+      distractors = distractors.filter((d) => {
+        const label = (d.glosses[0] ?? d.headword).toLowerCase()
+        if (seen.has(label)) return false
+        seen.add(label)
+        return true
+      })
       if (distractors.length < 2) return null
       // trim to 2 or 3 to keep 3–4 options total
       if (distractors.length > 3) distractors = distractors.slice(0, 3)
-      const correctGloss = e.glosses[0]!
       const options = [
         { label: correctGloss, correct: true },
         ...distractors.map((d) => ({ label: d.glosses[0] ?? d.headword, correct: false })),
@@ -279,15 +287,19 @@ export function conjugationCells(entries: VocabEntry[], paradigms: Paradigm[]): 
       let duForm: string | null = null
       for (const p of paradigms) {
         if (p.kind !== 'verb') continue
-        // cols may contain verb lemmas like "nehmen (e→i)"
-        const colIndex = p.cols.findIndex((c) => c.toLowerCase().includes(lemma.toLowerCase()))
+        // Exact column match on the bare infinitive ("nehmen", not the
+        // "nehmen (e→i)" label): substring matching once paired fahren
+        // with erfahren and taught erfährst as its du-form.
+        const colIndex = p.cols.findIndex((c) => c.toLowerCase().replace(/\s*\(.*\)\s*$/, '') === lemma.toLowerCase())
         if (colIndex >= 0) {
-          // Find rows du and er/sie/es
+          // cols and cells share index 0 (the Person label), so the verb
+          // column reads at colIndex, not colIndex+1.
           for (const cellRow of p.cells) {
             const person = cellRow[0]
-            if (person === 'du' && cellRow[colIndex + 1] ) duForm = cellRow[colIndex + 1]!
-            if (person === 'er/sie/es' && cellRow[colIndex + 1]) {
+            if (person === 'du' && cellRow[colIndex] ) duForm = cellRow[colIndex]!
+            if (person === 'er/sie/es' && cellRow[colIndex]) {
               // validate matches present3sg
+              if (cellRow[colIndex] !== present3sg) duForm = null
             }
           }
         }
@@ -343,6 +355,11 @@ export function pluralForge(entries: VocabEntry[]): PluralItem[] {
     .map((e) => {
       const pluralForm = e.plural.form!
       const topicId = e.occurrences[0]?.topicId ?? ''
+      // N1: strict (no folding, no fuzzy) only when the umlaut/ß IS the
+      // answer — i.e. the plural carries one the singular lacks (Mutter →
+      // Mütter). Plain-suffix plurals (Tage) stay lenient to typos.
+      const singularBare = e.headword.replace(/^(der|die|das)\s+/i, '')
+      const umlautIn = (s: string): boolean => /[äöüßÄÖÜẞ]/.test(s)
       return {
         id: `plural:${e.id}`,
         shape: 'typed',
@@ -355,7 +372,7 @@ export function pluralForge(entries: VocabEntry[]): PluralItem[] {
         speakPrompt: e.headword,
         prompt: `${e.headword} → ?`,
         accepted: [pluralForm],
-        strictUmlaut: true,
+        strictUmlaut: umlautIn(pluralForm) && !umlautIn(singularBare),
         lexemeId: e.id,
       } as PluralItem
     })
@@ -476,6 +493,9 @@ export function judgementFromWrongForms(wrongForms: WrongForm[]): JudgementItem[
 export function clozeFromDrills(entries: VocabEntry[], sentences: Sentence[]): ClozeItem[] {
   const byId = new Map(sentences.map((s) => [s.id, s]))
   const items: ClozeItem[] = []
+  const escapeRegExp = (s: string): string => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
+  // \b is ASCII-only (\u00e4 counts as a boundary); German needs its own.
+  const wordRe = (s: string): RegExp => new RegExp(`(?<![A-Za-zÄÖÜäöüßẞ])${escapeRegExp(s)}(?![A-Za-zÄÖÜäöüßẞ])`, 'i')
   for (const e of entries) {
     if (e.exampleIds.length === 0) continue
     // Use first example sentence
@@ -485,14 +505,14 @@ export function clozeFromDrills(entries: VocabEntry[], sentences: Sentence[]): C
     // Check if sentence contains lexeme text (lemma or headword word)
     const lemma = e.lemma
     // blank out the lexeme in sentence text — simple replace first occurrence case-insensitive
-    const idx = sent.text.toLowerCase().indexOf(lemma.toLowerCase())
-    if (idx === -1) {
-      // try headword without article
-      const hw = e.headword.replace(/^(der|die|das)\s+/i, '')
-      const idx2 = sent.text.toLowerCase().indexOf(hw.toLowerCase())
-      if (idx2 === -1) continue
-    }
-    const blanked = sent.text.replace(new RegExp(lemma, 'i'), '___')
+    const hw = e.headword.replace(/^(der|die|das)\s+/i, '')
+    // Track which surface form actually matched as a whole word so the
+    // blank lands on it — substring matching would clobber Woche inside
+    // Wochenende into an unsolvable ___nende.
+    const candidates = [lemma, hw].filter(Boolean)
+    const hit = candidates.find((c) => wordRe(c).test(sent.text))
+    if (!hit) continue
+    const blanked = sent.text.replace(wordRe(hit), '___')
     // If replacement didn't introduce blank (case mismatch), skip
     if (!blanked.includes('___')) continue
     const topicId = e.occurrences[0]?.topicId ?? sent.topicId
@@ -539,7 +559,6 @@ export function authoredItemsFromDrills(drills: Drill[]): AuthoredItem[] {
         authoredShape = 'typed'
       }
 
-      const strictUmlaut = it.expected.some(hasUmlaut) || hasUmlaut(it.prompt)
       const topicId = it.sourceTopicId
       const base: AuthoredItem = {
         id: `authored:${it.id}`,
@@ -563,8 +582,9 @@ export function authoredItemsFromDrills(drills: Drill[]): AuthoredItem[] {
 
       if (authoredShape === 'typed') {
         base.accepted = it.expected
-        // attach strict flag via rubric? Not needed but store for grading
-        void strictUmlaut
+        // N1: a typed authored key containing an umlaut is strict — ASCII
+        // folding must not forgive what the book demands spelled.
+        base.strictUmlaut = it.expected.some(hasUmlaut)
       } else if (authoredShape === 'slots') {
         // multiple blanks: each blank expects same? Actually expected array corresponds to blanks? Assume each blank maps to expected in order - if expected length matches blank count, distribute; otherwise first expected for first blank etc.
         const blanks = Array.from({ length: countBlanks }, (_, i) => ({

@@ -27,6 +27,10 @@ function SessionPage() {
   const navigate = useNavigate()
   const [bundles, setBundles] = useState<Bundles | null>(null)
   const [queue, setQueue] = useState<ExerciseItem[]>([])
+  // Cards deferred mid-rotation surface only when the active queue is
+  // exhausted — otherwise a tail "Again later" would slide back onto the
+  // current index and repeat immediately.
+  const [later, setLater] = useState<ExerciseItem[]>([])
   const [pos, setPos] = useState(0)
   const [graded, setGraded] = useState<Graded | null>(null)
   const [history, setHistory] = useState<Record_[]>([])
@@ -46,6 +50,7 @@ function SessionPage() {
       } catch {
         setQueue([])
       }
+      setLater([])
       setPos(0)
       setGraded(null)
       setHistory([])
@@ -69,46 +74,74 @@ function SessionPage() {
     setHistory((h) => [...h, { item, graded: g }])
     stopSpeaking()
     if (pos + 1 >= total) {
-      setDone(true)
+      if (later.length > 0) {
+        // Active rotation is done — review the deferred pile next instead of
+        // ending the session.
+        setQueue(later)
+        setLater([])
+        setPos(0)
+      } else {
+        setDone(true)
+      }
     } else {
       setPos((p) => p + 1)
-      setGraded(null)
     }
-  }, [graded, item, pos, total])
+    setGraded(null)
+  }, [graded, item, pos, total, later])
 
   const againLater = useCallback(() => {
     if (!item) return
-    // The current card is spliced out and reinserted 3 later; the next card
-    // slides into `pos`, so position stays — incrementing would skip a card,
-    // and ending here would drop the deferred one.
     if (queue.length <= 1) {
+      // Last card. If the deferred pile is empty the session ends; otherwise
+      // hand over the rotation to it.
+      if (later.length > 0) {
+        setQueue(later)
+        setLater([])
+        setPos(0)
+        setGraded(null)
+        return
+      }
       if (graded) {
         const g: Graded = graded
         setHistory((h) => [...h, { item, graded: g }])
+        // Clear the live verdict — counts already include history, and
+        // double-counting one card as exact AND review is the tally bug.
+        setGraded(null)
         setDone(true)
       }
       return
     }
-    setQueue((q) => {
-      if (q.length <= 1) return q
-      const next = [...q]
-      const [cur] = next.splice(pos, 1)
-      if (cur) {
-        const at = Math.min(next.length, pos + 3)
+    const next = [...queue]
+    const [cur] = next.splice(pos, 1)
+    let deferred = false
+    if (cur) {
+      const at = Math.min(next.length, pos + 3)
+      if (at <= pos) {
+        // Reinserting would slide the card back onto the current index (tail
+        // of the queue) — defer it instead so it cannot repeat immediately.
+        setLater((l) => [...l, cur])
+        deferred = true
+      } else {
         next.splice(at, 0, cur)
       }
-      return next
-    })
+    }
+    setQueue(next)
+    if (deferred && pos >= next.length) {
+      // The card we removed was the last one — reanchor on the new tail.
+      setPos(Math.max(0, next.length - 1))
+      setGraded(null)
+    }
     if (graded) {
       const g: Graded = graded
       setHistory((h) => [...h, { item, graded: g }])
       setGraded(null)
     }
-  }, [graded, item, pos, queue.length])
+  }, [graded, item, pos, queue, later.length])
 
   const reviewOnly = useCallback(() => {
     const misses = history.filter((h) => bucketOf(h.graded.outcome) === 'review').map((h) => h.item)
     if (misses.length === 0) return
+    setLater([])
     setQueue(misses)
     setHistory([])
     setPos(0)
@@ -192,6 +225,7 @@ function SessionPage() {
     if (!bundles) return
     const deck = buildDeck(search, bundles)
     setQueue(deck.items)
+    setLater([])
     setHistory([])
     setPos(0)
     setGraded(null)

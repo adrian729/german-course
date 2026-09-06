@@ -1,0 +1,340 @@
+[
+  {
+    "headword": "abhängig",
+    "pos": "adjective",
+    "glosses": [
+      "dependent (on)",
+      "reliant"
+    ],
+    "note": "named as source of unabhängig; no vocab row"
+  },
+  {
+    "headword": "abmachen",
+    "pos": "verb",
+    "glosses": [
+      "to agree on",
+      "to arrange"
+    ],
+    "verb": {
+      "separable": true,
+      "prefix": "ab"
+    },
+    "note": "separable ab|machen; named by vereinbaren"
+  },
+  {
+    "headword": "ansprechen",
+    "pos": "verb",
+    "glosses": [
+      "to address",
+      "to appeal to"
+    ],
+    "verb": {
+      "separable": true,
+      "prefix": "an"
+    },
+    "note": "separable an|sprechen; named by sich wenden an"
+  },
+  {
+    "headword": "anstrengen",
+    "pos": "verb",
+    "glosses": [
+      "to strain",
+      "to exert oneself"
+    ],
+    "verb": {
+      "separable": true,
+      "prefix": "an"
+    },
+    "note": "separable an|strengen, typically reflexive; named by anstrengend"
+  },
+  {
+    "headword": "bedeuten",
+    "pos": "verb",
+    "glosses": [
+      "to mean"
+    ],
+    "note": "named as source of die Bedeutung"
+  },
+  {
+    "headword": "begeistern",
+    "pos": "verb",
+    "glosses": [
+      "to inspire",
+      "to excite"
+    ],
+    "note": "named as source of begeistert"
+  },
+  {
+    "headword": "beginnen",
+    "pos": "verb",
+    "glosses": [
+      "to begin"
+    ],
+    "note": "named as source of der Beginn"
+  },
+  {
+    "headword": "beruhigen",
+    "pos": "verb",
+    "glosses": [
+      "to calm",
+      "to soothe"
+    ],
+    "note": "named as source of beruhigend"
+  },
+  {
+    "headword": "besuchen",
+    "pos": "verb",
+    "glosses": [
+      "to visit"
+    ],
+    "note": "named as source of der Besuch"
+  },
+  {
+    "headword": "sich bewerben",
+    "pos": "verb",
+    "glosses": [
+      "to apply (for)"
+    ],
+    "verb": {
+      "reflexive": "A"
+    },
+    "note": "reflexive only in the 'apply' sense (transitive bewerben = advertise); named by die Bewerbung"
+  },
+  {
+    "headword": "decken",
+    "pos": "verb",
+    "glosses": [
+      "to cover"
+    ],
+    "note": "named as source of verdecken"
+  },
+  {
+    "headword": "dienen",
+    "pos": "verb",
+    "glosses": [
+      "to serve"
+    ],
+    "note": "named as source of verdienen"
+  },
+  {
+    "headword": "entscheiden",
+    "pos": "verb",
+    "glosses": [
+      "to decide"
+    ],
+    "note": "named as source of die Entscheidung"
+  },
+  {
+    "headword": "enttäuschen",
+    "pos": "verb",
+    "glosses": [
+      "to disappoint"
+    ],
+    "note": "named as source of enttäuscht"
+  },
+  {
+    "headword": "entwickeln",
+    "pos": "verb",
+    "glosses": [
+      "to develop"
+    ],
+    "note": "named as source of die Entwicklung"
+  },
+  {
+    "headword": "erweitern",
+    "pos": "verb",
+    "glosses": [
+      "to expand",
+      "to extend"
+    ],
+    "note": "named as source of die Erweiterung"
+  },
+  {
+    "headword": "fordern",
+    "pos": "verb",
+    "glosses": [
+      "to demand"
+    ],
+    "note": "named as source of gefordert"
+  },
+  {
+    "headword": "frei",
+    "pos": "adjective",
+    "glosses": [
+      "free"
+    ],
+    "note": "named as source of die Freiheit"
+  },
+  {
+    "headword": "geduldig",
+    "pos": "adjective",
+    "glosses": [
+      "patient"
+    ],
+    "note": "named as source of ungeduldig"
+  },
+  {
+    "headword": "gelingen",
+    "pos": "verb",
+    "glosses": [
+      "to succeed"
+    ],
+    "note": "impersonal (es gelingt mir); named as source of gelungen"
+  },
+  {
+    "headword": "haben",
+    "pos": "verb",
+    "glosses": [
+      "to have"
+    ],
+    "note": "taught via paradigm tables, never a vocab row; named by aufweisen; leveled A1 explicitly (named in a B2 section, basic word)",
+    "level": "A1"
+  },
+  {
+    "headword": "interessant",
+    "pos": "adjective",
+    "glosses": [
+      "interesting"
+    ],
+    "note": "named as source of uninteressant"
+  },
+  {
+    "headword": "interessieren",
+    "pos": "verb",
+    "glosses": [
+      "to interest"
+    ],
+    "note": "named as source of interessiert"
+  },
+  {
+    "headword": "lassen",
+    "pos": "verb",
+    "glosses": [
+      "to let",
+      "to leave"
+    ],
+    "note": "named as source of verlassen"
+  },
+  {
+    "headword": "merken",
+    "pos": "verb",
+    "glosses": [
+      "to notice",
+      "to remember"
+    ],
+    "note": "named by zur Kenntnis nehmen"
+  },
+  {
+    "headword": "ordnen",
+    "pos": "verb",
+    "glosses": [
+      "to arrange",
+      "to organize"
+    ],
+    "note": "named as source of die Ordnung"
+  },
+  {
+    "headword": "planen",
+    "pos": "verb",
+    "glosses": [
+      "to plan"
+    ],
+    "note": "named as source of die Planung"
+  },
+  {
+    "headword": "rechtzeitig",
+    "pos": "adverb",
+    "glosses": [
+      "on time",
+      "in time"
+    ],
+    "note": "adverb sense (adjectival: punctual); named by fristgerecht"
+  },
+  {
+    "headword": "schwierig",
+    "pos": "adjective",
+    "glosses": [
+      "difficult"
+    ],
+    "note": "named as source of die Schwierigkeit"
+  },
+  {
+    "headword": "sein",
+    "pos": "verb",
+    "glosses": [
+      "to be"
+    ],
+    "note": "taught via paradigm tables, never a vocab row; named by sich befinden; leveled A1 explicitly (named in a B2 section, basic word)",
+    "level": "A1"
+  },
+  {
+    "headword": "sofort",
+    "pos": "adverb",
+    "glosses": [
+      "immediately"
+    ],
+    "note": "named by umgehend"
+  },
+  {
+    "headword": "spannen",
+    "pos": "verb",
+    "glosses": [
+      "to stretch",
+      "to tighten"
+    ],
+    "note": "named as source of spannend"
+  },
+  {
+    "headword": "tragen",
+    "pos": "verb",
+    "glosses": [
+      "to carry",
+      "to wear"
+    ],
+    "note": "named as source of vertragen"
+  },
+  {
+    "headword": "verbessern",
+    "pos": "verb",
+    "glosses": [
+      "to improve"
+    ],
+    "note": "named as source of die Verbesserung"
+  },
+  {
+    "headword": "vorbereiten",
+    "pos": "verb",
+    "glosses": [
+      "to prepare"
+    ],
+    "verb": {
+      "separable": true,
+      "prefix": "vor"
+    },
+    "note": "separable vor|bereiten; named by die Vorbereitung"
+  },
+  {
+    "headword": "wegen",
+    "pos": "preposition",
+    "glosses": [
+      "because of"
+    ],
+    "note": "genitive preposition; named by bezüglich"
+  },
+  {
+    "headword": "ändern",
+    "pos": "verb",
+    "glosses": [
+      "to change"
+    ],
+    "note": "named as source of verändern"
+  },
+  {
+    "headword": "überraschen",
+    "pos": "verb",
+    "glosses": [
+      "to surprise"
+    ],
+    "note": "named as source of überraschend"
+  }
+]

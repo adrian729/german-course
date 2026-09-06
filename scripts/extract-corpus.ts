@@ -14,7 +14,7 @@ import { createHash } from 'node:crypto'
 import { existsSync, mkdirSync, readFileSync, writeFileSync, readdirSync } from 'node:fs'
 import { join } from 'node:path'
 import matter from 'gray-matter'
-import { LESSONS, TABLE_SHAPES, PRACTICE_RE, VOCAB_RE, APPLIED_RE, ANSWER_KEY_RE, WEEK_RE, WEEK_REPLACE } from './extract.config.ts'
+import { LESSONS, TABLE_SHAPES, PRACTICE_RE, VOCAB_RE, APPLIED_RE, ANSWER_KEY_RE, WEEK_RE, WEEK_REPLACE, VALENCY_RE, FULL_PLURAL_RE } from './extract.config.ts'
 import type { Gender, Level, Plural, Pos, Theme } from '../src/content/types.ts'
 
 const ROOT = join(import.meta.dirname, '..')
@@ -29,6 +29,12 @@ const themeBySection = new Map(taxonomy.sections.map((s) => [normTitle(s.section
 
 const warnings: string[] = []
 const warn = (lessonId: string, msg: string) => warnings.push(`[${lessonId}] ${msg}`)
+// An unregistered table shape inside a vocabulary section fabricates data
+// (the false-friend row read positionally mints phantom senses) — guessing
+// is strictly worse than stopping, so this hard-fails.
+const unknownShapes: string[] = []
+// Article vs gender-tag disagreement means the parser broke. Same treatment.
+const genderDisagreements: string[] = []
 
 // ---------------------------------------------------------------- utilities
 
@@ -109,7 +115,7 @@ const ENGLISH_STOPWORDS = new Set(
 )
 
 type ParsedParen = Partial<{
-  gender: Gender
+  gender: Gender | null
   plural: Plural
   present3sg: string
   valency: string
@@ -129,17 +135,19 @@ function parseParen(raw: string, level: number, section: string, line: number): 
 
   if (inner === 'm.' || inner === 'f.' || inner === 'n.') {
     if (level !== 3) warn(`l${level}`, `gender tag "${inner}" outside lesson 3 in "${section}" L${line}`)
-    return { gender: inner[0] as Gender }
+    // Plural unknown — but keep the raw tag: it is the tooltip and the
+    // re-extraction diff signal, not disposable.
+    return { gender: inner[0] as Gender, plural: { form: null, kind: 'unknown', raw: inner } }
   }
 
   const suff = /^-([a-zäöüß]+)$/.exec(inner)
   if (suff) return { plural: { form: null, kind: 'suffix', raw: inner } }
 
-  if (/^[A-ZÄÖÜ]/.test(inner)) {
+  if (/^[A-ZÄÖÜ]/.test(inner) && FULL_PLURAL_RE.test(inner)) {
     return { plural: { form: inner, kind: /[äöü]/.test(inner) ? 'umlaut' : 'full', raw: inner } }
   }
 
-  if (inner.includes('+')) return { valency: inner }
+  if (VALENCY_RE.test(inner)) return { valency: inner }
 
   // 3sg stem change: "wäscht", "fährt ab", "nimmt" — never a plural.
   const words = inner.split(/\s+/)
@@ -201,7 +209,7 @@ function parseHeadword(raw0: string, ctx: { pos: Pos | null; level: number; sect
   if (plural.kind === 'invariant' || plural.kind === 'pluraleTantum') {
     plural = { ...plural, form: rest }
     if (plural.kind === 'pluraleTantum' && paren.gender === undefined) {
-      paren.gender = null as unknown as Gender
+      paren.gender = null
     }
   }
   // Suffix plurals are expanded to a fully spelled-out form here so nothing
@@ -216,12 +224,15 @@ function parseHeadword(raw0: string, ctx: { pos: Pos | null; level: number; sect
   }
   const articleGender: Gender | null = articleWord === 'der' ? 'm' : articleWord === 'die' ? 'f' : articleWord === 'das' ? 'n' : null
   if (paren.gender !== undefined && paren.gender !== null && articleGender && paren.gender !== articleGender) {
-    warn(`l${ctx.level}`, `gender tag "(${paren.gender}.)" disagrees with article "${articleWord}" in "${raw}" (${ctx.section} L${ctx.line})`)
+    // Hard failure, not a warning: article and tag both present and
+    // disagreeing means the parser broke (a wrong gender here ships a wrong
+    // word page and wrong drill keys downstream).
+    genderDisagreements.push(`[${ctx.level}] gender tag "(${paren.gender}.)" disagrees with article "${articleWord}" in "${raw}" (${ctx.section} L${ctx.line})`)
   }
   if (plural.kind === 'pluraleTantum') {
     warn(`l${ctx.level}`, `(pl.) "${raw}" needs a human decision — may be a plural of an existing singular, not a plurale tantum (${ctx.section} L${ctx.line})`)
   }
-  const gender: Gender | null = plural.kind === 'pluraleTantum' ? null : (paren.gender as Gender | null | undefined) ?? articleGender
+  const gender: Gender | null = plural.kind === 'pluraleTantum' ? null : (paren.gender ?? articleGender)
 
   return {
     headword: base,
@@ -538,7 +549,10 @@ function extractVocabulary(lesson: (typeof LESSONS)[number], level: Level, block
         inTable = true
         headerCells = cells
         shape = classifyTable(cells)
-        if (!shape) warn(lesson.id, `unknown table shape in "${section}": ${JSON.stringify(cells)}`)
+        if (!shape) {
+          unknownShapes.push(`[${lesson.id}] unknown table shape in "${section}": ${JSON.stringify(cells)}`)
+          warn(lesson.id, `unknown table shape in "${section}": ${JSON.stringify(cells)}`)
+        }
         continue
       }
       if (shape && headerCells && !isSeparatorRow(cells) && cells.length >= headerCells.length) {
@@ -621,7 +635,7 @@ function rowToOccurrence(
   line: number,
   sectionStart: number,
 ): Record<string, unknown> | null {
-  const parsed = parseHeadword(headRaw, { pos: sectionPos, level: lesson.number, section, line: line + sectionStart + 1 })
+  const parsed = parseHeadword(headRaw, { pos: sectionPos, level: lesson.number, section, line: line + sectionStart + 2 })
   if (!parsed) return null
 
   // POS cascade: section override → structural tests → null (+ warning at build).
@@ -634,20 +648,24 @@ function rowToOccurrence(
     }
     return null
   }
-  const pos: Pos | null = shape.forcePhrase ? 'phrase' : sectionPos ?? structuralPos()
+  // POS cascade: phrase first (the article in "das Bett machen" is part of
+  // the idiom, not a gender tag), then gendered headwords are nouns no
+  // matter what the section claims, then section override, then structural.
+  const pos: Pos | null = (shape.forcePhrase || parsed.phrase) ? 'phrase' : parsed.gender ? 'noun' : (sectionPos ?? structuralPos())
 
   const gloss = shape.gloss !== undefined ? stripInlineMd(row[shape.gloss] ?? '') : ''
   const exampleRaw = shape.example !== undefined ? (row[shape.example] ?? '') : ''
   const exampleId = exampleRaw ? registerSentence(exampleRaw, topicId, level) : null
 
-  const relations: Array<{ kind: string; sourceRaw: string }> = []
+  const relations: Array<{ kind: string; sourceRaw: string; topicId: string; lessonNumber: number; sourceSection: string; sourceLine: number }> = []
+  const relCtx = { topicId, lessonNumber: lesson.number, sourceSection: section, sourceLine: line + sectionStart + 2 }
   if (shape.derivedFrom !== undefined) {
     const src = stripInlineMd(row[shape.derivedFrom] ?? '')
-    if (src && !/[A-ZÄÖÜ]/.test(src[0]!)) relations.push({ kind: 'derived-from', sourceRaw: src.replace(/\([^()]+\)/g, '').trim() })
+    if (src && !/[A-ZÄÖÜ]/.test(src[0]!)) relations.push({ kind: 'derived-from', sourceRaw: src.replace(/\([^()]+\)/g, '').trim(), ...relCtx })
   }
   if (shape.informal !== undefined) {
     const inf = stripInlineMd(row[shape.informal] ?? '')
-    if (inf) relations.push({ kind: 'informal-of', sourceRaw: inf })
+    if (inf) relations.push({ kind: 'informal-of', sourceRaw: inf, ...relCtx })
   }
 
   const plural = parsed.plural
@@ -674,7 +692,7 @@ function rowToOccurrence(
       topicId,
       lessonNumber: lesson.number,
       sourceSection: section,
-      sourceLine: line + sectionStart + 1,
+      sourceLine: line + sectionStart + 2,
       gloss,
       exampleId,
     },
@@ -1002,6 +1020,21 @@ for (const lesson of LESSONS) {
 }
 
 // --------------------------------------------------------------- emit files
+
+// Refuse to write anything when a vocabulary table shape went unregistered:
+// partial output that looks complete is worse than no output.
+if (unknownShapes.length) {
+  console.error(`\n✖ extraction failed — ${unknownShapes.length} unregistered table shape(s) in vocabulary sections. Register the shape in extract.config.ts TABLE_SHAPES; guessing fabricates data.\n`)
+  for (const s of [...new Set(unknownShapes)].slice(0, 20)) console.error(`  · ${s}`)
+  console.error('')
+  process.exit(1)
+}
+if (genderDisagreements.length) {
+  console.error(`\n✖ extraction failed — ${genderDisagreements.length} article/gender-tag disagreement(s). Both present and disagreeing means the parser broke; fix parseHeadword.\n`)
+  for (const s of [...new Set(genderDisagreements)].slice(0, 20)) console.error(`  · ${s}`)
+  console.error('')
+  process.exit(1)
+}
 
 writeFileSync(join(EXTRACTED_DIR, 'occurrences.jsonl'), allOccurrences.map((o) => JSON.stringify(o)).join('\n') + '\n')
 writeFileSync(join(EXTRACTED_DIR, 'sentences.jsonl'), allSentences.map((o) => JSON.stringify(o)).join('\n') + '\n')

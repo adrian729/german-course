@@ -143,18 +143,34 @@ export function grade(input: string, accepted: string[], opts: GradeOptions = {}
     }
 
     // case-miss (peach) — folded equal but casing differs. Only when graded.
-    if (opts.gradeCase !== false && i4 === a4 && i2 !== a2) {
-      consider({ outcome: 'case-miss', matched: ai, distance: 0 })
-      continue
+    // Under strictUmlaut folding is disabled, so compare unfolded-lowered:
+    // VÄTER for Väter still diagnoses case, while Vaeter falls to wrong.
+    if (opts.gradeCase !== false && i2 !== a2) {
+      if (!strictUmlaut && i4 === a4) {
+        consider({ outcome: 'case-miss', matched: ai, distance: 0 })
+        continue
+      }
+      if (strictUmlaut && l2(raw).toLowerCase() === l2(ans).toLowerCase()) {
+        consider({ outcome: 'case-miss', matched: ai, distance: 0 })
+        continue
+      }
     }
 
     // N3: article-miss (peach) — noun without its article (or with an extra
-    // one). Strip a leading article from BOTH sides: if the stripped forms
-    // match while the full forms do not, the learner knew the word but not
-    // its gender.
+    // article when the answer carries none). Strip a leading article from
+    // BOTH sides: if the stripped forms match while the full forms do not,
+    // the learner knew the word but not its gender. BUT an article present
+    // on BOTH sides is not a miss — "die Vater" for "der Vater" chose the
+    // wrong gender, "dem Mann" for "den Mann" the wrong case. And it must
+    // short-circuit the fuzzy block too, or a one-letter article edit
+    // ("die"→"der") would heal itself to `near` instead of wrong.
     if (opts.expectsArticle && a4 !== i4) {
       if (stripArticle(i4) === stripArticle(a4)) {
-        consider({ outcome: 'article-miss', matched: ai, distance: 0 })
+        const iHas = ARTICLES.test(i4)
+        const aHas = ARTICLES.test(a4)
+        if (!iHas || !aHas) {
+          consider({ outcome: 'article-miss', matched: ai, distance: 0 })
+        }
         continue
       }
     }

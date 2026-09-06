@@ -26,6 +26,7 @@ import type {
   SentenceBundle,
   Topic,
   TopicId,
+  Theme,
   VocabBundle,
   VocabEntry,
   Verification,
@@ -124,7 +125,7 @@ type Occurrence = {
   plural: Plural
   gloss: string
   register?: 'formal' | 'informal'
-  relations: Array<{ kind: string; sourceRaw: string }>
+  relations: Array<{ kind: string; sourceRaw: string; topicId?: string; lessonNumber?: number; sourceSection?: string; sourceLine?: number }>
   themes: string[]
   level: string
   present3sg?: string
@@ -216,7 +217,7 @@ type MergeAcc = {
   register: Set<string>
   themes: Set<string>
   level: string
-  relations: Array<{ kind: string; sourceRaw: string }>
+  relations: Array<{ kind: string; sourceRaw: string; topicId?: string; lessonNumber?: number; sourceSection?: string; sourceLine?: number }>
   occurrenceList: Occurrence['occurrence'][]
   conflicts: Array<{ field: string; values: string[]; from: string[] }>
   pluralNote: string | null
@@ -287,13 +288,39 @@ for (const o of occurrences) {
   acc.occurrenceList.push(o.occurrence)
 }
 
+// Verbs the vocabulary never annotates with a 3sg form (sehen, nehmen…)
+// get it from the paradigm tables that tabulate them: exact bare-infinitive
+// column + er/sie/es row. Same corpus, same trust as a parenthesised form —
+// and the drill generator cross-checks the du-form against it before emitting.
+for (const acc of mergeByKey.values()) {
+  if (acc.present3sg || acc.pos !== 'verb') continue
+  const bare = acc.lemma.replace(/^sich\s+/, '')
+  for (const p of paradigmsRaw) {
+    if (p.kind !== 'verb') continue
+    const ci = p.cols.findIndex((c) => c.toLowerCase().replace(/\s*\(.*\)\s*$/, '') === bare.toLowerCase())
+    if (ci < 0) continue
+    const erRow = p.cells.find((r) => r[0] === 'er/sie/es')
+    const form = erRow?.[ci]
+    if (form && form !== '—' && form !== '') {
+      acc.present3sg = form
+      break
+    }
+  }
+}
+
 // ------------------------------------------------------------- lexeme ids
 
-// LexemeId = slugify(headword), with a deterministic -2 suffix for collisions
-// (gender homographs are already distinct via the article; verb/noun homographs
-// via the pos in the merge key).
+// LexemeId = slugify(headword). Homographs never auto-suffix by position:
+// every member of a collision group takes a content-derived suffix (first
+// lesson, then POS), so re-extraction cannot silently repoint a bookmark the
+// way order-dependent -2 numbering could.
 const entries: VocabEntry[] = []
-const usedIds = new Map<string, number>()
+const baseCount = new Map<string, number>()
+for (const acc of mergeByKey.values()) {
+  const base = slugify(acc.headword)
+  baseCount.set(base, (baseCount.get(base) ?? 0) + 1)
+}
+const usedIds = new Set<string>()
 
 for (const acc of mergeByKey.values()) {
   acc.occurrenceList.sort((a, b) => a.lessonNumber - b.lessonNumber || a.sourceLine - b.sourceLine)
@@ -301,9 +328,13 @@ for (const acc of mergeByKey.values()) {
   const glosses = acc.glosses.length ? acc.glosses : ['']
   const base = slugify(acc.headword)
   let id = base
-  let n = usedIds.get(base) ?? 0
-  if (n > 0) id = `${base}-${n + 1}`
-  usedIds.set(base, n + 1)
+  if ((baseCount.get(base) ?? 0) > 1) {
+    const firstLesson = acc.occurrenceList[0]?.lessonNumber ?? 0
+    id = `${base}-l${String(firstLesson).padStart(2, '0')}`
+    if (usedIds.has(id)) id = `${id}-${acc.pos ?? 'x'}`
+  }
+  if (usedIds.has(id)) fail(`lexeme id collision on "${id}" (${acc.headword}) — needs a hand-chosen slug`)
+  usedIds.add(id)
 
   entries.push({
     id,
@@ -322,9 +353,13 @@ for (const acc of mergeByKey.values()) {
     verification: 'extracted',
     errata: [],
     conflicts: acc.conflicts.length ? acc.conflicts : undefined,
-    ...(acc.present3sg ? { verb: { present3sg: acc.present3sg, ...(acc.reflexive ? { reflexive: acc.reflexive } : {}), ...(acc.valency ? { class: 'strong' } : {}) } } : {}),
+    // present3sg and valency are independent facts: a verb can carry a stem
+    // change AND govern a case (waschen (wäscht) vs zustimmen (+D)).
+    ...(acc.present3sg
+      ? { verb: { present3sg: acc.present3sg, ...(acc.reflexive ? { reflexive: acc.reflexive } : {}) } }
+      : {}),
     ...(acc.reflexive && !acc.present3sg ? { verb: { reflexive: acc.reflexive } } : {}),
-    ...(acc.valency && !acc.present3sg ? { valency: acc.valency } : {}),
+    ...(acc.valency ? { valency: acc.valency } : {}),
     ...(acc.literal ? { literal: acc.literal } : {}),
     ...(acc.falseFriend ? { falseFriend: acc.falseFriend } : {}),
   })
@@ -344,13 +379,95 @@ for (const e of entries) {
   if (arr) arr.push(e)
   else byLemma.set(k, [e])
 }
-const relationsByLemma = new Map<string, Array<{ kind: string; sourceRaw: string }>>()
+const relationsByLemma = new Map<string, Array<{ kind: string; sourceRaw: string; topicId?: string; lessonNumber?: number; sourceSection?: string; sourceLine?: number }>>()
 for (const o of occurrences) {
   if (!o.relations.length) continue
   const k = asciiFold(o.lemma).toLowerCase()
   const arr = relationsByLemma.get(k)
   if (arr) arr.push(...o.relations)
   else relationsByLemma.set(k, [...o.relations])
+}
+
+// ------------------------------------------------- authored new lexemes
+// Words the corpus names (word-formation sources, register pairs) but never
+// lists as vocabulary rows. Linguistics authored in overrides/new-lexemes.json;
+// provenance inherited from the first naming context — never fabricated.
+type NewLexeme = {
+  headword: string
+  pos: Pos
+  glosses: string[]
+  note?: string
+  verb?: { separable?: boolean; prefix?: string; reflexive?: 'A' | 'D' }
+  /** Explicit level/theme when inheritance misleads (e.g. haben/sein named
+   *  in a B2 register section are A1 words). */
+  level?: Level
+  themes?: Theme[]
+}
+const newLexemes = existsSync(join(OVERRIDES, 'new-lexemes.json')) ? readJson<NewLexeme[]>(join(OVERRIDES, 'new-lexemes.json')) : []
+{
+  // index naming contexts by normalised source word
+  type RelCtx = { kind: string; sourceRaw: string; topicId?: string; lessonNumber?: number; sourceSection?: string; sourceLine?: number };
+  const namingCtx = new Map<string, { rel: RelCtx; occ: (typeof occurrences)[number] }>()
+  for (const o of occurrences) {
+    for (const r of o.relations) {
+      const k = asciiFold(r.sourceRaw).toLowerCase()
+      if (!namingCtx.has(k)) namingCtx.set(k, { rel: r, occ: o })
+    }
+  }
+  for (const nl of newLexemes) {
+    const lemma = nl.headword
+    const id = slugify(nl.headword)
+    if (entries.some((e) => e.id === id)) fail(`overrides/new-lexemes.json: "${nl.headword}" collides with existing id "${id}"`)
+    const bare = lemma.replace(/^sich\s+/, '')
+    const ctx =
+      namingCtx.get(asciiFold(lemma).toLowerCase()) ?? (bare !== lemma ? namingCtx.get(asciiFold(bare).toLowerCase()) : undefined)
+    if (!ctx || ctx.rel.topicId === undefined || ctx.rel.sourceLine === undefined) {
+      fail(`overrides/new-lexemes.json: "${nl.headword}" names no occurrence in the corpus — remove it or fix the headword`)
+      continue
+    }
+    const lessonId = ctx.rel.topicId.split('/')[0]!
+    const lesson = lessons[lessonId]
+    if (!lesson) fail(`overrides/new-lexemes.json: "${nl.headword}" names unknown topic "${ctx.rel.topicId}"`)
+    entries.push({
+      id,
+      headword: nl.headword,
+      lemma,
+      pos: nl.pos,
+      gender: null,
+      plural: { form: null, kind: 'unknown', raw: null },
+      glosses: nl.glosses,
+      register: 'neutral',
+      relations: [],
+      themes: (nl.themes ?? (ctx.occ.themes.length ? ctx.occ.themes : ['misc'])) as VocabEntry['themes'],
+      level: (nl.level ?? lesson?.level ?? 'A1') as VocabEntry['level'],
+      occurrences: [
+        {
+          topicId: ctx.rel.topicId,
+          lessonNumber: ctx.rel.lessonNumber ?? lesson?.number ?? 0,
+          sourceSection: ctx.rel.sourceSection ?? '',
+          sourceLine: ctx.rel.sourceLine,
+          gloss: nl.glosses[0] ?? '',
+          exampleId: null,
+        },
+      ],
+      exampleIds: [],
+      verification: 'authored',
+      errata: [],
+      ...(nl.verb ? { verb: nl.verb } : {}),
+    })
+    const e = entries[entries.length - 1]!
+    const k = asciiFold(e.lemma).toLowerCase()
+    const arr = byLemma.get(k)
+    if (arr) arr.push(e)
+    else byLemma.set(k, [e])
+    // Reflexive infinitives are looked up bare ("bewerben" → "sich bewerben").
+    if (e.lemma.startsWith('sich ')) {
+      const bare = asciiFold(e.lemma.replace(/^sich\s+/, '')).toLowerCase()
+      const arr2 = byLemma.get(bare)
+      if (arr2) arr2.push(e)
+      else byLemma.set(bare, [e])
+    }
+  }
 }
 
 for (const e of entries) {
@@ -381,9 +498,11 @@ for (const e of entries) {
   }
   e.relations = [...new Map(rels.map((r) => [`${r.kind}:${r.lexemeId}`, r])).values()]
 }
-for (const [target, referrers] of [...missingRelationTargets.entries()].sort()) {
-  warn(`relation target "${target}" has no lexeme; dropped from ${referrers.length}: ${[...new Set(referrers)].slice(0, 4).join(', ')}${referrers.length > 4 ? '…' : ''}`)
-}
+// Surfaced on /status, not per-item console noise: every target here is a
+// word-formation source with no vocabulary row of its own.
+const unresolvedRelations = [...missingRelationTargets.entries()]
+  .sort(([a], [b]) => a.localeCompare(b))
+  .map(([target, referrers]) => ({ target, referrers: [...new Set(referrers)] }))
 
 // ---------------------------------------------------------------- overrides
 
@@ -740,6 +859,7 @@ const index: ContentIndex = {
     unknownPlural: entries.filter((e) => e.pos === 'noun' && e.plural.kind === 'unknown').length,
     unknownPos: entries.filter((e) => e.pos === null).length,
     conflicts: entries.filter((e) => e.conflicts?.length).length,
+    unresolvedRelations,
   },
 }
 
@@ -779,6 +899,9 @@ console.log(
 if (warnings.length) {
   console.log(`\n⚠ ${warnings.length} warning(s):`)
   for (const w of [...new Set(warnings)].slice(0, 60)) console.log(`  · ${w}`)
+}
+if (unresolvedRelations.length) {
+  console.log(`\nℹ ${unresolvedRelations.length} relation targets have no lexeme (dropped from distractors — full list on /status)`)
 }
 const unknownPlural = entries.filter((e) => e.pos === 'noun' && e.plural.kind === 'unknown')
 if (unknownPlural.length) {

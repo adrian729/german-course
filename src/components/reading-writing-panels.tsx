@@ -28,29 +28,35 @@ export function ReadingPanel({ reading }: { topic: Topic; reading: ReadingText }
 
   const renderWithGlossary = (sentence: string): ReactNode => {
     if (glossary.size === 0) return sentence
-    // Highlight known words that carry a glossary entry.
+    // Highlight every known glossary term in the sentence, longest first.
     const terms = [...glossary.values()]
       .map((e) => e.headword.replace(/^(der|die|das)\s+/, ''))
       .filter((w) => w.length > 3)
       .sort((a, b) => b.length - a.length)
       .slice(0, 40)
-    let out: ReactNode[] = [sentence]
+    let parts: ReactNode[] = [sentence]
+    let n = 0
     for (const term of terms) {
-      const idx = (out[0] as string)?.indexOf?.(term)
-      if (typeof out[0] === 'string' && idx !== undefined && idx >= 0) {
-        const s = out[0] as string
+      const next: ReactNode[] = []
+      for (const part of parts) {
+        if (typeof part !== 'string') {
+          next.push(part)
+          continue
+        }
+        // Walk every occurrence — the previous single-hit flag left later
+        // mentions of the same term untouched.
         const entry = [...glossary.values()].find((e) => e.headword.endsWith(term))
-        out = [
-          s.slice(0, idx),
-          <abbr key={term} title={entry ? `${entry.headword} — ${entry.glosses[0] ?? ''}` : term} className="decoration-dotted underline underline-offset-2">
-            {term}
-          </abbr>,
-          s.slice(idx + term.length),
-        ]
-        break
+        const title = entry ? `${entry.headword} — ${entry.glosses[0] ?? ''}` : term
+        const chunks = part.split(term)
+        for (let i = 0; i < chunks.length; i++) {
+          const c = chunks[i]!
+          if (i > 0) next.push(<abbr key={`gloss-${n++}`} title={title} className="decoration-dotted underline underline-offset-2">{term}</abbr>)
+          if (c) next.push(c)
+        }
       }
+      parts = next
     }
-    return out
+    return parts
   }
 
   return (

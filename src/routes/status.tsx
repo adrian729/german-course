@@ -108,6 +108,27 @@ function StatusPage() {
         )}
       </section>
 
+      {/* Unresolved relations */}
+      <section className="mt-8">
+        <h2 className="text-base font-semibold">Unresolved relations — {stats.unresolvedRelations.length}</h2>
+        <p className="text-muted-foreground mt-1 text-xs">
+          Word-formation sources with no vocabulary entry of their own. Their relations are dropped from distractor
+          generation; nothing is drilled off them.
+        </p>
+        {stats.unresolvedRelations.length === 0 ? (
+          <p className="text-muted-foreground mt-3 text-sm">No unresolved relations.</p>
+        ) : (
+          <ul className="border-border mt-3 divide-y rounded-lg border text-sm">
+            {stats.unresolvedRelations.map((r) => (
+              <li key={r.target} className="flex flex-wrap items-baseline justify-between gap-2 px-3 py-2">
+                <span className="font-mono text-xs">{r.target}</span>
+                <span className="text-muted-foreground text-xs">from {r.referrers.join(', ')}</span>
+              </li>
+            ))}
+          </ul>
+        )}
+      </section>
+
       {/* Errata */}
       <section className="mt-10">
         <h2 className="text-base font-semibold">Errata — {errataList.length}</h2>
