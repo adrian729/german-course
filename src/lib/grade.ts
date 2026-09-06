@@ -1,14 +1,14 @@
-// Typed German grading. The layer at which equality first holds is the grade.
-//
-// N1  — umlaut folding is DISABLED when the umlaut IS the answer (Vater→Väter,
-//       Maus→Mäuse, hoch→höher, groß→größten). strictUmlaut is computed once
-//       per item at generation time, so it costs one comparison here.
-// N2  — capitalisation is graded whenever the answer is or contains a noun.
-// N3  — the article is part of a noun; its absence is a diagnosis, not a typo.
-// N4  — the fuzzy radius must be smaller than the distance to the nearest
-//       paradigm sibling (keine/keinen/keinem/keiner). Checked at build.
-// N5  — word order is never fuzzy.
-// N6  — never-fuzzy blocklist, seeded from the false-friend table.
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
 
 import { l1, l2, l3, l4, tokens, umlautFold } from './normalise'
 
@@ -19,7 +19,7 @@ export type GradeOutcome =
   | 'article-miss'
   | 'near'
   | 'wrong'
-  | 'almost' // word order right, order wrong — Translation only
+  | 'almost'  
 
 export type GradeResult = {
   outcome: GradeOutcome
@@ -29,7 +29,7 @@ export type GradeResult = {
   distance: number
 }
 
-// ------------------------------------------------------------------ fuzzy
+ 
 
 /** Damerau–Levenshtein distance; transpositions count as one. */
 export function damerauLevenshtein(a: string, b: string): number {
@@ -64,7 +64,7 @@ export const fuzzyRadius = (len: number): number => (len <= 6 ? 1 : len <= 12 ? 
 /** The never-fuzzy blocklist (N6) — seeded from the false-friend table. */
 export const NEVER_FUZZY = new Set(['rat', 'rad', 'see', 'sehe', 'note', 'not'])
 
-// ---------------------------------------------------------------- grading
+ 
 
 export type GradeOptions = {
   /** true when the umlaut IS the answer — N1. */
@@ -123,18 +123,18 @@ export function grade(input: string, accepted: string[], opts: GradeOptions = {}
     const a2 = l2(ans)
     const a4 = l4(ans)
 
-    // exact — L2 equal. When case is not graded (verb forms, endings,
-    // particles), case-insensitive equality counts as exact — but folding
-    // stays enabled only when the umlaut is NOT the answer (N1).
+     
+     
+     
     if (i2 === a2) return { outcome: 'exact', matched: ai, distance: 0 }
     if (opts.gradeCase === false && !strictUmlaut && i4 === a4) return { outcome: 'exact', matched: ai, distance: 0 }
     if (opts.gradeCase === false && strictUmlaut && l2(raw).toLowerCase() === l2(ans).toLowerCase()) {
       return { outcome: 'exact', matched: ai, distance: 0 }
     }
 
-    // N1: umlaut-miss (peach) — unless the umlaut IS the answer.
-    // When strict, folding is disabled entirely: no umlaut-miss and no fuzzy,
-    // so Vater for Väter grades wrong, not "almost".
+     
+     
+     
     if (!strictUmlaut) {
       if (l3(raw) === l3(ans)) {
         consider({ outcome: 'umlaut-miss', matched: ai, distance: 0 })
@@ -142,9 +142,9 @@ export function grade(input: string, accepted: string[], opts: GradeOptions = {}
       }
     }
 
-    // case-miss (peach) — folded equal but casing differs. Only when graded.
-    // Under strictUmlaut folding is disabled, so compare unfolded-lowered:
-    // VÄTER for Väter still diagnoses case, while Vaeter falls to wrong.
+     
+     
+     
     if (opts.gradeCase !== false && i2 !== a2) {
       if (!strictUmlaut && i4 === a4) {
         consider({ outcome: 'case-miss', matched: ai, distance: 0 })
@@ -156,14 +156,14 @@ export function grade(input: string, accepted: string[], opts: GradeOptions = {}
       }
     }
 
-    // N3: article-miss (peach) — noun without its article (or with an extra
-    // article when the answer carries none). Strip a leading article from
-    // BOTH sides: if the stripped forms match while the full forms do not,
-    // the learner knew the word but not its gender. BUT an article present
-    // on BOTH sides is not a miss — "die Vater" for "der Vater" chose the
-    // wrong gender, "dem Mann" for "den Mann" the wrong case. And it must
-    // short-circuit the fuzzy block too, or a one-letter article edit
-    // ("die"→"der") would heal itself to `near` instead of wrong.
+     
+     
+     
+     
+     
+     
+     
+     
     if (opts.expectsArticle && a4 !== i4) {
       if (stripArticle(i4) === stripArticle(a4)) {
         const iHas = ARTICLES.test(i4)
@@ -175,11 +175,11 @@ export function grade(input: string, accepted: string[], opts: GradeOptions = {}
       }
     }
 
-    // N4/N6: fuzzy. Skipped when the umlaut is the answer (N1), between
-    // single-token closed-class paradigm siblings (N4 — keine/keinen, never
-    // article+noun pairs, where the article alone must not disable fuzzy),
-    // on the never-fuzzy blocklist (N6), and for word-order shapes
-    // (N5 — handled as `almost` below).
+     
+     
+     
+     
+     
     const foldedInput = umlautFold(i2).toLowerCase()
     const foldedAnswer = umlautFold(a2).toLowerCase()
     const singleToken = !i4.includes(' ') && !a4.includes(' ')
@@ -193,9 +193,9 @@ export function grade(input: string, accepted: string[], opts: GradeOptions = {}
     }
   }
 
-  // N5: word order is never fuzzy — but Translation softens to `almost` when
-  // the token multiset matches. Ranked, never returned outright, so a better
-  // peach (case/article-miss) still wins.
+   
+   
+   
   if (opts.orderSensitive) {
     const my = tokens(raw)
     accepted.forEach((ans, ai) => {

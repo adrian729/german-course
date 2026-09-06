@@ -1,5 +1,5 @@
-// Speaker button. Hidden (never disabled) when no German voice exists — a
-// disabled button invites clicking, and en-US German teaches a wrong phoneme map.
+ 
+ 
 
 import { useEffect, useState } from 'react'
 import { Volume2 } from 'lucide-react'

@@ -1,6 +1,6 @@
-// choice — one of two to four. Grading is immediate: a choice card has no
-// second step, and the aliases are read off the option labels, so a future kind
-// whose options happen to be der/die/das inherits D/F/S for free.
+ 
+ 
+ 
 
 import { SpeakButton } from '@/components/speak-button'
 import { Kbd, KeyHint } from '@/components/exercise/key-hint'
@@ -45,8 +45,8 @@ export function ChoiceShape({ item, graded, onGrade }: ShapeProps) {
         pick(match.label)
         return true
       }
-      // Ungraded choice cards swallow the advance keys: skipping a question
-      // without answering it is the one thing the tally cannot represent.
+       
+       
       if (e.key === ' ' || e.key === 'Enter' || e.key === 'ArrowRight') return true
       return false
     },

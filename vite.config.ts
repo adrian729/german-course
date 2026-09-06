@@ -23,11 +23,11 @@ function spaFallback(): Plugin {
 }
 
 export default defineConfig({
-  // GitHub Pages serves a project site from /<repo>/, so assets need that
-  // prefix. Unset locally, where the app is served from the root.
+   
+   
   base: process.env.BASE_PATH ?? '/',
   plugins: [
-    // Must precede the React plugin so generated routes are transformed.
+     
     tanstackRouter({ target: 'react', autoCodeSplitting: true }),
     react(),
     tailwindcss(),

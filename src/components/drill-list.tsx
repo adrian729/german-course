@@ -1,5 +1,5 @@
-// Practice topic renderer: the answer-key is folded into DrillItem.expected,
-// so answers are revealed per item — never dumped all at once.
+ 
+ 
 
 import { useEffect, useState } from 'react'
 import { loadDrills } from '@/content/loader'

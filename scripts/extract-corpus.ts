@@ -1,14 +1,14 @@
-// pnpm extract — reads ../enciclopedia/docs/german/week_N.md and emits:
-//   content/lessons/<lessonId>/topics/*.md   (93 topic bodies, one per content H2)
-//   content/lessons/<lessonId>/lesson.json   (topicOrder + metadata)
-//   content/extracted/*.jsonl / *.json        (vocab, sentences, drills, paradigms,
-//                                             wrong forms, readings, prompts)
-//   content/extracted/.upstream.json          (per-file sha256 — drift detector)
-//
-// MACHINE-WRITTEN output: content/extracted/ is clobbered every run and never
-// hand-edited; topic bodies under content/lessons/ are machine-owned but their
-// frontmatter keys are owned individually (build-content preserves the
-// human-authored keys). Run rarely; the output is committed.
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
 
 import { createHash } from 'node:crypto'
 import { existsSync, mkdirSync, readFileSync, writeFileSync, readdirSync } from 'node:fs'
@@ -29,14 +29,14 @@ const themeBySection = new Map(taxonomy.sections.map((s) => [normTitle(s.section
 
 const warnings: string[] = []
 const warn = (lessonId: string, msg: string) => warnings.push(`[${lessonId}] ${msg}`)
-// An unregistered table shape inside a vocabulary section fabricates data
-// (the false-friend row read positionally mints phantom senses) — guessing
-// is strictly worse than stopping, so this hard-fails.
+ 
+ 
+ 
 const unknownShapes: string[] = []
-// Article vs gender-tag disagreement means the parser broke. Same treatment.
+ 
 const genderDisagreements: string[] = []
 
-// ---------------------------------------------------------------- utilities
+ 
 
 const sha256 = (s: string): string => createHash('sha256').update(s, 'utf8').digest('hex')
 
@@ -104,7 +104,7 @@ function cellsOf(line: string): string[] {
 
 const isSeparatorRow = (cells: string[]): boolean => cells.length > 0 && cells.every((c) => /^:?-{2,}:?$/.test(c))
 
-// ------------------------------------------------------------- headword parse
+ 
 
 const ARTICLE_RE = /^(der|die|das)\s+/
 const SEPARABLE_PREFIXES = new Set(
@@ -135,8 +135,8 @@ function parseParen(raw: string, level: number, section: string, line: number): 
 
   if (inner === 'm.' || inner === 'f.' || inner === 'n.') {
     if (level !== 3) warn(`l${level}`, `gender tag "${inner}" outside lesson 3 in "${section}" L${line}`)
-    // Plural unknown — but keep the raw tag: it is the tooltip and the
-    // re-extraction diff signal, not disposable.
+     
+     
     return { gender: inner[0] as Gender, plural: { form: null, kind: 'unknown', raw: inner } }
   }
 
@@ -149,7 +149,7 @@ function parseParen(raw: string, level: number, section: string, line: number): 
 
   if (VALENCY_RE.test(inner)) return { valency: inner }
 
-  // 3sg stem change: "wäscht", "fährt ab", "nimmt" — never a plural.
+   
   const words = inner.split(/\s+/)
   const singleWord = words.length === 1
   if (singleWord && /(st|t)$/.test(words[0]!) && !/(en|eln|ern)$/.test(words[0]!)) {
@@ -159,17 +159,17 @@ function parseParen(raw: string, level: number, section: string, line: number): 
     return { present3sg: inner }
   }
 
-  // multi-word parens after a noun are either a full plural form written out
-  // ("die erneuerbare Energie (erneuerbaren Energien)") or an English gloss
-  // ("spielen (to play)"). English contains function words; German does not.
+   
+   
+   
   if (words.length > 1 && ![...ENGLISH_STOPWORDS].some((w) => words.includes(w))) {
     return { plural: { form: inner, kind: 'full', raw: inner } }
   }
 
-  // infinitive source: "die Ablehnung (ablehnen)"
+   
   if (singleWord && /(en|eln|ern)$/.test(words[0]!)) return { derivedFrom: inner }
 
-  // dotted abbreviation like (z.B.) is part of the phrase, not a notation
+   
   return {}
 }
 
@@ -189,8 +189,8 @@ function parseHeadword(raw0: string, ctx: { pos: Pos | null; level: number; sect
   const raw = stripBold(raw0).trim()
   if (!raw) return null
 
-  // Note: "der Arzt (m.) / die Ärztin (f.)" pair rows are split by the caller
-  // (splitPairRows); each half is parsed independently here.
+   
+   
 
   const paren = parseParen(raw, ctx.level, ctx.section, ctx.line)
   const noted = Object.keys(paren).length > 0
@@ -204,29 +204,29 @@ function parseHeadword(raw0: string, ctx: { pos: Pos | null; level: number; sect
   const phrase = articleWord !== null && /\s/.test(rest)
 
   let plural = paren.plural ?? UNKNOWN_PLURAL
-  // invariant and plurale tantum: the plural form IS the lemma, and a
-  // plurale tantum has no gender (the corpus's "die (pl.)" is a plural article).
+   
+   
   if (plural.kind === 'invariant' || plural.kind === 'pluraleTantum') {
     plural = { ...plural, form: rest }
     if (plural.kind === 'pluraleTantum' && paren.gender === undefined) {
       paren.gender = null
     }
   }
-  // Suffix plurals are expanded to a fully spelled-out form here so nothing
-  // downstream ever sees a bare suffix: Schwester + -n = Schwestern.
+   
+   
   if (plural.kind === 'suffix' && plural.raw) {
     plural = { ...plural, form: `${rest}${plural.raw.slice(1)}` }
   }
-  // Lessons 10–12 spell out invariant plurals (Richter); normalise to
-  // invariant so the two spellings of one fact never read as a conflict.
+   
+   
   if ((plural.kind === 'full' || plural.kind === 'umlaut') && plural.form === rest) {
     plural = { ...plural, kind: 'invariant' }
   }
   const articleGender: Gender | null = articleWord === 'der' ? 'm' : articleWord === 'die' ? 'f' : articleWord === 'das' ? 'n' : null
   if (paren.gender !== undefined && paren.gender !== null && articleGender && paren.gender !== articleGender) {
-    // Hard failure, not a warning: article and tag both present and
-    // disagreeing means the parser broke (a wrong gender here ships a wrong
-    // word page and wrong drill keys downstream).
+     
+     
+     
     genderDisagreements.push(`[${ctx.level}] gender tag "(${paren.gender}.)" disagrees with article "${articleWord}" in "${raw}" (${ctx.section} L${ctx.line})`)
   }
   if (plural.kind === 'pluraleTantum') {
@@ -252,9 +252,9 @@ function lemmaOf(h: Headword): string {
   return h.lemma
 }
 
-// const foldKey — superseded: POS resolves in rowToOccurrence before the key is built.
+ 
 
-// --------------------------------------------------------------- topic split
+ 
 
 type H2Block = {
   number: number
@@ -304,7 +304,7 @@ const renderSlug = (render: string, title: string): string =>
         ? 'applied-skills'
         : slugify(title.split(' — ')[0]!.split(' / ')[0]!)
 
-// ------------------------------------------------------------------ stages
+ 
 
 const files = readdirSync(CORPUS).filter((f) => /^week_\d+\.md$/.test(f)).sort()
 const upstream: Record<string, { sha256: string; lines: number; bytes: number }> = {}
@@ -376,7 +376,7 @@ function registerSentence(text0: string, topicId: string, level: Level): string 
   return id
 }
 
-// ---------------------------------------------------------------- stage: emit topics
+ 
 
 let topicTotal = 0
 
@@ -384,7 +384,7 @@ for (const lesson of LESSONS) {
   const lines = weekSources.get(lesson.weekFile)!
   const blocks = splitH2s(lines).filter((b) => !/^Table of Contents/i.test(b.title))
 
-  // ToC anchor check — a dangling anchor is a signal about the source.
+   
   const tocStart = lines.findIndex((l) => l.startsWith('## Table of Contents'))
   if (tocStart >= 0) {
     const toc = lines.slice(tocStart, tocStart + 100).join('\n')
@@ -423,9 +423,9 @@ for (const lesson of LESSONS) {
     body = body.replace(WEEK_RE, WEEK_REPLACE)
 
     const topicPath = join(topicsDir, `${slug}.md`)
-    // Frontmatter keys are owned individually: the machine owns id, lessonId,
-    // number, title, render and source; everything else (summary, points,
-    // revisits, paradigms, status) survives re-extraction verbatim.
+     
+     
+     
     let preserved: Record<string, unknown> = {}
     if (existsSync(topicPath)) {
       try {
@@ -498,7 +498,7 @@ function levelOf(lesson: (typeof LESSONS)[number]): Level {
   return (m?.[1] as Level) ?? lesson.level
 }
 
-// ------------------------------------------------------------- vocabulary
+ 
 
 function extractVocabulary(lesson: (typeof LESSONS)[number], level: Level, block: H2Block, topicId: string) {
   const lines = block.body
@@ -518,8 +518,8 @@ function extractVocabulary(lesson: (typeof LESSONS)[number], level: Level, block
       const occurrence = rowToOccurrence(single, row, shape, lesson, level, topicId, section, sectionPos, sectionTheme, line, block.start)
       if (!occurrence) continue
       if (isFemininePair && (occurrence.gender as string) === 'f') {
-        // der Arzt (m.) / die Ärztin (f.): the feminine entry alone carries a
-        // feminine-of link to the masculine lemma.
+         
+         
         const other = halves.find((h) => h !== single) ?? ''
         const otherLemma = other.replace(/\([^()]+\)\s*$/, '').replace(/^(der|die|das)\s+/, '').trim()
         ;(occurrence.relations as Array<{ kind: string; sourceRaw: string }>).push({ kind: 'feminine-of', sourceRaw: otherLemma })
@@ -575,9 +575,9 @@ function extractVocabulary(lesson: (typeof LESSONS)[number], level: Level, block
     }
   }
 
-  // Masculine/feminine profession rows ("der Bekannte" / "die Bekannte" as
-  // separate rows of one table): the feminine occurrence alone carries a
-  // feminine-of link to the masculine lemma.
+   
+   
+   
   const seenInBlock = new Map<string, Record<string, unknown>[]>()
   for (const o of allOccurrences) {
     const occ = o as { occurrence?: { topicId?: string; sourceSection?: string }; lemma?: string; pos?: string; gender?: string }
@@ -638,7 +638,7 @@ function rowToOccurrence(
   const parsed = parseHeadword(headRaw, { pos: sectionPos, level: lesson.number, section, line: line + sectionStart + 2 })
   if (!parsed) return null
 
-  // POS cascade: section override → structural tests → null (+ warning at build).
+   
   const structuralPos = (): Pos | null => {
     if (parsed.phrase) return 'phrase'
     if (parsed.gender) return 'noun'
@@ -648,9 +648,9 @@ function rowToOccurrence(
     }
     return null
   }
-  // POS cascade: phrase first (the article in "das Bett machen" is part of
-  // the idiom, not a gender tag), then gendered headwords are nouns no
-  // matter what the section claims, then section override, then structural.
+   
+   
+   
   const pos: Pos | null = (shape.forcePhrase || parsed.phrase) ? 'phrase' : parsed.gender ? 'noun' : (sectionPos ?? structuralPos())
 
   const gloss = shape.gloss !== undefined ? stripInlineMd(row[shape.gloss] ?? '') : ''
@@ -699,7 +699,7 @@ function rowToOccurrence(
   }
 }
 
-// ------------------------------------------------------------------ drills
+ 
 
 function extractDrills(lesson: (typeof LESSONS)[number], block: H2Block, topicId: string) {
   const lines = block.body
@@ -798,8 +798,8 @@ function parseKeyItem(raw: string): { expected: string[]; english: string | null
       }
       continue
     }
-    // Unbolded keys (week_1 10.4, week_4 6.3/6.4): "1. schneller (faster)".
-    // The head before a trailing gloss/rationale is the answer.
+     
+     
     const noRat = alt.replace(/\s*—\s*\*[^*]*\*\s*$/, '').replace(/\s*—\s*[A-Za-z].*$/, '').trim()
     const m = /^(.*?)\s*\(([^()]*)\)\s*$/.exec(noRat)
     const head = (m ? m[1]! : noRat).trim()
@@ -818,7 +818,7 @@ function parseKeyItem(raw: string): { expected: string[]; english: string | null
   return { expected, english: gloss ? gloss[1]!.trim() : null, rationale }
 }
 
-// ------------------------------------------------------------------ applied
+ 
 
 function extractApplied(lesson: (typeof LESSONS)[number], block: H2Block, topicId: string) {
   const lines = block.body
@@ -837,12 +837,12 @@ function extractApplied(lesson: (typeof LESSONS)[number], block: H2Block, topicI
 
 function parseReading(topicId: string, title: string, body: string, level: Level): Record<string, unknown> {
   const fences = body.split(/^---\s*$/m)
-  // Questions live AFTER the --- fence; the text is before it.
+   
   let main = (fences[0] ?? body).trim()
   const after = fences.slice(1).join('\n---\n')
   const haystack = after.trim() ? `${main}\n${after}` : main
   main = main.replace(/^\*\*[^*]+\*\*\s*/, '')
-  // The source writes "> **New words in this text:** …" (colon INSIDE bold).
+   
   const newWords = /^\>\s*\*\*New words[^*]*:?\*\*\s*:?\s*(.+)$/m.exec(body)
   const questions: Array<{ q: string; answer: string | null }> = []
   const qStart = /^\*\*Comprehension Questions\*\*/m.exec(haystack)?.index ?? -1
@@ -884,7 +884,7 @@ function parseWritingPrompt(topicId: string, title: string, body: string): Recor
   }
 }
 
-// ------------------------------------------------------------- paradigms
+ 
 
 for (const lesson of LESSONS) {
   const lines = weekSources.get(lesson.weekFile)!
@@ -973,7 +973,7 @@ function parseParadigms(lesson: (typeof LESSONS)[number], block: H2Block, topicI
 function classifyParadigm(header: string[], rows: string[][]): 'verb' | 'article' | 'pronoun' | 'adjective-ending' | null {
   const h = header.join(' ').toLowerCase()
   if (/person|infinitive|partizip|tense|aspect|konjunktiv|präteritum|perfekt|passive|conjugation|modal|ending|formation|construction|full pattern|aux/i.test(h)) return 'verb'
-  // "Verb | Example" lists are vocabulary tables, not paradigms.
+   
   if (/^verb$/.test(header[0]!.toLowerCase())) return null
   if (h.startsWith('case') || h.startsWith('nominative')) {
     const sample = rows[0]?.[1] ?? ''
@@ -984,7 +984,7 @@ function classifyParadigm(header: string[], rows: string[][]): 'verb' | 'article
   return null
 }
 
-// ------------------------------------------------------------ wrong forms
+ 
 
 for (const lesson of LESSONS) {
   const lines = weekSources.get(lesson.weekFile)!
@@ -1004,8 +1004,8 @@ for (const lesson of LESSONS) {
         if (before && !before.includes('~~')) correct = before.replace(/^[-–—]\s*/, '')
       }
       if (!correct) correct = /^\*\*([^*]+)\*\*/.exec(line)?.[1] ?? null
-      // Never invent a correction by suffix-stripping: a guessed "correct"
-      // next to an authored wrong form teaches a wrong rule. Leave null.
+       
+       
       allWrongForms.push({
         id: `${lesson.id}:wf${idx}-${k++}`,
         form,
@@ -1019,10 +1019,10 @@ for (const lesson of LESSONS) {
   })
 }
 
-// --------------------------------------------------------------- emit files
+ 
 
-// Refuse to write anything when a vocabulary table shape went unregistered:
-// partial output that looks complete is worse than no output.
+ 
+ 
 if (unknownShapes.length) {
   console.error(`\n✖ extraction failed — ${unknownShapes.length} unregistered table shape(s) in vocabulary sections. Register the shape in extract.config.ts TABLE_SHAPES; guessing fabricates data.\n`)
   for (const s of [...new Set(unknownShapes)].slice(0, 20)) console.error(`  · ${s}`)
@@ -1045,7 +1045,7 @@ writeFileSync(join(EXTRACTED_DIR, 'readings.json'), JSON.stringify(allReadings, 
 writeFileSync(join(EXTRACTED_DIR, 'prompts.json'), JSON.stringify(allPrompts, null, 2) + '\n')
 writeFileSync(join(EXTRACTED_DIR, '.upstream.json'), JSON.stringify(upstream, null, 2) + '\n')
 
-// ----------------------------------------------------------------- summary
+ 
 
 const drillItems = allDrills.reduce((n, d) => n + (d.items as unknown[]).length, 0)
 console.log(

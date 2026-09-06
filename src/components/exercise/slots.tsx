@@ -1,6 +1,6 @@
-// slots — n strings, graded together and reported separately. A partially right
-// answer that does not say *which* blank failed teaches nothing, so every blank
-// gets its own verdict.
+ 
+ 
+ 
 
 import { useEffect, useRef, useState } from 'react'
 import { SpeakButton } from '@/components/speak-button'
@@ -21,7 +21,7 @@ export function SlotsShape({ item, graded, onGrade }: ShapeProps) {
   useEffect(() => {
     setValues(view.blanks.map(() => ''))
     refs.current[0]?.focus()
-    // The blank count is a property of the item, so re-seed on the item only.
+     
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [item.id])
 
@@ -31,8 +31,8 @@ export function SlotsShape({ item, graded, onGrade }: ShapeProps) {
     if (graded) return
     const verdicts: SlotVerdict[] = view.blanks.map((blank, i) => {
       const input = values[i] ?? ''
-      // N2: grade capitalisation only when the answer is/contains a noun.
-      // Verb forms, auxiliaries and endings are case-insensitive.
+       
+       
       const looksNominal = (blank.accepted[0] ?? '').trim().length > 0 && /^[A-ZÄÖÜ]/.test((blank.accepted[0] ?? '').trim())
       const result = grade(input, blank.accepted, { strictUmlaut: blank.strictUmlaut, gradeCase: looksNominal })
       return {

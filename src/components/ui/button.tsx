@@ -8,9 +8,9 @@ const buttonVariants = cva(
   {
     variants: {
       variant: {
-        // Hover uses dedicated palette steps (--primary-hover / --accent-hover)
-        // rather than an opacity nudge, which was imperceptible on saturated
-        // mauve. Both steps are contrast-verified — see theme.css.
+         
+         
+         
         default: "bg-primary text-primary-foreground hover:bg-primary-hover",
         destructive:
           "bg-destructive text-white hover:bg-destructive/80 focus-visible:ring-destructive/20 dark:bg-destructive/60 dark:focus-visible:ring-destructive/40",

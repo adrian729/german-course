@@ -1,5 +1,5 @@
-// reveal — no learner input. Space/Enter/→ turns the card, and the second press
-// falls through to the global map that advances it.
+ 
+ 
 
 import { SpeakButton } from '@/components/speak-button'
 import { Kbd, KeyHint } from '@/components/exercise/key-hint'
@@ -10,9 +10,9 @@ export function RevealShape({ item, graded, onGrade }: ShapeProps) {
   const view = revealPayload(item)
   const revealed = graded !== null
 
-  // Reveal counts as `exact`: there was nothing to get wrong, and the session
-  // tally needs every item in exactly one of its three buckets. Pressing A on a
-  // reveal card is how it lands in "to review" instead.
+   
+   
+   
   const reveal = () => onGrade({ outcome: 'exact', verdicts: [{ input: '', expected: view.back, result: gradeResult('exact') }] })
 
   useShapeKeys(

@@ -16,7 +16,7 @@ export function ThemeToggle() {
 
   useEffect(() => {
     setLocal(getTheme())
-    // Keep "system" live if the OS flips while the tab is open.
+     
     const media = matchMedia('(prefers-color-scheme: dark)')
     const onChange = () => getTheme() === 'system' && applyTheme('system')
     media.addEventListener('change', onChange)

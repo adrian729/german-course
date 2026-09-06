@@ -1,6 +1,6 @@
-// How much a human has looked at this record. The unverified pill keeps the
-// learner able to check the source — do not hide provenance from the person
-// being graded.
+ 
+ 
+ 
 
 import { cn } from '@/lib/utils'
 import type { Verification } from '@/content/types'

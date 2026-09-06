@@ -1,6 +1,6 @@
-// Applied topic renderers: a reading with per-sentence TTS and glossary
-// popovers, and a writing prompt with a required-construction checklist held
-// in React state.
+ 
+ 
+ 
 
 import { useEffect, useState, type ReactNode } from 'react'
 import { Link } from '@tanstack/react-router'
@@ -28,7 +28,7 @@ export function ReadingPanel({ reading }: { topic: Topic; reading: ReadingText }
 
   const renderWithGlossary = (sentence: string): ReactNode => {
     if (glossary.size === 0) return sentence
-    // Highlight every known glossary term in the sentence, longest first.
+     
     const terms = [...glossary.values()]
       .map((e) => e.headword.replace(/^(der|die|das)\s+/, ''))
       .filter((w) => w.length > 3)
@@ -43,8 +43,8 @@ export function ReadingPanel({ reading }: { topic: Topic; reading: ReadingText }
           next.push(part)
           continue
         }
-        // Walk every occurrence — the previous single-hit flag left later
-        // mentions of the same term untouched.
+         
+         
         const entry = [...glossary.values()].find((e) => e.headword.endsWith(term))
         const title = entry ? `${entry.headword} — ${entry.glosses[0] ?? ''}` : term
         const chunks = part.split(term)

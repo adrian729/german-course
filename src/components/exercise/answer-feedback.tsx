@@ -1,6 +1,6 @@
-// The graded panel, shared by all six shapes. Grading is not boolean: peach is
-// the load-bearing state, and each peach outcome gets the specific sentence that
-// names the actual mistake instead of a generic "almost".
+ 
+ 
+ 
 
 import type { ReactNode } from 'react'
 import { Check, TriangleAlert, X } from 'lucide-react'

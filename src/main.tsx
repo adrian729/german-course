@@ -8,7 +8,7 @@ const router = createRouter({
   routeTree,
   defaultPreload: 'intent',
   scrollRestoration: true,
-  // Matches Vite's `base`, so routes resolve under a GitHub Pages subpath.
+   
   basepath: import.meta.env.BASE_URL,
 })
 

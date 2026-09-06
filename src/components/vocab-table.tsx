@@ -1,6 +1,6 @@
-// The data-driven vocabulary topic renderer. Entries are grouped by the
-// corpus's own thematic H3 sections, with a per-group "practise these N words"
-// link.
+ 
+ 
+ 
 
 import { useEffect, useMemo, useState } from 'react'
 import { Link } from '@tanstack/react-router'

@@ -22,8 +22,8 @@ export function SidebarNav({ onNavigate }: { onNavigate?: () => void }) {
   const matchRoute = useMatchRoute()
   const lessonMatch = (matchRoute({ to: '/lessons/$lessonSlug', fuzzy: true }) as { lessonSlug: string } | false) || null
   const topicMatch = (matchRoute({ to: '/lessons/$lessonSlug/$topicSlug', fuzzy: true }) as { lessonSlug?: string; topicSlug?: string } | false) || null
-  // On a topic page the lesson id comes from the topic match; on a lesson
-  // page it comes from the lesson match.
+   
+   
   const openLessonId = topicMatch && 'lessonSlug' in topicMatch && topicMatch.lessonSlug ? (topicMatch.lessonSlug as string) : lessonMatch?.lessonSlug ?? null
 
   return (

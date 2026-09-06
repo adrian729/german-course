@@ -22,7 +22,7 @@ function RootLayout() {
     setSidebarCollapsed(v)
   }
 
-  // The session screen is full-bleed — the one place the shell gets out of the way.
+   
   const isSession = Boolean(matchRoute({ to: '/practice/session' }))
 
   if (isSession) {

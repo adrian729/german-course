@@ -1,5 +1,5 @@
-// A theme toggle that resets on reload is worse than no toggle, so this
-// persists to localStorage (see also lib/sidebar.ts).
+ 
+ 
 
 export type Theme = 'light' | 'dark' | 'system'
 

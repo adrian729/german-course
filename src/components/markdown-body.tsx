@@ -1,8 +1,8 @@
-// Renders a topic body. Element styling is supplied through the renderer's
-// `components` map. Links are intercepted by ContentAnchor: /vocabulary#id,
-// /grammar#id and /lessons/... all resolve to hover-cards and router links.
-// `~~strikethrough~~` renders as a red struck span with a ✗ — the corpus
-// authored those as teaching devices, so they are marked, never hidden.
+ 
+ 
+ 
+ 
+ 
 
 import type { ComponentPropsWithoutRef } from 'react'
 import { Markdown } from '@tanstack/markdown/react'

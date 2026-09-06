@@ -1,9 +1,9 @@
-// Inline links are authored as ordinary markdown links with relative URLs:
-//   [Präteritum](/grammar#praeteritum)   [das Kind](/vocabulary#das-kind)
-//   [Inseparable Verbs](/lessons/05-separable-verbs/02-inseparable-prefix-verbs)
-// @tanstack/markdown silently drops links with unrecognised schemes, so this
-// is the only link form that survives the parser — and it is validated at
-// build time with the same parser the app renders with.
+ 
+ 
+ 
+ 
+ 
+ 
 
 import { useEffect, useState } from 'react'
 import { Link } from '@tanstack/react-router'

@@ -21,7 +21,7 @@ function GrammarPage() {
     return ''
   })
 
-  // Keep ?q in URL for shareability
+   
   useEffect(() => {
     if (typeof window === 'undefined') return
     const url = new URL(window.location.href)
@@ -30,7 +30,7 @@ function GrammarPage() {
     window.history.replaceState(null, '', url.toString())
   }, [query])
 
-  // Deep-link hash scroll on mount and when hash changes
+   
   useEffect(() => {
     if (typeof window === 'undefined') return
     const hash = window.location.hash.slice(1)

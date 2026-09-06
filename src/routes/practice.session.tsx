@@ -27,9 +27,9 @@ function SessionPage() {
   const navigate = useNavigate()
   const [bundles, setBundles] = useState<Bundles | null>(null)
   const [queue, setQueue] = useState<ExerciseItem[]>([])
-  // Cards deferred mid-rotation surface only when the active queue is
-  // exhausted — otherwise a tail "Again later" would slide back onto the
-  // current index and repeat immediately.
+   
+   
+   
   const [later, setLater] = useState<ExerciseItem[]>([])
   const [pos, setPos] = useState(0)
   const [graded, setGraded] = useState<Graded | null>(null)
@@ -75,8 +75,8 @@ function SessionPage() {
     stopSpeaking()
     if (pos + 1 >= total) {
       if (later.length > 0) {
-        // Active rotation is done — review the deferred pile next instead of
-        // ending the session.
+         
+         
         setQueue(later)
         setLater([])
         setPos(0)
@@ -92,8 +92,8 @@ function SessionPage() {
   const againLater = useCallback(() => {
     if (!item) return
     if (queue.length <= 1) {
-      // Last card. If the deferred pile is empty the session ends; otherwise
-      // hand over the rotation to it.
+       
+       
       if (later.length > 0) {
         setQueue(later)
         setLater([])
@@ -104,8 +104,8 @@ function SessionPage() {
       if (graded) {
         const g: Graded = graded
         setHistory((h) => [...h, { item, graded: g }])
-        // Clear the live verdict — counts already include history, and
-        // double-counting one card as exact AND review is the tally bug.
+         
+         
         setGraded(null)
         setDone(true)
       }
@@ -117,8 +117,8 @@ function SessionPage() {
     if (cur) {
       const at = Math.min(next.length, pos + 3)
       if (at <= pos) {
-        // Reinserting would slide the card back onto the current index (tail
-        // of the queue) — defer it instead so it cannot repeat immediately.
+         
+         
         setLater((l) => [...l, cur])
         deferred = true
       } else {
@@ -127,7 +127,7 @@ function SessionPage() {
     }
     setQueue(next)
     if (deferred && pos >= next.length) {
-      // The card we removed was the last one — reanchor on the new tail.
+       
       setPos(Math.max(0, next.length - 1))
       setGraded(null)
     }
@@ -149,8 +149,8 @@ function SessionPage() {
     setDone(false)
   }, [history])
 
-  // Global session keys. Shape components own their keys in capture phase and
-  // stop propagation, so S is *das* on a gender card and "speak" elsewhere.
+   
+   
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
       const t = e.target as HTMLElement | null
@@ -192,7 +192,7 @@ function SessionPage() {
         return
       }
       if ((e.key === ' ' || e.key === 'Enter' || e.key === 'ArrowRight') && graded) {
-        // Reveal shapes consume these pre-grade; post-grade they advance.
+         
         e.preventDefault()
         advance()
       }

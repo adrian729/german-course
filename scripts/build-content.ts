@@ -1,10 +1,10 @@
-// pnpm content — reads content/ (authored lessons + extracted data + overrides),
-// merges extracted occurrences into deduplicated VocabEntry records, validates
-// every structural and referential invariant, and emits the typed bundles at
-// src/content/generated/. Gated ahead of dev, build and typecheck.
-//
-// Hard-fail on anything a build can prove wrong; warn on anything about corpus
-// quality a human must judge. A build that is always red enforces nothing.
+ 
+ 
+ 
+ 
+ 
+ 
+ 
 
 import { existsSync, mkdirSync, readFileSync, writeFileSync, readdirSync } from 'node:fs'
 import { basename, join } from 'node:path'
@@ -68,7 +68,7 @@ const readJson = <T>(p: string): T => JSON.parse(readFileSync(p, 'utf8')) as T
 const readJsonl = <T>(p: string): T[] =>
   existsSync(p) ? readFileSync(p, 'utf8').split('\n').filter(Boolean).map((l) => JSON.parse(l) as T) : []
 
-// ------------------------------------------------------------ read lessons
+ 
 
 const lessonDirs = readdirSync(LESSONS_DIR, { withFileTypes: true })
   .filter((d) => d.isDirectory())
@@ -108,13 +108,13 @@ for (const dir of lessonDirs) {
     }
   }
 
-  // topicOrder must exactly match the topic files on disk, both directions.
+   
   const onDisk = topicFiles.map((f) => `${dir}/${basename(f, '.md')}`)
   for (const id of lesson.topicOrder) if (!onDisk.includes(id)) fail(`${dir}/lesson.json: topicOrder lists "${id}" with no file`)
   for (const id of onDisk) if (!lesson.topicOrder.includes(id)) fail(`${dir}/lesson.json: topic "${id}" exists but is missing from topicOrder`)
 }
 
-// ------------------------------------------------------------ read extracted
+ 
 
 type Occurrence = {
   key: string
@@ -180,7 +180,7 @@ const wrongFormsRaw = readJson<WrongForm[]>(join(EXTRACTED, 'wrong-forms.json'))
 const readingsRaw = readJson<Reading[]>(join(EXTRACTED, 'readings.json'))
 const promptsRaw = readJson<WritingPrompt[]>(join(EXTRACTED, 'prompts.json'))
 
-// ------------------------------------------------------------------ merge
+ 
 
 /** Structural POS fallback — the cascade that saves verbs and phrases whose
  *  section carried no override. */
@@ -227,8 +227,8 @@ const mergeByKey = new Map<string, MergeAcc>()
 
 for (const o of occurrences) {
   const pos = o.pos ?? structuralPos(o.lemma, o.gender, o.phrase ?? false)
-  // Merge key includes gender for nouns: der/die Bekannte are two entries
-  // with a feminine-of relation, never one entry with a gender conflict.
+   
+   
   const key = pos === 'noun' ? `${pos}:${o.gender ?? ''}:${asciiFold(o.lemma).toLowerCase()}` : o.key
   const acc = mergeByKey.get(key) ?? {
     key,
@@ -260,11 +260,11 @@ for (const o of occurrences) {
     acc.gender = o.gender
   }
 
-  // plural: the known form wins over unknown; a spelled-out form wins over
-  // "no pl." (early lessons are conservative; lessons 10–12 spell everything
-  // out) — recorded as a note, never a drill-blocking conflict. Two different
-  // spelled-out forms genuinely disagree: earliest wins + conflicts[] + warn,
-  // and the field stays out of generated drills.
+   
+   
+   
+   
+   
   const otherPlural = expandPlural(o.plural, o.lemma)
   if (acc.plural.kind === 'unknown' && otherPlural.kind !== 'unknown') acc.plural = otherPlural
   else if (acc.plural.kind === 'none' && otherPlural.kind !== 'none' && otherPlural.kind !== 'unknown') {
@@ -288,10 +288,10 @@ for (const o of occurrences) {
   acc.occurrenceList.push(o.occurrence)
 }
 
-// Verbs the vocabulary never annotates with a 3sg form (sehen, nehmen…)
-// get it from the paradigm tables that tabulate them: exact bare-infinitive
-// column + er/sie/es row. Same corpus, same trust as a parenthesised form —
-// and the drill generator cross-checks the du-form against it before emitting.
+ 
+ 
+ 
+ 
 for (const acc of mergeByKey.values()) {
   if (acc.present3sg || acc.pos !== 'verb') continue
   const bare = acc.lemma.replace(/^sich\s+/, '')
@@ -308,12 +308,12 @@ for (const acc of mergeByKey.values()) {
   }
 }
 
-// ------------------------------------------------------------- lexeme ids
+ 
 
-// LexemeId = slugify(headword). Homographs never auto-suffix by position:
-// every member of a collision group takes a content-derived suffix (first
-// lesson, then POS), so re-extraction cannot silently repoint a bookmark the
-// way order-dependent -2 numbering could.
+ 
+ 
+ 
+ 
 const entries: VocabEntry[] = []
 const baseCount = new Map<string, number>()
 for (const acc of mergeByKey.values()) {
@@ -353,8 +353,8 @@ for (const acc of mergeByKey.values()) {
     verification: 'extracted',
     errata: [],
     conflicts: acc.conflicts.length ? acc.conflicts : undefined,
-    // present3sg and valency are independent facts: a verb can carry a stem
-    // change AND govern a case (waschen (wäscht) vs zustimmen (+D)).
+     
+     
     ...(acc.present3sg
       ? { verb: { present3sg: acc.present3sg, ...(acc.reflexive ? { reflexive: acc.reflexive } : {}) } }
       : {}),
@@ -369,8 +369,8 @@ for (const acc of mergeByKey.values()) {
   void acc
 }
 
-// resolve relations sourceRaw → lexemeId (indexed once; the naive
-// entries×occurrences filter never finished in this environment)
+ 
+ 
 const byLemma = new Map<string, VocabEntry[]>()
 const missingRelationTargets = new Map<string, string[]>()
 for (const e of entries) {
@@ -388,10 +388,10 @@ for (const o of occurrences) {
   else relationsByLemma.set(k, [...o.relations])
 }
 
-// ------------------------------------------------- authored new lexemes
-// Words the corpus names (word-formation sources, register pairs) but never
-// lists as vocabulary rows. Linguistics authored in overrides/new-lexemes.json;
-// provenance inherited from the first naming context — never fabricated.
+ 
+ 
+ 
+ 
 type NewLexeme = {
   headword: string
   pos: Pos
@@ -405,7 +405,7 @@ type NewLexeme = {
 }
 const newLexemes = existsSync(join(OVERRIDES, 'new-lexemes.json')) ? readJson<NewLexeme[]>(join(OVERRIDES, 'new-lexemes.json')) : []
 {
-  // index naming contexts by normalised source word
+   
   type RelCtx = { kind: string; sourceRaw: string; topicId?: string; lessonNumber?: number; sourceSection?: string; sourceLine?: number };
   const namingCtx = new Map<string, { rel: RelCtx; occ: (typeof occurrences)[number] }>()
   for (const o of occurrences) {
@@ -460,7 +460,7 @@ const newLexemes = existsSync(join(OVERRIDES, 'new-lexemes.json')) ? readJson<Ne
     const arr = byLemma.get(k)
     if (arr) arr.push(e)
     else byLemma.set(k, [e])
-    // Reflexive infinitives are looked up bare ("bewerben" → "sich bewerben").
+     
     if (e.lemma.startsWith('sich ')) {
       const bare = asciiFold(e.lemma.replace(/^sich\s+/, '')).toLowerCase()
       const arr2 = byLemma.get(bare)
@@ -474,18 +474,18 @@ for (const e of entries) {
   const rels: VocabEntry['relations'] = []
   const occRels = relationsByLemma.get(asciiFold(e.lemma).toLowerCase()) ?? []
   for (const occ of occRels) {
-    // feminine-of links a lemma shared by the m/f pair: prefer the masculine
-    // entry, never an arbitrary (possibly self) first hit.
+     
+     
     const candidates = byLemma.get(asciiFold(occ.sourceRaw).toLowerCase()) ?? []
     const target =
       occ.kind === 'feminine-of'
         ? (candidates.find((c) => c.gender === 'm') ?? candidates[0])
         : candidates[0]
     if (!target) {
-      // Compound splits ("das Haus + die Tür") and gloss-decorated sources
-      // ("stehen — to stand") never resolve by construction — drop silently.
-      // A clean single word that resolves nowhere is a real extraction gap,
-      // collected below and warned once per missing target.
+       
+       
+       
+       
       if (/^[a-zäöüß]+$/i.test(occ.sourceRaw.trim())) {
         const k = occ.sourceRaw.trim().toLowerCase()
         const arr = missingRelationTargets.get(k)
@@ -498,13 +498,13 @@ for (const e of entries) {
   }
   e.relations = [...new Map(rels.map((r) => [`${r.kind}:${r.lexemeId}`, r])).values()]
 }
-// Surfaced on /status, not per-item console noise: every target here is a
-// word-formation source with no vocabulary row of its own.
+ 
+ 
 const unresolvedRelations = [...missingRelationTargets.entries()]
   .sort(([a], [b]) => a.localeCompare(b))
   .map(([target, referrers]) => ({ target, referrers: [...new Set(referrers)] }))
 
-// ---------------------------------------------------------------- overrides
+ 
 
 type OverrideFile = Array<{ id: string; patch: Partial<VocabEntry>; note?: string }>
 const lexemeOverrides = existsSync(join(OVERRIDES, 'lexemes.json')) ? readJson<OverrideFile>(join(OVERRIDES, 'lexemes.json')) : []
@@ -521,26 +521,26 @@ for (const ov of lexemeOverrides) {
   if (ov.patch.verification) entry.verification = ov.patch.verification
   const fields = new Set(Object.keys(ov.patch).filter((k) => k !== 'verification'))
   overriddenByField.set(ov.id, fields)
-  // An authored override settles the field: drop its merge conflicts so the
-  // value drills again and the triage warning goes quiet.
+   
+   
   if (entry.conflicts && fields.size) {
     entry.conflicts = entry.conflicts.filter((c) => !fields.has(c.field))
     if (!entry.conflicts.length) entry.conflicts = undefined
   }
 }
 
-// Merge-conflict warnings fire here — after overrides — so a human decision
-// recorded in overrides/lexemes.json actually clears the queue. Only genuine
-// disagreements (two spelled-out forms, two genders, two POS) warn: the
-// "no pl."-overruled-by-attested-form cases are policy-decided (see above)
-// with the singular-only exceptions encoded in overrides/lexemes.json.
+ 
+ 
+ 
+ 
+ 
 for (const e of entries) {
   if (e.conflicts?.length) {
     warn(`merge conflict on "${e.headword}" (${e.lemma}): ` + e.conflicts.map((c) => `${c.field}: ${[...new Set(c.values)].join(' / ')}`).join('; '))
   }
 }
 
-// ------------------------------------------------------------------ errata
+ 
 
 const errata: Erratum[] = existsSync(join(OVERRIDES, 'errata.json')) ? readJson<Erratum[]>(join(OVERRIDES, 'errata.json')) : []
 const upstream = existsSync(join(EXTRACTED, '.upstream.json')) ? readJson<Record<string, { sha256: string }>>(join(EXTRACTED, '.upstream.json')) : {}
@@ -583,13 +583,13 @@ for (const er of errata) {
   }
 }
 
-// ------------------------------------------------------- sentences + counts
+ 
 
-// Slug-collision tripwire: two noun entries sharing a lemma with different
-// non-null genders split silently by the gendered merge key. The known
-// masculine/feminine profession pairs carry a feminine-of relation and stay
-// quiet; anything else is a human check — a silent merge of two words onto
-// one page is the worst bug this app can have.
+ 
+ 
+ 
+ 
+ 
 {
   const byLemma = new Map<string, VocabEntry[]>()
   for (const e of entries) {
@@ -602,8 +602,8 @@ for (const er of errata) {
   for (const group of byLemma.values()) {
     const genders = new Set(group.map((e) => e.gender))
     if (genders.size < 2) continue
-    // A feminine-of link to a DIFFERENT entry of the pair silences this —
-    // a self-link does not, since that is the failure mode.
+     
+     
     const linked = group.some((e) =>
       e.relations.some((r) => r.kind === 'feminine-of' && r.lexemeId !== e.id && group.some((o) => o.id === r.lexemeId)),
     )
@@ -614,7 +614,7 @@ for (const er of errata) {
 }
 
 const sentencesById = new Map(sentencesRaw.map((s) => [s.id, s]))
-// Index exampleId → lexemeIds once instead of entries×sentences filtering.
+ 
 {
   const lexemesByExample = new Map<string, string[]>()
   for (const e of entries) {
@@ -659,12 +659,12 @@ for (const topic of Object.values(topics)) {
   }
 }
 
-// ------------------------------------------------------------------ paradigms
+ 
 
-// Merge tables with identical column sets AND identical cells for any shared
-// row into one, recording which lesson introduced each row — progressive
-// revelation, not progress tracking. A table whose shared rows disagree (e.g.
-// the kein grid vs. the dieser grid) is a DIFFERENT table and stays separate.
+ 
+ 
+ 
+ 
 type MergedParadigm = Paradigm & { origins: string[] }
 const paradigmGroups = new Map<string, MergedParadigm[]>()
 
@@ -711,7 +711,7 @@ for (const p of paradigmsRaw) {
 }
 const paradigms: MergedParadigm[] = [...paradigmGroups.values()].flat()
 
-// --------------------------------------------------------------- invariant: links
+ 
 
 function collectLinks(node: unknown, found: string[] = []): string[] {
   if (!node || typeof node !== 'object') return found
@@ -755,7 +755,7 @@ function textOf(node: unknown): string {
   return ''
 }
 
-// ------------------------------------------------------------ point claims
+ 
 
 const pointsByTopic = new Map<TopicId, Set<string>>()
 const pointsClaimed = new Map<string, string>()
@@ -796,8 +796,8 @@ for (const topic of Object.values(topics)) {
   }
 }
 
-// Link resolution runs AFTER points/lexemes are known, with the same parser
-// the app renders with so the check cannot drift.
+ 
+ 
 for (const topic of Object.values(topics)) {
   const raw = readFileSync(join(LESSONS_DIR, topic.lessonId, 'topics', `${topic.slug}.md`), 'utf8')
   const { content } = matter(raw)
@@ -813,23 +813,23 @@ for (const topic of Object.values(topics)) {
       if (!topics[t]) fail(`${topic.id}: [..](/lessons/${t}) resolves to no topic`)
     }
   }
-  // <ParadigmTable id="..." rows={...}> references must resolve so a prose
-  // topic can never render an empty or half-missing grid.
+   
+   
   for (const m of content.matchAll(/<ParadigmTable[^>]*\bid=["']([^"']+)["']/g)) {
     const pid = m[1]!
     if (!paradigms.some((p) => p.id === pid)) fail(`${topic.id}: <ParadigmTable id="${pid}"> resolves to no paradigm`)
   }
 }
 
-// ------------------------------------------------------------ paradigm cells
+ 
 
-// The assembly manifest (content/reference/assembly.json) makes verbatim
-// copies nonexistent: bodies name a slice instead of restating it. So the
-// invariant is reference resolution (checked above), not verbatim presence.
-// The old verbatim-cell check is intentionally removed — it would fail every
-// assembled table.
+ 
+ 
+ 
+ 
+ 
 
-// ------------------------------------------------------------ practice viability
+ 
 
 for (const d of drillsRaw) {
   if (!topics[d.topicId]) fail(`drill "${d.id}": topicId "${d.topicId}" does not exist`)
@@ -841,7 +841,7 @@ for (const d of drillsRaw) {
   }
 }
 
-// ------------------------------------------------------------- stats + emit
+ 
 
 const byVerification: Record<Verification, number> = { extracted: 0, reviewed: 0, authored: 0 }
 for (const e of entries) byVerification[e.verification]++

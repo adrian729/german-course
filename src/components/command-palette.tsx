@@ -1,5 +1,5 @@
-// Search palette, opened with `/`. Opened empty it is a jump list, not a blank
-// box — and nothing is remembered between visits.
+ 
+ 
 
 import { useEffect, useMemo, useState } from 'react'
 import { useNavigate } from '@tanstack/react-router'
@@ -33,7 +33,7 @@ export function CommandPalette({
     if (!open) setQuery('')
   }, [open])
 
-  // Build the vocabulary index once, lazily, so `uber` finds `über`.
+   
   useEffect(() => {
     loadVocab().then((b) => {
       setVocabIndex(b.entries.map((e) => ({ id: e.id, label: e.headword, hint: e.glosses[0] ?? '', to: `/vocabulary/${e.id}` })))

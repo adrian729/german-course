@@ -1,6 +1,6 @@
-// Character-level diff for the typed shape: the wireframe highlights the single
-// differing character (`a` against `ä`), which a whole-string comparison cannot
-// show.
+ 
+ 
+ 
 
 export type DiffSeg = { kind: 'same' | 'del' | 'ins'; text: string }
 
@@ -24,7 +24,7 @@ export function charDiff(a: string, b: string): DiffSeg[] {
 
   const n = a.length
   const m = b.length
-  // lcs[i][j] = length of the LCS of a.slice(i) and b.slice(j)
+   
   const lcs: number[][] = Array.from({ length: n + 1 }, () => new Array<number>(m + 1).fill(0))
   for (let i = n - 1; i >= 0; i--) {
     for (let j = m - 1; j >= 0; j--) {

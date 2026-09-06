@@ -1,7 +1,7 @@
-// Metadata is eager (small, and needed for nav, search, practice and the
-// lesson index on every screen). The five data bundles are lazy, each reached
-// by a memoised dynamic import in a route loader, so ~1.6 MB of lexical data
-// stays out of the entry chunk.
+ 
+ 
+ 
+ 
 
 import { contentIndex } from './generated/index'
 import type {
@@ -53,7 +53,7 @@ export async function loadLessonIntro(lesson: Lesson): Promise<string | null> {
   return load ? load() : null
 }
 
-// ---------------------------------------------------------------- lazy bundles
+ 
 
 let vocabPromise: Promise<VocabBundle> | null = null
 let sentencePromise: Promise<SentenceBundle> | null = null

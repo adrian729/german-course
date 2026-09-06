@@ -1,10 +1,10 @@
-// Browser speech synthesis for German, ~120 lines, no dependency.
-//
-// If no German voice exists, the app does NOT speak German with an English
-// voice — an en-US engine reading "Ich möchte" teaches a wrong phoneme map.
-// audioAvailable() then returns false for the session, audio-requiring kinds
-// are dropped from every mode, speaker buttons are hidden (not disabled), and
-// the deck builder shows one dismissible line.
+ 
+ 
+ 
+ 
+ 
+ 
+ 
 
 export type Rate = 0.75 | 0.9 | 1.0
 
@@ -48,7 +48,7 @@ let available: boolean | null = null
 export function audioAvailable(): boolean {
   if (available !== null && voices !== null && voices.length > 0) return available
   const v = resolveVoice()
-  // Do not permanently cache "false" before voices have arrived.
+   
   if (!v && (!voices || voices.length === 0)) return false
   available = v !== null
   return available
@@ -69,8 +69,8 @@ export function initVoices(onReady?: () => void): void {
   if (probe()) return
   const onVoices = () => probe()
   window.speechSynthesis?.addEventListener('voiceschanged', onVoices)
-  // Poll a few times: some Firefox builds never fire voiceschanged when
-  // voices were already present, others deliver them late.
+   
+   
   let attempts = 0
   const t = setInterval(() => {
     attempts++
@@ -111,7 +111,7 @@ export function speak(text: string, rate: Rate = getRate()): void {
     if (i < chunks.length) {
       u.onend = () => speakNext()
     }
-    // iOS requires a user gesture for the first utterance — never autoplay.
+     
     synth.speak(u)
   }
   speakNext()

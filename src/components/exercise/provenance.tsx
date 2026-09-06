@@ -1,6 +1,6 @@
-// Where this item came from. Never hidden while an answer is being graded — if
-// the learner thinks the app is wrong, the link and the pill let them check, and
-// the app keeps the benefit of the doubt.
+ 
+ 
+ 
 
 import { Link } from '@tanstack/react-router'
 import { getLesson, topics } from '@/content/loader'

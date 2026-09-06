@@ -1,6 +1,6 @@
-// The six-shape contract. Twenty-six exercise kinds collapse onto six response
-// shapes, so adding a kind is a generator plus a payload variant — never a UI
-// change. Everything here is shape-level and kind-blind.
+ 
+ 
+ 
 
 import { useEffect } from 'react'
 import type { GradeOutcome, GradeResult } from '@/lib/grade'

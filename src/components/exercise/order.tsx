@@ -1,6 +1,6 @@
-// order — a token sequence. Word order is never fuzzy (N5): a transposition is
-// the error under test, so the verdict here is exact or wrong and nothing
-// between.
+ 
+ 
+ 
 
 import { useEffect, useMemo, useState } from 'react'
 import { SpeakButton } from '@/components/speak-button'
@@ -68,7 +68,7 @@ export function OrderShape({ item, graded, onGrade }: ShapeProps) {
         submit(placed)
         return true
       }
-      // Space/→ must not skip an unbuilt sentence.
+       
       if (e.key === ' ' || e.key === 'ArrowRight') return true
       return false
     },

@@ -1,5 +1,5 @@
-// A fold that resets on reload is worse than no fold, so this persists to
-// localStorage (see also lib/theme.ts).
+ 
+ 
 
 const KEY = 'sidebar'
 

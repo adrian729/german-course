@@ -1,6 +1,6 @@
-// Declarative knobs for scripts/extract-corpus.ts. This is where the corpus's
-// idiosyncrasy lives — a human edits this (not the parser) when extraction gets
-// something wrong, then re-runs `pnpm extract`.
+ 
+ 
+ 
 
 import type { Level } from '../src/content/types.ts'
 
@@ -139,7 +139,7 @@ export const LESSONS: LessonDef[] = [
 
 export const lessonById = new Map(LESSONS.map((l) => [l.id, l]))
 
-// --------------------------------------------------------------------- tables
+ 
 
 /** Which column of a vocabulary table holds which role. Columns are 0-based. */
 export type TableShape = {
@@ -190,11 +190,11 @@ export const TABLE_SHAPES: Array<{ match: string[]; shape: TableShape }> = [
   { match: ['#', 'german', 'english'], shape: { head: 1, gloss: 2 } },
 ]
 
-// ------------------------------------------------------------------ notation
+ 
 
-// NOTE: 3sg detection lives inline in parseParen (extract-corpus.ts) — it
-// needs separable-prefix and infinitive-exclusion logic a regex cannot hold.
-// Tune it there, not here.
+ 
+ 
+ 
 
 /** Valency patterns: `(+D)`, `(an + Acc)`, `(auf + Akk)`, `+ D + A`. */
 export const VALENCY_RE = /^[^)]*\+[^)]*$/
@@ -202,7 +202,7 @@ export const VALENCY_RE = /^[^)]*\+[^)]*$/
 /** Capitalised full plural forms — `(Väter)`, `(Romane)`, `(Geschäfte)`. */
 export const FULL_PLURAL_RE = /^[A-ZÄÖÜ]/
 
-// ------------------------------------------------------------ drill handling
+ 
 
 /** Practice section titles — a topic whose title matches one of these is a
  *  practice topic; its answer-key H3 is folded into DrillItem.expected. */
@@ -213,7 +213,7 @@ export const APPLIED_RE = /Applied Skills/i
 /** The answer-key boundary inside a practice section. */
 export const ANSWER_KEY_RE = /^###\s+[\d.]+\s+Answer Key/i
 
-// ------------------------------------------------------------ rewriting
+ 
 
 /** "Week 5" → "Lesson 5" everywhere except in the German words Woche(nende). */
 export const WEEK_RE = /\bWeeks?\s+(\d+)(?:\s*[-–]\s*(\d+))?/g

@@ -1,7 +1,7 @@
-// Payload adaptation, one function per shape. Every variant of the exercise
-// union is mapped here onto the single view model its shape renders, which is
-// what keeps the kinds out of the components and out of the dispatcher: a new
-// kind adds a branch to this file only.
+ 
+ 
+ 
+ 
 
 import type { ExerciseItem } from '@/lib/exercises/types'
 
@@ -54,10 +54,10 @@ export function typedPayload(item: ExerciseItem): TypedView {
     strictUmlaut: 'strictUmlaut' in item ? Boolean(item.strictUmlaut) : false,
     gradeCase: 'gradeCase' in item ? Boolean((item as { gradeCase?: boolean }).gradeCase) : true,
     expectsArticle: 'expectsArticle' in item ? Boolean((item as { expectsArticle?: boolean }).expectsArticle) : false,
-    // Only sentence-building order tasks are order-sensitive (word order is
-    // the thing under test, N5). Single words and ordinary typed answers stay
-    // fuzzy-eligible so typos grade `near`; the `almost` multiset softening
-    // applies to order-sensitive items only.
+     
+     
+     
+     
     orderSensitive: item.kind === 'authored' && 'chunks' in item && Boolean((item as { chunks?: string[] }).chunks?.length),
     english: 'english' in item ? (item as { english?: string | null }).english ?? null : null,
     speakAnswer: 'speakAnswer' in item ? (item as { speakAnswer?: string }).speakAnswer ?? (primary || null) : primary || null,

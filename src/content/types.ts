@@ -1,21 +1,21 @@
-// The shared content contract for the German course: what authored JSON and
-// extracted/overridden records must look like, and what the build adds on top.
-// Imported by both the app and scripts/*.ts, so these types are the single
-// definition of the model.
-//
-// Three rules run through the whole model:
-//   - the extractor never invents a value the corpus does not state (`unknown`
-//     is a first-class outcome, not a failure);
-//   - the word "week" appears nowhere in the app;
-//   - every field has at least one named consumer.
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
 
-export type LessonId = string // "03-praeteritum-and-reflexives"
-export type TopicId = string // "03-praeteritum-and-reflexives/02-reflexive-verbs"
-export type PointId = string // "praeteritum" — anchor in /grammar
-export type LexemeId = string // "die-erfahrung" — anchor in /vocabulary
-export type SentenceId = string // "s-a41f9c" — content hash, survives re-extraction
-export type ErratumId = string // "rechnung-plural"
-export type ParadigmId = string // "article-definite"
+export type LessonId = string  
+export type TopicId = string  
+export type PointId = string  
+export type LexemeId = string  
+export type SentenceId = string  
+export type ErratumId = string  
+export type ParadigmId = string  
 
 export const LEVELS = ['A1', 'A2', 'B1', 'B2'] as const
 export type Level = (typeof LEVELS)[number]
@@ -73,7 +73,7 @@ export type Pos = (typeof POS)[number]
 export const GENDERS = ['m', 'f', 'n'] as const
 export type Gender = (typeof GENDERS)[number]
 
-// ------------------------------------------------------------------ lessons
+ 
 
 export type Lesson = {
   id: LessonId
@@ -83,8 +83,8 @@ export type Lesson = {
   level: Level
   summary: string
   status: Verification
-  topicOrder: TopicId[] // single source of display order
-  sourceFile: string // provenance only, never rendered as a link
+  topicOrder: TopicId[]  
+  sourceFile: string  
 }
 
 /** 'prose' renders markdown and nothing else. The other three render a short
@@ -96,7 +96,7 @@ export type SourceRef = {
   file: string
   lines: [number, number]
   heading: string
-  sha256: string // staleness detector for errata + upstream drift
+  sha256: string  
 }
 
 export type Heading = { depth: 2 | 3; text: string; id: string }
@@ -109,7 +109,7 @@ export type TopicFrontmatter = {
   render: TopicRender
   status: Verification
   summary: string
-  points: PointId[] // grammar points canonically defined here
+  points: PointId[]  
   /** Points defined elsewhere that this one leans on. Direction (back/forward)
    *  is COMPUTED from lesson+topic order, never authored. */
   revisits: Array<{ pointId: PointId; note: string }>
@@ -136,14 +136,14 @@ export type GrammarPoint = {
   definition: string
   lessonId: LessonId
   topicId: TopicId
-  confusableWith: PointId[] // generates contrast cards
-  sequence?: string[] // when the point IS a procedure
+  confusableWith: PointId[]  
+  sequence?: string[]  
   register?: { spoken: string; written: string }
   level: Level
   themes: Theme[]
 }
 
-// ------------------------------------------------------------------ vocab
+ 
 
 export type PluralKind =
   | 'suffix'
@@ -155,9 +155,9 @@ export type PluralKind =
   | 'unknown'
 
 export type Plural = {
-  form: string | null // ALWAYS fully spelled out, or null. The only field consumers read.
+  form: string | null  
   kind: PluralKind
-  raw: string | null // exactly what stood in the parens — tooltip + re-extraction diff
+  raw: string | null  
 }
 
 export type NounDeclension = 'normal' | 'adjectival' | 'n'
@@ -174,10 +174,10 @@ export type VerbInfo = {
   present3sg?: string
   praeteritum3sg?: string
   partizip2?: string
-  praeteritumFull?: string[] // the six persons the corpus crams into one cell
+  praeteritumFull?: string[]  
 }
 
-export type Valency = string // "zustimmen (+D)" · "geben + D + A"
+export type Valency = string  
 
 export type Occurrence = {
   topicId: TopicId
@@ -190,12 +190,12 @@ export type Occurrence = {
 
 export type VocabEntry = {
   id: LexemeId
-  headword: string // "die Erfahrung" — as displayed, and as spoken
-  lemma: string // "Erfahrung" — grading, search, plural expansion
+  headword: string  
+  lemma: string  
   pos: Pos | null
   gender: Gender | null
   plural: Plural
-  glosses: string[] // union across occurrences; [0] is primary
+  glosses: string[]  
   declension?: NounDeclension
   verb?: VerbInfo
   valency?: Valency
@@ -205,17 +205,17 @@ export type VocabEntry = {
     lexemeId: LexemeId
   }>
   falseFriend?: { looksLike: string; actuallyMeans: string }
-  literal?: string // idioms carry a literal reading beside the figurative
+  literal?: string  
   themes: Theme[]
   level: Level
-  occurrences: Occurrence[] // "Introduced in Lesson 3 · also in 7, 11"
+  occurrences: Occurrence[]  
   exampleIds: SentenceId[]
   verification: Verification
   conflicts?: Array<{ field: string; values: string[]; from: TopicId[] }>
   errata: ErratumId[]
 }
 
-// ------------------------------------------------------------------ sentences
+ 
 
 export type Token = { text: string; capitalised: boolean }
 
@@ -233,10 +233,10 @@ export type Sentence = {
   /** Safe to scramble for the word-order drill. True only for 4–8 tokens, one
    *  finite verb, no fronted adverbial, and A1/A2. */
   wordOrderEligible: boolean
-  speakable: string // == text unless the cell carried trailing markdown
+  speakable: string  
 }
 
-// ------------------------------------------------------------------ paradigms
+ 
 
 export type ParadigmKind = 'verb' | 'article' | 'pronoun' | 'adjective-ending'
 
@@ -259,16 +259,16 @@ export type Paradigm = {
   verification: Verification
 }
 
-// ------------------------------------------------------------------ drills
+ 
 
 export type DrillItem = {
   id: string
   n: number
-  prompt: string // "Ich ___ (sein) Student."
-  expected: string[] // the key's " / " alternatives all land here
-  english: string | null // the key's literal gloss — doubles as an EN→DE prompt
-  rationale: string | null // the trailing "— *ein → kein*"
-  chunks?: string[] // wordOrder drills arrive pre-chunked from the source
+  prompt: string  
+  expected: string[]  
+  english: string | null  
+  rationale: string | null  
+  chunks?: string[]  
   /** The section rubric, attached VERBATIM — never summarised. Guards the
    *  typed drills whose key is not the whole set of correct answers. */
   rubric?: string
@@ -294,7 +294,7 @@ export type WrongForm = {
   context: string
 }
 
-// ------------------------------------------------------------------ errata
+ 
 
 /** A correction to a corpus we do not own. Quotes and hashes its source, so a
  *  re-extraction that changes that text hard-fails rather than silently
@@ -302,7 +302,7 @@ export type WrongForm = {
 export type Erratum = {
   id: ErratumId
   kind: 'factual' | 'notation' | 'classification' | 'typo'
-  severity: 'error' | 'silent' // 'error' renders a visible callout
+  severity: 'error' | 'silent'  
   source: { file: string; line: number; quote: string; sha256: string }
   note: string
   target:
@@ -311,7 +311,7 @@ export type Erratum = {
     | { kind: 'paradigm'; id: ParadigmId; patch: Partial<Paradigm> }
 }
 
-// ------------------------------------------------------------------ applied
+ 
 
 export type ReadingText = {
   id: string
@@ -329,10 +329,10 @@ export type WritingPrompt = {
   topicId: TopicId
   title: string
   prompt: string
-  requirements: string[] // required-construction checklist
+  requirements: string[]  
 }
 
-// ------------------------------------------------------------------ bundles
+ 
 
 /** Eager — nav, headers, search, everything the shell renders. */
 export type ContentIndex = {

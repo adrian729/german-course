@@ -1,5 +1,5 @@
-// pair — bipartite matching. 1–6 picks left, a–f picks partner;
-// correct pairs lock and grey. Every binding is printed under the controls.
+ 
+ 
 
 import { useMemo, useState } from 'react'
 import { Kbd, KeyHint } from '@/components/exercise/key-hint'
@@ -17,7 +17,7 @@ export function PairShape({ item, graded, onGrade }: ShapeProps) {
   const left = useMemo(() => view?.left ?? [], [view])
   const right = useMemo(() => {
     const r = [...(view?.right ?? [])]
-    // Deterministic shuffle per item so the answer is not positional.
+     
     let h = 0
     for (const c of item.id) h = (h * 31 + c.charCodeAt(0)) >>> 0
     for (let i = r.length - 1; i > 0; i--) {

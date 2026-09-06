@@ -1,4 +1,4 @@
-// Practice exercise types — discriminated union over six response shapes.
+ 
 import type { Gender, Level, Pos, Theme, Verification } from '@/content/types'
 
 export type Shape = 'reveal' | 'choice' | 'typed' | 'slots' | 'order' | 'pair'
@@ -60,7 +60,7 @@ type BaseExercise = {
   speakPrompt?: string
 }
 
-// -- reveal
+ 
 export type VocabRevealItem = BaseExercise & {
   shape: 'reveal'
   kind: 'vocab-reveal'
@@ -70,7 +70,7 @@ export type VocabRevealItem = BaseExercise & {
   level: Level
 }
 
-// -- choice variants
+ 
 export type GenderItem = BaseExercise & {
   shape: 'choice'
   kind: 'gender'
@@ -97,7 +97,7 @@ export type JudgementItem = BaseExercise & {
   formId: string
 }
 
-// -- typed variants
+ 
 export type TypedRecallItem = BaseExercise & {
   shape: 'typed'
   kind: 'typed-recall'
@@ -130,7 +130,7 @@ export type PluralItem = BaseExercise & {
   lexemeId: string
 }
 
-// -- slots variants
+ 
 export type PartizipPairItem = BaseExercise & {
   shape: 'slots'
   kind: 'partizip-pair'
@@ -149,7 +149,7 @@ export type ClozeItem = BaseExercise & {
   lexemeId: string
 }
 
-// -- order variant
+ 
 export type SentenceBuilderItem = BaseExercise & {
   shape: 'order'
   kind: 'sentence-builder'
@@ -160,14 +160,14 @@ export type SentenceBuilderItem = BaseExercise & {
   sentenceId: string
 }
 
-// -- pair variant
+ 
 export type MatchGridItem = BaseExercise & {
   shape: 'pair'
   kind: 'match-grid'
   pairs: Array<{ left: string; right: string; lexemeId: string }>
 }
 
-// -- authored wraps DrillItem
+ 
 export type AuthoredItem = BaseExercise & {
   shape: 'typed' | 'slots' | 'order' | 'choice' | 'reveal' | 'pair'
   kind: 'authored'
@@ -177,9 +177,9 @@ export type AuthoredItem = BaseExercise & {
   english: string | null
   rationale: string | null
   chunks?: string[]
-  // derived shape helpers
+   
   authoredShape: 'typed' | 'slots' | 'order'
-  // for typed/slots grading
+   
   accepted?: string[]
   strictUmlaut?: boolean
   blanks?: Array<{ accepted: string[]; strictUmlaut?: boolean }>
@@ -201,7 +201,7 @@ export type ExerciseItem =
   | MatchGridItem
   | AuthoredItem
 
-// ------------------------------------------------------------------ validation
+ 
 
 export const MODES: DeckMode[] = ['mixed', 'vocab', 'grammar', 'production', 'listening']
 export const SIZES: DeckSize[] = [10, 20, 40, 0]

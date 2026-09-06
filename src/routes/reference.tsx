@@ -28,8 +28,8 @@ function kebab(s: string): string {
   return s.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '')
 }
 
-// Rows introduced later render dimmed when viewed as-of an earlier lesson.
-// On /reference there is no asOf so everything is complete.
+ 
+ 
 function lessonNumberFromId(id: string): number | null {
   const m = id.match(/^(\d+)/)
   if (!m || !m[1]) return null
@@ -47,7 +47,7 @@ function isRowDimmed(
   const asOfNum = lessonNumberFromId(asOf)
   const introducedNum = lessonNumberFromId(introduced)
   if (asOfNum === null || introducedNum === null) {
-    // Fallback to lexical compare for full ids
+     
     return introduced > asOf
   }
   return introducedNum > asOfNum
@@ -61,7 +61,7 @@ function ParadigmTable({
   asOf?: LessonId
 }) {
   const [expanded, setExpanded] = useState(false)
-  // Long lists (30 participles, 20 Präteritum forms) sit behind Show-all.
+   
   const shouldCollapse = paradigm.rows.length > 10
   const visibleCells = shouldCollapse && !expanded ? paradigm.cells.slice(0, 10) : paradigm.cells
 
@@ -95,9 +95,9 @@ function ParadigmTable({
               {visibleCells.map((row, idx) => {
                 const rowLabel = paradigm.rows[idx] ?? row[0] ?? ''
                 const dimmed = isRowDimmed(rowLabel, paradigm.rowIntroducedIn, asOf)
-                // Map row index for actual paradigm.rows when collapsed: use idx
-                // For visibleCells slicing, rowLabel already aligns with idx; for expanded it's fine.
-                // For correctness when collapsed, dimming should use the visible row's label.
+                 
+                 
+                 
                 return (
                   <tr
                     key={`${paradigm.id}-${idx}`}
@@ -173,14 +173,14 @@ function ReferencePage() {
     return false
   }
 
-  // Keep section order, but also include empty sections for rail stability if needed.
-  // For current data only verb+article have entries.
+   
+   
   const sections = groups
 
-  // Rail: per-table anchors so ⌘F + deep links land on the exact grid.
+   
   const railTables = paradigms.map((p) => ({ id: kebab(p.id), title: p.title }))
 
-  // Touch lessons import to satisfy noUnusedLocals if needed for dimming helper demo
+   
   const _lessonCount = lessons.length
   void _lessonCount
 

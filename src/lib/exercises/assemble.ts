@@ -1,4 +1,4 @@
-// Deck assembly: claim → cap → spread
+ 
 
 import { audioAvailable } from '@/lib/tts'
 import { foldForSearch } from '@/lib/normalise'
@@ -47,19 +47,19 @@ function kindMatchesMode(kind: ExerciseItem['kind'], mode: DeckFilters['mode']):
   if (mode === 'vocab') return ['vocab-reveal', 'gender', 'meaning-mcq', 'typed-recall', 'plural', 'partizip-pair', 'match-grid'].includes(kind)
   if (mode === 'grammar') return ['conjugation-cell', 'cloze', 'sentence-builder', 'judgement', 'authored'].includes(kind)
   if (mode === 'production') return ['typed-recall', 'cloze', 'sentence-builder', 'authored'].includes(kind)
-  if (mode === 'listening') return false // dictation kinds not shipped — always empty
+  if (mode === 'listening') return false  
   return true
 }
 
 export function buildDeck(filters: DeckFilters, bundles: Bundles, _options?: { seed?: number }): Deck {
-  // Generate all pools
+   
   const entries = bundles.vocab.entries
   const sentences = bundles.sentences.sentences
   const drills = bundles.drills.drills
   const wrongForms = bundles.drills.wrongForms
   const paradigms = bundles.paradigms.paradigms
 
-  // Apply pre-filtering to entries/sentences based on theme, pos, level, point, lexeme, lesson, topic
+   
   let filteredEntries = entries
   if (filters.theme) filteredEntries = filteredEntries.filter((e) => e.themes.includes(filters.theme!))
   if (filters.pos) filteredEntries = filteredEntries.filter((e) => e.pos === filters.pos)
@@ -79,7 +79,7 @@ export function buildDeck(filters: DeckFilters, bundles: Bundles, _options?: { s
     filteredEntries = filteredEntries.filter((e) => e.occurrences.some((o) => o.topicId === filters.topic))
   }
   if (filters.point) {
-    // points belong to topics — match topic
+     
     const pointTopicIds = Object.values(topics)
       .filter((t) => t.points.includes(filters.point!))
       .map((t) => t.id)
@@ -100,21 +100,21 @@ export function buildDeck(filters: DeckFilters, bundles: Bundles, _options?: { s
   }
   if (filters.level) filteredSentences = filteredSentences.filter((s) => s.level === filters.level)
 
-  // Build kind pools
+   
   const pools = new Map<ExerciseItem['kind'], ExerciseItem[]>()
 
   const addPool = (kind: ExerciseItem['kind'], items: ExerciseItem[]) => {
     let filtered = items
-    // Pools are already built from lesson/topic-filtered entries and
-    // sentences; this only re-checks item-level hrefs with exact prefixes —
-    // slug-substring matching leaks across lessons (02-vocabulary repeats).
+     
+     
+     
     if (filters.lesson) {
       const prefix = `/lessons/${filters.lesson}/`
       const entryIds = new Set(filteredEntries.map((e) => e.id))
       filtered = filtered.filter((it) => {
         if (it.sourceHref?.startsWith(prefix)) return true
-        // Vocab-sourced items whose href is missing: keep iff a source lexeme
-        // survived the entry filter (any, not just the first).
+         
+         
         if (it.sourceIds.length) {
           if (it.sourceIds.some((sid) => entryIds.has(sid))) return true
           const entry = entries.find((e) => e.id === it.sourceIds[0])
@@ -128,7 +128,7 @@ export function buildDeck(filters: DeckFilters, bundles: Bundles, _options?: { s
       const entryIds = new Set(filteredEntries.map((e) => e.id))
       filtered = filtered.filter((it) => {
         if (it.sourceHref === href) return true
-        // check via occurrences
+         
         if (it.sourceIds.some((sid) => entryIds.has(sid))) {
           const entry = entries.find((e) => it.sourceIds.includes(e.id))
           if (entry) return entry.occurrences.some((o) => o.topicId === filters.topic)
@@ -136,16 +136,16 @@ export function buildDeck(filters: DeckFilters, bundles: Bundles, _options?: { s
         return false
       })
     }
-    // unverified filtering: extracted = unverified, reviewed/authored = verified
+     
     if (filters.unverified === false) {
       filtered = filtered.filter((it) => !(it.riskyWhenUnverified && it.verification === 'extracted'))
     }
-    // audio filtering
+     
     const audioOff = filters.audio === 'off' || !audioAvailable()
     if (audioOff) {
-      // No dictation kinds shipped, so nothing to drop; but keep for future
+       
     }
-    // mode filtering
+     
     filtered = filtered.filter((it) => kindMatchesMode(it.kind, filters.mode))
     pools.set(kind, shuffle(filtered))
   }
@@ -171,17 +171,17 @@ export function buildDeck(filters: DeckFilters, bundles: Bundles, _options?: { s
     return true
   })))
 
-  // Determine deck size
+   
   const size = filters.size ?? 20
   const targetSize = size === 0 ? Number.POSITIVE_INFINITY : size
 
-  // 1) claim: round-robin admitting only if sourceIds not already claimed
+   
   const claimed = new Set<string>()
   const deck: ExerciseItem[] = []
 
-  // Round-robin
+   
   let progress = true
-  // total available
+   
   const totalAvailable = [...pools.values()].reduce((a, b) => a + b.length, 0)
   const maxIterations = totalAvailable * 2 + 10
   let iter = 0
@@ -191,7 +191,7 @@ export function buildDeck(filters: DeckFilters, bundles: Bundles, _options?: { s
       if (deck.length >= targetSize) break
       const pool = pools.get(kind)
       if (!pool || pool.length === 0) continue
-      // Find first item in pool whose sourceIds not claimed
+       
       const pos = pool.findIndex((it) => it.sourceIds.every((sid) => !claimed.has(sid)))
       if (pos === -1) continue
       const [item] = pool.splice(pos, 1)
@@ -203,20 +203,20 @@ export function buildDeck(filters: DeckFilters, bundles: Bundles, _options?: { s
     iter++
   }
 
-  // If still under target and pools have items with claimed overlap, we already exhausted claimable
-  // No further items (spec says admit only if none of sourceIds already claimed)
+   
+   
 
-  // Shuffle deck initial order? Keep round-robin order but add small randomization for direction already done
+   
 
-  // 2) cap: no single kind exceeds 30% of deck (unless size=0).
-  // Recomputed after each removal — shrinking the deck lowers the cap.
+   
+   
   if (size !== 0 && deck.length > 0) {
     for (const kind of KINDS_ORDER) {
       const cap = Math.ceil(deck.length * 0.3)
       const count = deck.filter((it) => it.kind === kind).length
       if (count > cap) {
         const excess = count - cap
-        // find indices of this kind
+         
         const indices: number[] = []
         deck.forEach((it, i) => { if (it.kind === kind) indices.push(i) })
         const toRemove = shuffle(indices).slice(0, excess).sort((a, b) => b - a)
@@ -225,13 +225,13 @@ export function buildDeck(filters: DeckFilters, bundles: Bundles, _options?: { s
     }
   }
 
-  // 3) spread: one linear pass swapping forward any item that would be third consecutive of its kind
+   
   for (let i = 2; i < deck.length; i++) {
     const a = deck[i - 2]!
     const b = deck[i - 1]!
     const c = deck[i]!
     if (a.kind === b.kind && b.kind === c.kind) {
-      // find forward swap target
+       
       let swapIdx = -1
       for (let j = i + 1; j < deck.length; j++) {
         if (deck[j]!.kind !== c.kind) { swapIdx = j; break }
@@ -244,17 +244,17 @@ export function buildDeck(filters: DeckFilters, bundles: Bundles, _options?: { s
     }
   }
 
-  // Build meta
+   
   const byKind: Record<string, number> = {}
   for (const k of KINDS_ORDER) byKind[k] = 0
   for (const it of deck) byKind[it.kind] = (byKind[it.kind] ?? 0) + 1
 
   const lessonLabels: string[] = []
   if (filters.lesson) {
-    // fallback: use lesson id
+     
     lessonLabels.push(filters.lesson)
   } else {
-    // collect lessons from items
+     
     const set = new Set<string>()
     for (const it of deck) {
       if (it.sourceHref) {
@@ -272,12 +272,12 @@ export function buildDeck(filters: DeckFilters, bundles: Bundles, _options?: { s
     for (const it of filteredEntries.slice(0, 20)) {
       for (const th of it.themes) tset.add(th)
     }
-    // limit
+     
   }
 
   const wordCount = new Set(deck.flatMap((d) => d.sourceIds)).size
 
-  // Final truncation to size (if claim produced more than target due to infinite? but we limited)
+   
   const finalItems = size === 0 ? deck : deck.slice(0, size)
 
   return {

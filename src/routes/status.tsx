@@ -35,7 +35,7 @@ function StatusPage() {
         A human must judge whether to author an override or leave it unknown.
       </p>
 
-      {/* Big number cards */}
+      { }
       <div className="mt-8 grid grid-cols-2 gap-3 md:grid-cols-5">
         <StatCard label="Words" value={stats.lexemes} />
         <StatCard label="Sentences" value={stats.sentences} />
@@ -44,7 +44,7 @@ function StatusPage() {
         <StatCard label="Paradigms" value={paradigmCount ?? '…'} />
       </div>
 
-      {/* Verification breakdown */}
+      { }
       <Card className="mt-6">
         <CardHeader className="pb-3">
           <CardTitle className="text-sm font-semibold">Verification</CardTitle>
@@ -65,7 +65,7 @@ function StatusPage() {
         </CardContent>
       </Card>
 
-      {/* Unknown plurals */}
+      { }
       <section className="mt-8">
         <h2 className="text-base font-semibold">Unknown plurals — {stats.unknownPlural}</h2>
         <p className="text-muted-foreground mt-1 text-xs">
@@ -80,7 +80,7 @@ function StatusPage() {
         )}
       </section>
 
-      {/* Unknown POS */}
+      { }
       <section className="mt-8">
         <h2 className="text-base font-semibold">Unknown part of speech — {stats.unknownPos}</h2>
         <p className="text-muted-foreground mt-1 text-xs">Entries where POS could not be determined.</p>
@@ -93,7 +93,7 @@ function StatusPage() {
         )}
       </section>
 
-      {/* Merge conflicts */}
+      { }
       <section className="mt-8">
         <h2 className="text-base font-semibold">Merge conflicts — {stats.conflicts}</h2>
         <p className="text-muted-foreground mt-1 text-xs">
@@ -108,7 +108,7 @@ function StatusPage() {
         )}
       </section>
 
-      {/* Unresolved relations */}
+      { }
       <section className="mt-8">
         <h2 className="text-base font-semibold">Unresolved relations — {stats.unresolvedRelations.length}</h2>
         <p className="text-muted-foreground mt-1 text-xs">
@@ -129,7 +129,7 @@ function StatusPage() {
         )}
       </section>
 
-      {/* Errata */}
+      { }
       <section className="mt-10">
         <h2 className="text-base font-semibold">Errata — {errataList.length}</h2>
         {errataList.length === 0 ? (
@@ -275,5 +275,5 @@ function GroupedVocabList({
   )
 }
 
-// Ensure lessons import is used (grouping uses getLesson) — keep for noUnusedLocals
+ 
 void lessons.length

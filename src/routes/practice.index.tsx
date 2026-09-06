@@ -45,7 +45,7 @@ function PracticePage() {
   const preview = useMemo(() => {
     if (!bundles) return null
     try {
-      // Preview with a small cap so the builder stays instant.
+       
       return buildDeck({ ...search, size: 20 }, bundles)
     } catch {
       return null

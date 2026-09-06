@@ -1,7 +1,7 @@
-// typed — one string. Both mechanisms for German on an English keyboard are
-// live: `ue`/`oe`/`ae`/`ss` are accepted by the grader, and Alt+a/o/u/s plus the
-// clickable row insert the real characters. On grading the field is left, so
-// every global single-letter binding wakes up again.
+ 
+ 
+ 
+ 
 
 import { useEffect, useRef, useState } from 'react'
 import { SpeakButton } from '@/components/speak-button'
@@ -33,8 +33,8 @@ export function TypedShape({ item, graded, onGrade }: ShapeProps) {
       orderSensitive: view.orderSensitive,
     })
     const expected = view.accepted[result.matched] ?? view.accepted[0] ?? ''
-    // Focus must leave the field the moment it is graded — the post-answer
-    // keyboard is identical across all six shapes only if the globals are live.
+     
+     
     inputRef.current?.blur()
     onGrade({ outcome: result.outcome, verdicts: [{ input: value, expected, result }] })
   }

@@ -1,15 +1,15 @@
-// German text normalisation. Four layers, applied identically to the learner's
-// string and to every accepted answer. The layer at which equality first holds
-// is the grade — grading is not boolean.
-//
-//   L0 raw
-//   L1 NFC · trim · collapse whitespace · strip zero-width
-//   L2 punctuation: strip trailing . ! ? ; normalise ’→' “”→" ; strip wrapping quotes
-//   L3 umlaut fold: ä→ae ö→oe ü→ue ß→ss  (fold BOTH sides to the ASCII digraph)
-//   L4 case fold
-//
-// Fold into a comparison key; NEVER transform the learner's input. Rewriting
-// ss→ß turns Wasser into Waßer; rewriting ue→ü destroys Abenteuer.
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
 
 export const FOLD = {
   ä: 'ae',

@@ -1,6 +1,6 @@
-// Substring match across lessons, topics, grammar points and vocabulary, with
-// umlaut folding so typing `uber` finds `über`. Vocabulary is lazy, so the
-// search index builds once the first bundle is loaded.
+ 
+ 
+ 
 
 import { allLessons, allTopics, points } from '@/content/loader'
 import { foldForSearch } from '@/lib/normalise'

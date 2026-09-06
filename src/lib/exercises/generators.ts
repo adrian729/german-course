@@ -1,5 +1,5 @@
-// Pure generators — each returns items from loaded bundles + filter context.
-// No side effects, no I/O, no audio checks (those happen in assemble).
+ 
+ 
 
 import type { Drill, Paradigm, Sentence, VocabEntry, WrongForm } from '@/content/types'
 import type {
@@ -18,7 +18,7 @@ import type {
 } from './types'
 import { topics } from '@/content/loader'
 
-// Helpers
+ 
 
 function sourceHref(topicId: string): string | undefined {
   const t = topics[topicId]
@@ -45,7 +45,7 @@ function hasUmlaut(s: string): boolean {
   return /[äöüÄÖÜ]/.test(s)
 }
 
-// Built-in conjugation table for sein/haben/modals (Präsens)
+ 
 const BUILTIN_CONJUGATIONS: Record<string, Record<string, string>> = {
   sein: { ich: 'bin', du: 'bist', 'er/sie/es': 'ist', wir: 'sind', ihr: 'seid', 'sie/Sie': 'sind' },
   haben: { ich: 'habe', du: 'hast', 'er/sie/es': 'hat', wir: 'haben', ihr: 'habt', 'sie/Sie': 'haben' },
@@ -60,7 +60,7 @@ const BUILTIN_CONJUGATIONS: Record<string, Record<string, string>> = {
 
 const PERSONS = ['ich', 'du', 'er/sie/es', 'wir', 'ihr', 'sie/Sie'] as const
 
-// --- vocabReveal
+ 
 export function vocabReveal(entries: VocabEntry[]): VocabRevealItem[] {
   return entries.map((e) => ({
     id: `vocab-reveal:${e.id}`,
@@ -79,7 +79,7 @@ export function vocabReveal(entries: VocabEntry[]): VocabRevealItem[] {
   }))
 }
 
-// --- genderSnap
+ 
 export function genderSnap(entries: VocabEntry[]): GenderItem[] {
   return entries
     .filter((e) => e.pos === 'noun' && e.gender && !e.conflicts?.some((c) => c.field === 'gender'))
@@ -89,7 +89,7 @@ export function genderSnap(entries: VocabEntry[]): GenderItem[] {
         label,
         correct: label === correct,
       }))
-      // randomize order but keep correct marked
+       
       const shuffled = shuffle(options)
       const topicId = e.occurrences[0]?.topicId ?? ''
       return {
@@ -109,24 +109,24 @@ export function genderSnap(entries: VocabEntry[]): GenderItem[] {
     })
 }
 
-// --- typedRecall
+ 
 export function typedRecall(entries: VocabEntry[]): TypedRecallItem[] {
   return entries
     .filter((e) => e.glosses.length > 0)
     .map((e) => {
       const english = e.glosses[0]!
-      // N3: the ONLY accepted form is the full headword. A bare lemma typed
-      // for a noun must grade article-miss (peach), never exact — accepting
-      // it here would return exact before article-miss is even considered.
+       
+       
+       
       const accepts: string[] = [e.headword]
       if (e.pos !== 'noun' && e.lemma && e.lemma !== e.headword) accepts.push(e.lemma)
       const uniq = [...new Set(accepts.filter(Boolean))]
       const expectsArticle = e.pos === 'noun' && !!e.gender
-      // gradeCase true for nouns
+       
       const gradeCase = e.pos === 'noun'
-      // N1: the umlaut is NOT under test in EN→DE recall — Strasse for
-      // Straße is an umlaut-miss (peach), not wrong. Strict is reserved for
-      // plural/conjugation tasks where the umlaut IS the answer.
+       
+       
+       
       const strictUmlaut = false
       const topicId = e.occurrences[0]?.topicId ?? ''
       return {
@@ -150,24 +150,24 @@ export function typedRecall(entries: VocabEntry[]): TypedRecallItem[] {
     })
 }
 
-// Distractor logic for meaningMCQ
+ 
 function pickDistractors(
   entry: VocabEntry,
   all: VocabEntry[],
   count: number,
 ): VocabEntry[] {
-  // 1) explicit authored relations (falseFriend, relations) — map lexemeId to entries
+   
   const relatedIds = new Set<string>()
   for (const r of entry.relations) relatedIds.add(r.lexemeId)
-  // falseFriend is not lexemeId but looksLike string — ignore for distractors unless maps to entry?
+   
   const related = all.filter((e) => relatedIds.has(e.id) && e.id !== entry.id)
 
-  // 2) same theme AND same pos
+   
   const themePosPool = all.filter(
     (e) => e.id !== entry.id && e.pos === entry.pos && e.themes.some((t) => entry.themes.includes(t)),
   )
 
-  // 3) any same-pos
+   
   const samePosPool = all.filter((e) => e.id !== entry.id && e.pos === entry.pos)
 
   const picked: VocabEntry[] = []
@@ -182,11 +182,11 @@ function pickDistractors(
     }
   }
 
-  // priority order
+   
   tryAdd(related)
   if (picked.length < count) tryAdd(themePosPool)
   if (picked.length < count) tryAdd(samePosPool)
-  // fallback: any entry excluding self
+   
   if (picked.length < count) {
     const fallback = all.filter((e) => !used.has(e.id))
     tryAdd(fallback)
@@ -199,8 +199,8 @@ export function meaningMCQ(entries: VocabEntry[]): MeaningMcqItem[] {
     .filter((e) => e.glosses.length > 0)
     .map((e) => {
       let distractors = pickDistractors(e, entries, 3)
-      // No two options may show the same label: a learner picking the right
-      // translation must never lose to a duplicate copy marked wrong.
+       
+       
       const correctGloss = e.glosses[0]!
       const seen = new Set([correctGloss.toLowerCase()])
       distractors = distractors.filter((d) => {
@@ -210,14 +210,14 @@ export function meaningMCQ(entries: VocabEntry[]): MeaningMcqItem[] {
         return true
       })
       if (distractors.length < 2) return null
-      // trim to 2 or 3 to keep 3–4 options total
+       
       if (distractors.length > 3) distractors = distractors.slice(0, 3)
       const options = [
         { label: correctGloss, correct: true },
         ...distractors.map((d) => ({ label: d.glosses[0] ?? d.headword, correct: false })),
       ]
       const shuffled = shuffle(options)
-      // ensure at least 2 options and at most 4
+       
       if (shuffled.length < 3 || shuffled.length > 4) return null
       const topicId = e.occurrences[0]?.topicId ?? ''
       return {
@@ -238,13 +238,13 @@ export function meaningMCQ(entries: VocabEntry[]): MeaningMcqItem[] {
     .filter((x): x is MeaningMcqItem => Boolean(x))
 }
 
-// --- conjugationCells
+ 
 export function conjugationCells(entries: VocabEntry[], paradigms: Paradigm[]): ConjugationCellItem[] {
   const items: ConjugationCellItem[] = []
 
-  // Build paradigm lookup for verb conjugation table
-  // Paradigms with kind verb contain cells like [person, conjugation] or with multiple verb columns
-  // We use built-in table for sein/haben/modals, otherwise use entry.verb.present3sg or paradigm rows
+   
+   
+   
   const verbEntries = entries.filter((e) => e.pos === 'verb')
 
   for (const e of verbEntries) {
@@ -278,33 +278,33 @@ export function conjugationCells(entries: VocabEntry[], paradigms: Paradigm[]): 
     }
 
     if (e.verb?.present3sg) {
-      // Use present3sg for du and er/sie/es variations; need to ensure we don't invent forms
-      // For strong verbs, we know du and er forms differ. We have present3sg (3sg). Use paradigms to infer others maybe.
-      // Simplify: generate one cell for er/sie/es using present3sg, and du form if we can derive
-      // Check paradigms for this verb maybe?
+       
+       
+       
+       
       const present3sg = e.verb.present3sg
-      // Try to find paradigm row for du form
+       
       let duForm: string | null = null
       for (const p of paradigms) {
         if (p.kind !== 'verb') continue
-        // Exact column match on the bare infinitive ("nehmen", not the
-        // "nehmen (e→i)" label): substring matching once paired fahren
-        // with erfahren and taught erfährst as its du-form.
+         
+         
+         
         const colIndex = p.cols.findIndex((c) => c.toLowerCase().replace(/\s*\(.*\)\s*$/, '') === lemma.toLowerCase())
         if (colIndex >= 0) {
-          // cols and cells share index 0 (the Person label), so the verb
-          // column reads at colIndex, not colIndex+1.
+           
+           
           for (const cellRow of p.cells) {
             const person = cellRow[0]
             if (person === 'du' && cellRow[colIndex] ) duForm = cellRow[colIndex]!
             if (person === 'er/sie/es' && cellRow[colIndex]) {
-              // validate matches present3sg
+               
               if (cellRow[colIndex] !== present3sg) duForm = null
             }
           }
         }
       }
-      // Add er/sie/es cell
+       
       items.push({
         id: `conjugation:${e.id}:er/sie/es`,
         shape: 'typed',
@@ -346,18 +346,18 @@ export function conjugationCells(entries: VocabEntry[], paradigms: Paradigm[]): 
   return items
 }
 
-// --- pluralForge
-// Conflicted plurals stay out of the drill entirely — it does not fall back
-// and does not accept anything.
+ 
+ 
+ 
 export function pluralForge(entries: VocabEntry[]): PluralItem[] {
   return entries
     .filter((e) => e.pos === 'noun' && e.plural.form && e.plural.kind !== 'unknown' && e.plural.kind !== 'none' && !e.conflicts?.some((c) => c.field === 'plural'))
     .map((e) => {
       const pluralForm = e.plural.form!
       const topicId = e.occurrences[0]?.topicId ?? ''
-      // N1: strict (no folding, no fuzzy) only when the umlaut/ß IS the
-      // answer — i.e. the plural carries one the singular lacks (Mutter →
-      // Mütter). Plain-suffix plurals (Tage) stay lenient to typos.
+       
+       
+       
       const singularBare = e.headword.replace(/^(der|die|das)\s+/i, '')
       const umlautIn = (s: string): boolean => /[äöüßÄÖÜẞ]/.test(s)
       return {
@@ -378,7 +378,7 @@ export function pluralForge(entries: VocabEntry[]): PluralItem[] {
     })
 }
 
-// --- partizipPairs
+ 
 export function partizipPairs(entries: VocabEntry[]): PartizipPairItem[] {
   return entries
     .filter((e) => e.pos === 'verb' && e.verb?.partizip2)
@@ -404,15 +404,15 @@ export function partizipPairs(entries: VocabEntry[]): PartizipPairItem[] {
     })
 }
 
-// --- sentenceBuilders
+ 
 export function sentenceBuilders(sentences: Sentence[]): SentenceBuilderItem[] {
   return sentences
     .filter((s) => s.wordOrderEligible)
     .map((s) => {
-      // tokens: strip trailing punctuation? Use text split but tokens already provide
+       
       const rawTokens = s.tokens.map((t) => t.text.replace(/[.!?;,]+$/, ''))
       const tokens = rawTokens.filter(Boolean)
-      // expected order is identity (0..n-1) — scramble will be done in component
+       
       const expectedOrder = tokens.map((_, i) => i)
       return {
         id: `sentence-builder:${s.id}`,
@@ -433,7 +433,7 @@ export function sentenceBuilders(sentences: Sentence[]): SentenceBuilderItem[] {
     })
 }
 
-// --- matchGrid (pair shape): 6 words ↔ 6 glosses from the same scope.
+ 
 export function matchGrid(entries: VocabEntry[]): MatchGridItem[] {
   const pool = entries.filter((e) => e.glosses.length > 0)
   if (pool.length < 6) return []
@@ -458,17 +458,17 @@ export function matchGrid(entries: VocabEntry[]): MatchGridItem[] {
   return out
 }
 
-// --- judgementFromWrongForms
+ 
 export function judgementFromWrongForms(wrongForms: WrongForm[]): JudgementItem[] {
   return wrongForms.map((wf) => {
-    const isCorrect = wf.correct ? false : true // if no correct provided, maybe not used? But spec says statement = wrong form, options right/wrong
-    // options: label right/wrong, correct indicates whether statement is correct -> but statement is wrong, so 'wrong' is correct
+    const isCorrect = wf.correct ? false : true  
+     
     const options: JudgementItem['options'] = [
       { label: 'right', correct: false },
       { label: 'wrong', correct: true },
     ]
-    // If correct is null, still show wrong as correct (the form is wrong)
-    // If context indicates form is actually wrong, we keep as above.
+     
+     
     void isCorrect
     return {
       id: `judgement:${wf.id}`,
@@ -489,31 +489,31 @@ export function judgementFromWrongForms(wrongForms: WrongForm[]): JudgementItem[
   })
 }
 
-// --- clozeFromDrills: blank the target lexeme's example sentence
+ 
 export function clozeFromDrills(entries: VocabEntry[], sentences: Sentence[]): ClozeItem[] {
   const byId = new Map(sentences.map((s) => [s.id, s]))
   const items: ClozeItem[] = []
   const escapeRegExp = (s: string): string => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
-  // \b is ASCII-only (\u00e4 counts as a boundary); German needs its own.
+   
   const wordRe = (s: string): RegExp => new RegExp(`(?<![A-Za-zÄÖÜäöüßẞ])${escapeRegExp(s)}(?![A-Za-zÄÖÜäöüßẞ])`, 'i')
   for (const e of entries) {
     if (e.exampleIds.length === 0) continue
-    // Use first example sentence
+     
     const sid = e.exampleIds[0]!
     const sent = byId.get(sid)
     if (!sent) continue
-    // Check if sentence contains lexeme text (lemma or headword word)
+     
     const lemma = e.lemma
-    // blank out the lexeme in sentence text — simple replace first occurrence case-insensitive
+     
     const hw = e.headword.replace(/^(der|die|das)\s+/i, '')
-    // Track which surface form actually matched as a whole word so the
-    // blank lands on it — substring matching would clobber Woche inside
-    // Wochenende into an unsolvable ___nende.
+     
+     
+     
     const candidates = [lemma, hw].filter(Boolean)
     const hit = candidates.find((c) => wordRe(c).test(sent.text))
     if (!hit) continue
     const blanked = sent.text.replace(wordRe(hit), '___')
-    // If replacement didn't introduce blank (case mismatch), skip
+     
     if (!blanked.includes('___')) continue
     const topicId = e.occurrences[0]?.topicId ?? sent.topicId
     items.push({
@@ -535,7 +535,7 @@ export function clozeFromDrills(entries: VocabEntry[], sentences: Sentence[]): C
   return items
 }
 
-// --- authoredItemsFromDrills
+ 
 export function authoredItemsFromDrills(drills: Drill[]): AuthoredItem[] {
   const items: AuthoredItem[] = []
   for (const drill of drills) {
@@ -582,11 +582,11 @@ export function authoredItemsFromDrills(drills: Drill[]): AuthoredItem[] {
 
       if (authoredShape === 'typed') {
         base.accepted = it.expected
-        // N1: a typed authored key containing an umlaut is strict — ASCII
-        // folding must not forgive what the book demands spelled.
+         
+         
         base.strictUmlaut = it.expected.some(hasUmlaut)
       } else if (authoredShape === 'slots') {
-        // multiple blanks: each blank expects same? Actually expected array corresponds to blanks? Assume each blank maps to expected in order - if expected length matches blank count, distribute; otherwise first expected for first blank etc.
+         
         const blanks = Array.from({ length: countBlanks }, (_, i) => ({
           accepted: it.expected.slice(i, i + 1).length ? [it.expected[i]!] : it.expected,
           strictUmlaut: hasUmlaut(it.expected[i] ?? it.expected[0] ?? ''),
@@ -605,7 +605,7 @@ export function authoredItemsFromDrills(drills: Drill[]): AuthoredItem[] {
   return items
 }
 
-// Utility to detect strictUmlaut for authored items
+ 
 export function authoredStrictUmlaut(item: AuthoredItem): boolean {
   const exp = item.expected ?? []
   return exp.some(hasUmlaut)

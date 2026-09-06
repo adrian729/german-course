@@ -1,7 +1,7 @@
-// The vocabulary browser: filter/sort ~2,646 lexemes by lesson, theme, part of
-// speech and gender, all reflected in the URL so any view is bookmarkable.
-// The list is virtualised by hand (fixed row height, scroll-driven windowing)
-// since the corpus is too large to render unvirtualised.
+ 
+ 
+ 
+ 
 
 import { createFileRoute, Link } from '@tanstack/react-router'
 import { useEffect, useMemo, useRef, useState } from 'react'
